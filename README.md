@@ -31,7 +31,7 @@
 - **HTML/CSS**: estrutura e estilo das páginas.
 - **JavaScript**: para interações e cálculos dinâmicos.
 - **Git e GitHub**: versionamento do projeto.
-
+- **Docker**: facilitar implementação do banco de dados
 ---
 
 ##  ✅Responsáveis por Área✅
@@ -72,5 +72,3 @@ Permitir que o usuário monte refeições personalizadas com base em alimentos d
 6. Criar testes unitários para as principais funcionalidades implementadas.
 
 ---
-
-

@@ -19,8 +19,9 @@
 - Acessar todas as funcionalidades sem necessidade de login.
 - Efetuar login opcionalmente para gerar e baixar relatórios em PDF.
 
-- **DOCUMENTACAO EM DETALHES DOS SPRINTS**
-https://docs.google.com/document/d/16bmeSKUb60Sma7MMCSvWFXq1465XLaLWFufkiDN6FjE/edit?usp=sharing
+- [**DOCUMENTACAO EM DETALHES DOS SPRINTS**](https://docs.google.com/document/d/16bmeSKUb60Sma7MMCSvWFXq1465XLaLWFufkiDN6FjE/edit?usp=sharing)
+
+- [**PROTOTIPAGEM INICIAL NO PROJETO**](https://www.figma.com/proto/lQPOqAeOSFHSjUynHLdZet/Untitled?node-id=4-185&p=f&t=uzYsCdXIex9B338e-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2)
 
 ---
 

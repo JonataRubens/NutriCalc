@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cadastro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/Register.css">
+
+</head>
+<body>
+
+  <div class="card">
+    <h1>Crie sua conta</h1>
+    <form id="cadastroForm">
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" required />
+      </div>
+
+      <div class="form-group">
+        <label for="sobrenome">Sobrenome</label>
+        <input type="text" id="sobrenome" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" required />
+        <div class="error" id="erroSenha"></div>
+      </div>
+
+      <button type="submit">Cadastrar</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("cadastroForm");
+    const senha = document.getElementById("senha");
+    const erroSenha = document.getElementById("erroSenha");
+
+    form.addEventListener("submit", function (e) {
+      if (senha.value.length < 8) {
+        e.preventDefault();
+        erroSenha.textContent = "A senha deve ter no mínimo 8 caracteres.";
+      } else {
+        erroSenha.textContent = "";
+        alert("Cadastro realizado com sucesso!");
+      }
+    });
+  </script>
+
+</body>
+</html>

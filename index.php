@@ -22,7 +22,7 @@ require_once 'includes/db_connection.php';
         </ul>
         <div class="nav-right">
           <a href="#" class="btn-entrar">Entrar</a>
-          <a href="#" class="btn-criar">Criar Conta PRO</a>
+          <a href="pages/Register.html" class="btn-criar">Criar Conta</a>
         </div>
       </nav>
     </div>

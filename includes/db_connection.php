@@ -1,6 +1,6 @@
 <?php
 // Database configuration
-$host = "localhost"; // Database host
+$host = "db"; // Database host
 $port = "3306"; // Database port 
 $username = "admin";
 $password = "admin"; 

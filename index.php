@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+require_once 'includes/db_connection.php';
+?>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
@@ -66,6 +69,7 @@
         <div class="card">Calculadora de IMC e Peso Ideal</div>
       </div>
     </section>
+
   </main>
 
   <!-- Footer -->

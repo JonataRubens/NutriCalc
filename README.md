@@ -31,7 +31,7 @@
 - **HTML/CSS**: estrutura e estilo das páginas.
 - **JavaScript**: para interações e cálculos dinâmicos.
 - **Git e GitHub**: versionamento do projeto.
-
+- **Docker**: facilitar implementação do banco de dados
 ---
 
 ##  ✅Responsáveis por Área✅
@@ -73,4 +73,11 @@ Permitir que o usuário monte refeições personalizadas com base em alimentos d
 
 ---
 
+## Como Executar 
 
+Para executar esta aplicação, siga estes passos:
+
+1.  **Certifique-se de ter o Docker e o Docker Compose instalados.**
+2.  **Navegue até o diretório do projeto no seu terminal.**
+3.  **Execute `docker-compose up --build -d` para construir e iniciar os containers.**
+4.  **Abra seu navegador e acesse `http://localhost`.**

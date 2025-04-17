@@ -72,3 +72,12 @@ Permitir que o usuário monte refeições personalizadas com base em alimentos d
 6. Criar testes unitários para as principais funcionalidades implementadas.
 
 ---
+
+## Como Executar 
+
+Para executar esta aplicação, siga estes passos:
+
+1.  **Certifique-se de ter o Docker e o Docker Compose instalados.**
+2.  **Navegue até o diretório do projeto no seu terminal.**
+3.  **Execute `docker-compose up --build -d` para construir e iniciar os containers.**
+4.  **Abra seu navegador e acesse `http://localhost`.**

@@ -297,3 +297,38 @@
     padding-top: 16px;
   }
   
+
+  /*POSTS*/
+
+  .post-grid {
+    display: flex;
+    gap: 24px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+  
+  .post-card {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 24px;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  
+  .post-card h2 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+  }
+  
+  .btn-leia {
+    display: inline-block;
+    margin-top: 16px;
+    background-color: #5e3bea;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+  }
+  

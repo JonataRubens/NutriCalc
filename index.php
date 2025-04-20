@@ -19,7 +19,7 @@ require_once 'includes/db_connection.php';
         <ul>
           <li><a href="#">Página inicial</a></li>
           <li><a href="#">Calculadoras nutricionais</a></li>
-          <li><a href="#">Blog</a></li>
+          <li><a href="pages/Blog.php">Blog</a></li>
         </ul>
         <div class="nav-right">
           <a href="#" class="btn-entrar">Entrar</a>

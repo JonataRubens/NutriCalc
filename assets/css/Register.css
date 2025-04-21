@@ -6,7 +6,7 @@
   }
 
   body {
-    background: linear-gradient(to right, #667eea, #764ba2);
+    background: linear-gradient(to right, #667eea, #160428);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,7 +77,7 @@
   }
 
   button:hover {
-    background-color: #4338ca;
+    background-color: #da1515;
   }
 
   @media (max-width: 420px) {

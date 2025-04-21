@@ -19,6 +19,7 @@ require_once 'includes/db_connection.php';
         <ul>
           <li><a href="#">Página inicial</a></li>
           <li><a href="#">Calculadoras nutricionais</a></li>
+          <li><a href="pages/Calculadora_IMC.html">Calculadora IMC </a></li>
         </ul>
         <div class="nav-right">
           <a href="#" class="btn-entrar">Entrar</a>
@@ -66,7 +67,7 @@ require_once 'includes/db_connection.php';
       <div class="cards-simples">
         <div class="card">Calculadora de Calorias</div>
         <div class="card">Calculadora de Gasto Calórico</div>
-        <div class="card">Calculadora de IMC e Peso Ideal</div>
+        <div class="card">Calculadora de IMC</div>
       </div>
     </section>
 

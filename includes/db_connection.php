@@ -1,9 +1,17 @@
 <?php
+/*
 // Database configuration
 $host = "db"; // Database host
 $port = "3306"; // Database port 
 $username = "admin";
 $password = "admin"; 
+$database = "nutricalc"; 
+**/
+
+$host = "localhost"; // Database host
+$port = "3306"; // Database port 
+$username = "root";
+$password = ""; 
 $database = "nutricalc"; 
 
 // Create connection

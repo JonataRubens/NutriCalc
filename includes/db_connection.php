@@ -9,7 +9,6 @@ $database = "nutricalc";
 
 
 
-
 // Create connection
 $conn = new mysqli($host, $username, $password, $database);
 

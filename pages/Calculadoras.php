@@ -39,7 +39,7 @@
             <div class="calc-card gratuito" style="border-left: 6px solid #ef4444;">
                 <h4>Calculadora de IMC</h4>
                 <p>Verifique se seu peso está adequado para sua altura com base no Índice de Massa Corporal.</p>
-                <a href="#">Calcular IMC</a>
+                <a href="Ferramentas/Imc.php">Calcular IMC</a>
             </div>
 
             <div class="calc-card gratuito" style="border-left: 6px solid #facc15;">

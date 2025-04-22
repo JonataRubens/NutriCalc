@@ -58,15 +58,9 @@ require_once 'includes/db_connection.php';
     <section class="conheca">
       <h3>Conheça nossas Ferramentas Nutricionais</h3>
       <div class="cards-simples">
-<<<<<<< HEAD
-        <div class="card">Calculadora de Calorias</div>
-        <div class="card">Calculadora de Gasto Calórico</div>
-        <div class="card">Calculadora de IMC</div>
-=======
         <a href="#" class="card" >Calculadora de Calorias</a>
-        <a href="#" class="card" >Calculadora de IMC e Peso Ideal</a>
+        <a href="pages/Ferramentas/Imc.php" class="card" >Calculadora de IMC e Peso Ideal</a>
         <a href="pages/Ferramentas/QTDAagua.php" class="card card-agua">Quantidade de Água Ideal</a>
->>>>>>> develop
       </div>
     </section>
 

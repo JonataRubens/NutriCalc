@@ -1,181 +1,294 @@
+/* Reset básico */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
-}
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #fafafa;
+    color: #222;
+    line-height: 1.6;
+  }
 
-body {
-  background-color: #f9f9f9;
-  color: #333;
-}
-
-.navbar {
-  background-color: white;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #eee;
-}
-
-.navbar nav a {
-  margin-right: 1.5rem;
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-
-.auth-buttons .btn-outline,
-.auth-buttons .btn-primary {
-  margin-left: 0.5rem;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  font-weight: 500;
-}
-
-.btn-outline {
-  background: white;
-  border: 1px solid #ccc;
-}
-
-.btn-primary {
-  background: #5c27fe;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.btn-primary:hover {
-  background: #524284; 
-  transform: scale(1.05); 
-}
-
-.container {
-  max-width: 600px;
-  margin: 3rem auto;
-  text-align: center;
-}
-
-.subtitle {
-  color: #777;
-  margin-bottom: 2rem;
-}
-
-.calculator-box {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  text-align: left;
-}
-
-.calculator-box label {
-  display: block;
-  margin-top: 1rem;
-  font-weight: bold;
-}
-
-.calculator-box input {
-  width: 100%;
-  padding: 0.75rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  margin-top: 0.5rem;
-}
-
-.calculator-box .btn-primary {
-  width: 100%;
-  margin-top: 1.5rem;
-  padding: 0.75rem;
-  border-radius: 20px;
-}
-
-.resultado {
-  margin-top: 1rem;
-  font-weight: bold;
-}
-
-
-/* CONHEÇA NOSSAS CALCULADORAS */
-.conheca {
-  text-align: center;
-  margin-bottom: 64px;
-}
-
-.cards-simples {
-  display: flex ;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 16px;
-}
-
-.card {
-  flex: 1;
-  min-width: 100px;
-  padding: 16px;
-  border-radius: 8px;
-  background: #fff;
-  border: 2px solid #ddd;
-  text-align: center;
-  font-weight: 500;
-  transition: 0.3s;
-  margin: 80px;
-}
-
-.card:nth-child(1) { border-color: #06b6d4; }
-.card:nth-child(2) { border-color: #ef4444; }
-.card:nth-child(3) { border-color: #facc15; }
-
-.card:hover {
-  background-color: #f9f9f9;
-}
-
-/* RESPONSIVO */
-@media (max-width: 768px) {
+  main {
+    flex: 1; /* faz o conteúdo ocupar o máximo possível */
+  }
+  html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  /* NAVBAR */
+  .navbar {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 16px 0;
+  }
+  
+  .navbar nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+  }
+  
   .nav-right {
-    flex-direction: column;
-    gap: 8px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  
+  .navbar .btn-entrar,
+  .navbar .btn-criar {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+  }
+  
+  .btn-entrar {
+    background: transparent;
+    border: 1px solid #ccc;
+  }
+  
+  .btn-criar {
+    background: #5e3bea;
+    color: #fff;
+    border: none;
+  }
+  
+  .link-pro {
+    color: #5e3bea;
+    font-weight: bold;
+  }
+  
+  /* RESPONSIVO */
+  @media (max-width: 768px) {
+    .nav-right {
+      flex-direction: column;
+      gap: 8px;
+    }
+  
+    .calculadoras {
+      flex-direction: column;
+    }
+  
+    .cards-simples {
+      flex-direction: column;
+    }
   }
 
-  .calculadoras {
-    flex-direction: column;
-  }
-
-  .cards-simples {
-    flex-direction: column;
-  }
-}
-
-
+  
+   /* FOOTER */
 .footer {
-  margin-top: 4rem;
-  padding: 2rem;
-  background: #f0f0f0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  font-size: 0.9rem;
-}
+    background-color: #f8f8f8;
+    border-top: 1px solid #ddd;
+    padding: 40px 0 20px;
+    font-size: 0.95rem;
+    color: #444;
+  }
+  
+  .footer-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .footer-col {
+    flex: 1;
+    min-width: 220px;
+  }
+  
+  .footer-col h4 {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    color: #222;
+  }
+  
+  .footer-col ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-col ul li {
+    margin-bottom: 8px;
+  }
+  
+  .footer-col ul li a {
+    text-decoration: none;
+    color: #555;
+  }
+  
+  .footer-col ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #888;
+    border-top: 1px solid #eee;
+    padding-top: 16px;
+  }
+  
+  .post-content {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 24px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  }
+  /*LINHA DIVISORIA*/
 
-.footer h4 {
-  margin-bottom: 0.5rem;
-}
+  .linha-divisoria {
+    border: none;
+    border-top: 1px solid #e5e7eb; /* cor cinza clara */
+    margin: 48px auto;
+    max-width: 800px;
+    width: 100%;
+  }
 
-.footer a {
-  text-decoration: none;
-  color: #333;
-}
-
-.footer .copyright {
-  grid-column: 1 / -1;
-  text-align: center;
-  margin-top: 1rem;
-  font-size: 0.8rem;
-  color: #777;
-}
+  /* Título */
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  
+  p {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Formulário */
+  #imcForm {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  
+  .input-group label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+    color: #444;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  #imcForm button {
+    background-color: #5b21b6;
+    color: white;
+    border: none;
+    padding: 0.7rem;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #imcForm button:hover {
+    background-color: #4c1d95;
+  }
+  
+  .resultado {
+    text-align: center;
+    margin-top: 1.2rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #222;
+  }
+  
+  /* CALCULADORAS */
+  .calculadoras {
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* <-- Centraliza horizontalmente */
+  gap: 2rem;
+  margin-top: 3rem;
+  padding: 0 1rem;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  }
+  .calc-card {
+    flex: 1;
+    min-width: 280px;
+    padding: 24px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  }
+  
+  .calc-card h4 {
+    margin-bottom: 8px;
+    color: #222;
+  }
+  
+  .calc-card span {
+    font-size: 0.8rem;
+    color: #fff;
+    background-color: #5e3bea;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 8px;
+  }
+  
+  .calc-card a {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 8px 16px;
+    background-color: #5e3bea;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+  }
+  
+  .gratuito {
+    border-left: 6px solid #10b981; /* verde */
+  }
+  
+  .pro {
+    border-left: 6px solid #5e3bea; /* roxo */
+  }
+  h3 {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }

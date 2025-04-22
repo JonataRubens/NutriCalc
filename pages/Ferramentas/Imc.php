@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Calculadora de Água</title>
-  <link rel="stylesheet" href="../../assets/css/Style.css">
+    <meta charset="UTF-8">
+    <title>IMC</title>
+    <link rel="stylesheet" href="../../assets/css/Imc.css">
 </head>
 <body>
-
-
-   <!-- Navbar -->
+     <!-- Navbar -->
    <header class="navbar">
     <div class="container">
       <nav>
@@ -24,33 +22,66 @@
       </nav>
     </div>
   </header>
-
-  <hr class="linha-divisoria">
-
-  <main class="container">
-    <div class="agua-wrapper">
-      <h1>Calculadora de consumo diário de água</h1>
-      <p>Saiba quantos litros de água você deve beber por dia com base no seu peso corporal.</p>
-
-      <form id="formAgua">
-        <div class="agua-inputs">
-          <div>
-            <label for="idade">Idade</label>
-            <input type="number" id="idade" placeholder="25" required>
-          </div>
-          <div>
-            <label for="peso">Peso (kg)</label>
-            <input type="number" id="peso" placeholder="65" required>
-          </div>
-        </div>
-        <button type="submit" class="agua-btn">Calcular consumo de água</button>
-      </form>
-
-      <div class="agua-resultado" id="resultadoAgua"></div>
-    </div>
-
+    
     <hr class="linha-divisoria">
+  
+     <!-- IMC -->
+    <div class="container">
+    <h2>Calculadora de IMC</h2>
+    <p>Verifique se seu peso está adequado para sua altura com base no Índice de Massa Corporal.</p>
+    
+    <form id="imcForm">
+      <div class="input-group">
+        <label for="altura">Altura (cm)</label>
+        <input type="number" id="altura" required />
+      </div>
+      <div class="input-group">
+        <label for="peso">Peso (kg)</label>
+        <input type="number" id="peso" required />
+      </div>
+      <button type="submit">Calcular IMC</button>
+    </form>
 
+    <div id="resultado" class="resultado"></div>
+  </div>
+   
+  <hr class="linha-divisoria">
+  
+  <!-- Script para calcular o IMC -->
+  <script>
+    const form = document.getElementById("imcForm");
+    const resultado = document.getElementById("resultado");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const altura = parseFloat(document.getElementById("altura").value) / 100;
+      const peso = parseFloat(document.getElementById("peso").value);
+
+      if (altura > 0 && peso > 0) {
+        const imc = (peso / (altura * altura)).toFixed(2);
+        let classificacao = "";
+
+        if (imc < 18.5) {
+          classificacao = "Abaixo do peso";
+        } else if (imc < 24.9) {
+          classificacao = "Peso normal";
+        } else if (imc < 29.9) {
+          classificacao = "Sobrepeso";
+        } else if (imc < 34.9) {
+          classificacao = "Obesidade grau 1";
+        } else if (imc < 39.9) {
+          classificacao = "Obesidade grau 2";
+        } else {
+          classificacao = "Obesidade grau 3";
+        }
+
+        resultado.textContent = `Seu IMC é ${imc} (${classificacao}).`;
+      } else {
+        resultado.textContent = "Preencha os campos corretamente.";
+      }
+    });
+  </script>
+    
     <!-- Calculadoras -->
     <h3>Conheça nossas Ferramentas Nutricionais</h3>
     <section class="calculadoras">
@@ -67,31 +98,12 @@
             </div>
 
         </section>
-  </main>
 
-  <script>
-    const form = document.getElementById('formAgua');
-    const resultado = document.getElementById('resultadoAgua');
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const peso = parseFloat(document.getElementById('peso').value);
-
-      if (isNaN(peso) || peso <= 0) {
-        resultado.textContent = "Insira um peso válido.";
-        return;
-      }
-
-      const consumoMl = peso * 35;
-      const consumoLitros = (consumoMl / 1000).toFixed(2);
-
-      resultado.innerHTML = `Você deve consumir aproximadamente <strong>${consumoMl.toFixed(0)} ml</strong> ou <strong>${consumoLitros} litros</strong> de água por dia.`;
-    });
-  </script>
-
-</body>
-
-    <!-- Footer -->
+        <hr class="linha-divisoria">
+        
+        
+        
+        <!-- Footer -->
    <footer class="footer">
     <div class="container">
       <div class="footer-grid">
@@ -119,4 +131,7 @@
     </div>
   </footer>
 
+
+</header>
+</body>
 </html>

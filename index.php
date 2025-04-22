@@ -7,7 +7,7 @@ require_once 'includes/db_connection.php';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tabela Nutricional - NutriCalc</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/Style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -17,8 +17,8 @@ require_once 'includes/db_connection.php';
     <div class="container">
       <nav>
         <ul>
-          <li><a href="#">Página inicial</a></li>
-          <li><a href="#">Calculadoras nutricionais</a></li>
+          <li><a href="index.php">Página inicial</a></li>
+          <li><a href="pages/Calculadoras.php">Ferramentas Nutricionais</a></li>
           <li><a href="pages/Blog.php">Blog</a></li>
         </ul>
         <div class="nav-right">
@@ -54,20 +54,13 @@ require_once 'includes/db_connection.php';
     </section>
 
     <!-- Calculadoras -->
-    <section class="calculadoras">
-      <div class="calc-card gratuito">
-        <h4>Calculadora de calorias</h4>
-        <p>Calcule a quantidade de calorias e nutrientes das suas refeições e tenha maior controle sobre sua dieta.</p>
-        <a href="#">Calcular calorias</a>
-      </div>
-    </section>
 
     <section class="conheca">
-      <h3>Conheça nossas Calculadoras Nutricionais</h3>
+      <h3>Conheça nossas Ferramentas Nutricionais</h3>
       <div class="cards-simples">
-        <div class="card">Calculadora de Calorias</div>
-        <div class="card">Calculadora de Gasto Calórico</div>
-        <div class="card">Calculadora de IMC e Peso Ideal</div>
+        <a href="#" class="card" >Calculadora de Calorias</a>
+        <a href="#" class="card" >Calculadora de IMC e Peso Ideal</a>
+        <a href="pages/Ferramentas/QTDAagua.php" class="card card-agua">Quantidade de Água Ideal</a>
       </div>
     </section>
 
@@ -84,8 +77,9 @@ require_once 'includes/db_connection.php';
         <div class="footer-col">
           <h4>Links rápidos</h4>
           <ul>
-            <li><a href="#">Página inicial</a></li>
-            <li><a href="#">Calculadoras</a></li>
+            <li><a href="index.php">Página inicial</a></li>
+            <li><a href="pages/Calculadoras.php">Ferramentas Nutricionais</a></li>
+            <li><a href="pages/Blog.php">Blog</a></li>
           </ul>
         </div>
         <div class="footer-col">

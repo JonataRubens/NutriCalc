@@ -14,40 +14,43 @@
         <ul>
           <li><a href="../index.php">Página inicial</a></li>
           <li><a href="Calculadoras.php">Ferramentas Nutricionais</a></li>
-          <li><a href="../pages/Blog.php">Blog</a></li>
+          <li><a href="Blog.php">Blog</a></li>
         </ul>
         <div class="nav-right">
           <a href="#" class="btn-entrar">Entrar</a>
-          <a href="../pages/Register.html" class="btn-criar">Criar Conta</a>
+          <a href="Register.html" class="btn-criar">Criar Conta</a>
         </div>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <h1>Blog NutriCalc</h1>
-    <p>Saiba mais sobre nossas calculadoras e como elas funcionam.</p>
+    <h1>Ferramentas Nutricionais</h1>
+    <p>Nossas Ferramentas</p>
 
-    <section class="calculadoras">
-            <div class="calc-card gratuito">
+        <!-- Calculadoras -->
+        <section class="calculadoras">
+            <div class="calc-card gratuito" style="border-left: 6px solid #06b6d4;">
                 <h4 >Calculadora de Calorias</h4>
-                <p>Saiba mais sobre nossas calculadoras e como elas funcionam.</p>
-                <a href="posts/PostCalorias.html" class="btn-leia">Leia mais</a>
+                <p>Descubra quantas calorias e nutrientes você consome ao montar suas refeições diárias.</p>
+                <a href="#">Calcular calorias</a>
             </div>
 
-            <div class="calc-card gratuito" >
+            <div class="calc-card gratuito" style="border-left: 6px solid #ef4444;">
                 <h4>Calculadora de IMC</h4>
-                <p>Aprenda como o Índice de Massa Corporal é calculado e interpretado.</p>
-                <a href="posts/PostIMC.html" class="btn-leia">Leia mais</a>
+                <p>Verifique se seu peso está adequado para sua altura com base no Índice de Massa Corporal.</p>
+                <a href="#">Calcular IMC</a>
             </div>
 
-            <div class="calc-card gratuito" >
+            <div class="calc-card gratuito" style="border-left: 6px solid #facc15;">
                 <h4>Quantidade de Água Ideal</h4>
                 <p>Saiba a quantidade recomendada de água que seu corpo precisa com base no seu peso.</p>
-                <a href="posts/PostQTDAgua.html">Leia mais</a>
+                <a href="Ferramentas/QTDAagua.php">Calcular ingestão</a>
             </div>
         </section>
 
+
+    </div>
   </main>
 
    <!-- Footer -->
@@ -62,8 +65,8 @@
           <h4>Links rápidos</h4>
           <ul>
             <li><a href="../index.php">Página inicial</a></li>
-            <li><a href="../pages/Calculadoras.php">Ferramentas Nutricionais</a></li>
-            <li><a href="../pages/Blog.php">Blog</a></li>
+            <li><a href="Calculadoras.php">Ferramentas Nutricionais</a></li>
+            <li><a href="Blog.php">Blog</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -78,6 +81,6 @@
     </div>
   </footer>
 
-
 </body>
+
 </html>

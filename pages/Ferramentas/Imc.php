@@ -91,10 +91,11 @@
                 <a href="#">Calcular calorias</a>
             </div>
 
-            <div class="calc-card gratuito" style="border-left: 6px solid #ef4444;">
-                <h4>Calculadora de IMC</h4>
-                <p>Verifique se seu peso está adequado para sua altura com base no Índice de Massa Corporal.</p>
-                <a href="Imc.php">Calcular IMC</a>
+  
+            <div class="calc-card gratuito" style="border-left: 6px solid #facc15;">
+                <h4>Calculadora de Ingestao de agua</h4>
+                <p>Verifique se esta ingerindo a quantide de agua correta para a sua idade e peso.</p>
+                <a href="QTDAagua.php">Calculadora ingestao de agua</a>
             </div>
 
         </section>

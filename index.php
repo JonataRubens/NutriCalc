@@ -61,6 +61,7 @@ require_once 'includes/db_connection.php';
         <a href="#" class="card" >Calculadora de Calorias</a>
         <a href="#" class="card" >Calculadora de IMC e Peso Ideal</a>
         <a href="pages/Ferramentas/QTDAagua.php" class="card card-agua">Quantidade de Água Ideal</a>
+        <a href="pages/Ferramentas/CalcCalorias.php" class="card card-agua">Calculadora de Gasto Calorico</a>
       </div>
     </section>
 

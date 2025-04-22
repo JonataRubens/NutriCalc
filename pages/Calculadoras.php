@@ -47,6 +47,12 @@
                 <p>Saiba a quantidade recomendada de água que seu corpo precisa com base no seu peso.</p>
                 <a href="Ferramentas/QTDAagua.php">Calcular ingestão</a>
             </div>
+
+             <div class="calc-card gratuito" style="border-left: 6px solid #2b6cb0;">
+                <h4 >Calculadora de Gasto Caloricos</h4>
+                <p>Descubra quantas calorias e nutrientes você deve gastar.</p>
+                <a href="Ferramentas/CalcCalorias.php">Calcular Gasto caloricos</a>
+            </div>
         </section>
 
 

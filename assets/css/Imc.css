@@ -45,6 +45,15 @@ body {
   background: #5c27fe;
   color: white;
   border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #524284; 
+  transform: scale(1.05); 
 }
 
 .container {
@@ -84,12 +93,65 @@ body {
   width: 100%;
   margin-top: 1.5rem;
   padding: 0.75rem;
+  border-radius: 20px;
 }
 
 .resultado {
   margin-top: 1rem;
   font-weight: bold;
 }
+
+
+/* CONHEÇA NOSSAS CALCULADORAS */
+.conheca {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.cards-simples {
+  display: flex ;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.card {
+  flex: 1;
+  min-width: 100px;
+  padding: 16px;
+  border-radius: 8px;
+  background: #fff;
+  border: 2px solid #ddd;
+  text-align: center;
+  font-weight: 500;
+  transition: 0.3s;
+  margin: 80px;
+}
+
+.card:nth-child(1) { border-color: #06b6d4; }
+.card:nth-child(2) { border-color: #ef4444; }
+.card:nth-child(3) { border-color: #facc15; }
+
+.card:hover {
+  background-color: #f9f9f9;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .nav-right {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .calculadoras {
+    flex-direction: column;
+  }
+
+  .cards-simples {
+    flex-direction: column;
+  }
+}
+
 
 .footer {
   margin-top: 4rem;

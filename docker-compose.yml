@@ -8,6 +8,13 @@ services:
       - .:/var/www/html #
     depends_on: # Espera o banco de dados iniciar
       - db
+    command: >
+      sh -c "
+        echo 'Aguardando o banco iniciar...' &&
+        sleep 10 &&
+        php scripts/verifica_tabela.php &&
+        apache2-foreground
+      "
   db: # serviço do banco de dados
     image: mysql:latest 
     container_name: nutricalc_db

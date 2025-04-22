@@ -22,8 +22,8 @@ require_once 'includes/db_connection.php';
           <li><a href="pages/Blog.php">Blog</a></li>
         </ul>
         <div class="nav-right">
-          <a href="#" class="btn-entrar">Entrar</a>
-          <a href="pages/Register.html" class="btn-criar">Criar Conta</a>
+          <a href="pages/Login.php" class="btn-entrar">Entrar</a>
+          <a href="pages/Register.php" class="btn-criar">Criar Conta</a>
         </div>
       </nav>
     </div>

@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_param("ssss", $nome, $sobrenome, $email, $senha);
 
         if ($stmt->execute()) {
-          header("Location: /index.php");
+          header("Location: /pages/login/Login.php");
           exit;
         } else {
           $mensagem = "Erro ao cadastrar: " . $conn->error;

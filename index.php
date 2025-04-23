@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php include('includes/NavBar.php'); ?>
 <main class="container">
     <section class="hero">

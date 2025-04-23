@@ -1,5 +1,6 @@
 <?php
 session_start();
 session_destroy();
-header("Location: /index.php");
-exit;
+
+// Define que é uma resposta de sucesso, mas não redireciona
+http_response_code(200);

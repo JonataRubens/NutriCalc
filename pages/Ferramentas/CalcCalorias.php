@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="../../assets/css/Calorias.css">
 <?php include('../../includes/NavBar.php'); ?>
+<link rel="stylesheet" href="../../assets/css/Calorias.css">
 
 
   <main class="container">

@@ -35,13 +35,14 @@ require_once __DIR__ . '/db_connection.php';
                 <span class="seta">&#9662;</span>
               </div>
               <div id="dropdown-menu" class="dropdown-menu">
-                <a href="/pages/login/Logout.php">
-                  <span class="logout-icon">⎋</span> Sair
+                  <a href="#" onclick="logout(event)">
+                    <span class="logout-icon">⎋</span> Sair
+                  </a>
                 </a>
               </div>
             </div>
           <?php else: ?>
-            <a href="/pages/login/Login.php" class="btn-entrar">Entrar</a>
+            <a href="/pages/login/Login.php?redirect=<?= urlencode($_SERVER['REQUEST_URI']) ?>" class="btn-entrar">Entrar</a>
             <a href="/pages/login/Register.php" class="btn-criar">Criar Conta</a>
           <?php endif; ?>
         </div>
@@ -60,4 +61,19 @@ require_once __DIR__ . '/db_connection.php';
         document.getElementById('dropdown-menu')?.classList.remove('ativo');
       }
     });
+
+
+    function logout(e) {
+    e.preventDefault();
+    fetch('/pages/login/Logout.php')
+      .then(response => {
+        if (response.ok) {
+          // Atualiza a página para refletir o logout (ex: troca nav bar)
+          location.reload();
+        }
+      })
+      .catch(error => {
+        console.error('Erro ao fazer logout:', error);
+      });
+  }
   </script>

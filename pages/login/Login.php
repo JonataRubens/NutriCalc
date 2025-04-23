@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../includes/db_connection.php';
+include '../../includes/db_connection.php';
 
 $mensagem = "";
 
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($senha, $senha_hash)) {
             $_SESSION['usuario_id'] = $id;
             $_SESSION['usuario_nome'] = $nome;
-            header("Location: teste.php"); // redireciona após login
+            header("Location: /index.php"); // redireciona após login
             exit;
         } else {
             $mensagem = "Senha incorreta.";
@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
   <meta charset="UTF-8" />
   <title>Login</title>
-  <link rel="stylesheet" href="../assets/css/Login.css">
+  <link rel="stylesheet" href="../../assets/css/Login.css">
 </head>
 <body>
 

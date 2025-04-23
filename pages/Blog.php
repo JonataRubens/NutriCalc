@@ -46,6 +46,12 @@
                 <p>Saiba a quantidade recomendada de água que seu corpo precisa com base no seu peso.</p>
                 <a href="posts/PostQTDAgua.html">Leia mais</a>
             </div>
+
+              <div class="calc-card gratuito" >
+                <h4>Calculadora de Gasto Calórico</h4>
+                <p>Descubra quantas calórias seu corpo gasta por dia.</p>
+                <a href="posts/PostCalGastos.html">Leia mais</a>
+            </div>
         </section>
 
   </main>

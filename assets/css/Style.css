@@ -675,3 +675,19 @@ button {
   color: #2f855a;
   font-weight: bold;
 }
+/*BOLINHA DO USUARIO*/
+.usuario-logado {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: #333;
+}
+
+.bolinha-verde {
+  width: 10px;
+  height: 10px;
+  background-color: #00c853;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}

@@ -1,30 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <title>Como funciona a Calculadora de Calorias</title>
-  <link rel="stylesheet" href="../../assets/css/Style.css">
-</head>
-<body>
-
-    <!-- Navbar -->
-    <header class="navbar">
-      <div class="container">
-        <nav>
-          <ul>
-            <li><a href="../../index.php">Página inicial</a></li>
-            <li><a href="../Calculadoras.php">Ferramentas Nutricionais</a></li>
-            <li><a href="../Blog.php">Blog</a></li>
-          </ul>
-          <div class="nav-right">
-            <a href="#" class="btn-entrar">Entrar</a>
-            <a href="../../pages/Register.html" class="btn-criar">Criar Conta</a>
-          </div>
-        </nav>
-      </div>
-    </header>
-
-    <main class="container">
+<?php include('../../includes/NavBar.php'); ?>
         <div class="post-content">
           <h1>Quantos Litros de Água Você Deve Beber por Dia?</h1>
           <p>Manter-se hidratado é uma das práticas mais simples — e mais negligenciadas — para uma vida saudável. A <strong>Calculadora de Água Ideal</strong> do NutriCalc ajuda você a descobrir a quantidade ideal de ingestão de água com base no seu peso.</p>
@@ -58,36 +32,4 @@
           <p>A água é essencial para o funcionamento ideal do corpo. Com a Calculadora de Água do NutriCalc, você pode estabelecer uma meta personalizada de hidratação e melhorar sua saúde de forma simples e natural.</p>
           <p><a href="../Ferramentas/QTDAagua.php">Calcule agora sua ingestão diária ideal de água</a>.</p>
         </div>
-      </main>
-      
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-col">
-            <h4>NutriCalc</h4>
-            <p>Plataforma de apoio nutricional completa para usuários comuns.</p>
-          </div>
-          <div class="footer-col">
-            <h4>Links rápidos</h4>
-            <ul>
-              <li><a href="../../index.php">Página inicial</a></li>
-              <li><a href="../Calculadoras.php">Ferramentas Nutricionais</a></li>
-              <li><a href="../Blog.php">Blog</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Contato</h4>
-            <p>Email: nutricalc</p>
-            <p>Suporte: snutricalc</p>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; 2025 NutriCalc. Todos os direitos reservados.</p>
-        </div>
-      </div>
-    </footer>
-
-</body>
-</html>
+<?php include('../../includes/Footer.html'); ?>

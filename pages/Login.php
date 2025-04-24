@@ -1,13 +1,8 @@
 <?php
 session_start();
-include '../../includes/db_connection.php';
+include '../includes/db_connection.php';
 
 $mensagem = "";
-
-// Captura a URL de retorno (pode vir da sessão ou do GET)
-if (isset($_GET['redirect'])) {
-    $_SESSION['url_retorno'] = $_GET['redirect'];
-}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST['email']);
@@ -28,11 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($senha, $senha_hash)) {
             $_SESSION['usuario_id'] = $id;
             $_SESSION['usuario_nome'] = $nome;
-
-            // Redireciona para a página anterior (ou index como fallback)
-            $redirect = $_SESSION['url_retorno'] ?? '/index.php';
-            unset($_SESSION['url_retorno']); // limpa a sessão
-            header("Location: $redirect");
+            header("Location: teste.php"); // redireciona após login
             exit;
         } else {
             $mensagem = "Senha incorreta.";
@@ -47,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
   <meta charset="UTF-8" />
   <title>Login</title>
-  <link rel="stylesheet" href="../../assets/css/Login.css">
+  <link rel="stylesheet" href="../assets/css/Login.css">
 </head>
 <body>
 
@@ -56,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php if ($mensagem): ?>
       <p><?= $mensagem ?></p>
     <?php endif; ?>
-    <form action="Login.php<?php if (isset($_GET['redirect'])) echo '?redirect=' . urlencode($_GET['redirect']); ?>" method="POST">
+    <form action="Login.php" method="POST">
       <div class="form-group">
         <label for="email">E-mail</label>
         <input type="email" id="email" name="email" required />

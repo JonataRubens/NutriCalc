@@ -71,7 +71,5 @@ foreach ($alimentos as $alimento) {
         echo "Alimento '{$alimento[0]}' já existe. <br>";
     }
 }
-
-
 $conn->close();
 echo "Processo de inserção concluído!";

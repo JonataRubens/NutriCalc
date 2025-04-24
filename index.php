@@ -1,5 +1,36 @@
-<?php include('includes/NavBar.php'); ?>
-<main class="container">
+<!DOCTYPE html>
+<?php
+require_once 'includes/db_connection.php';
+?>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabela Nutricional - NutriCalc</title>
+  <link rel="stylesheet" href="assets/css/Style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="index.php">Página inicial</a></li>
+          <li><a href="pages/Calculadoras.php">Ferramentas Nutricionais</a></li>
+          <li><a href="pages/Blog.php">Blog</a></li>
+        </ul>
+        <div class="nav-right">
+          <a href="pages/Login.php" class="btn-entrar">Entrar</a>
+          <a href="pages/Register.php" class="btn-criar">Criar Conta</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main class="container">
     <section class="hero">
       <h1>Tabela Nutricional</h1>
       <p>Plataforma nutricional completa, fornecendo informações detalhadas sobre alimentos e ferramentas de apoio para uso pessoal.</p>
@@ -34,10 +65,11 @@
         <a href="#" class="card" >Calculadora de Calorias</a>
         <a href="#" class="card" >Calculadora de IMC e Peso Ideal</a>
         <a href="pages/Ferramentas/QTDAagua.php" class="card card-agua">Quantidade de Água Ideal</a>
-
+        <a href="pages/Ferramentas/CalcCalorias.php" class="card card-agua">Calculadora de Gasto Calorico</a>
       </div>
     </section>
 
+  </main>
   <script>
     document.getElementById('searchInput').addEventListener('input', function(e) {
       const searchTerm = e.target.value.trim();
@@ -125,6 +157,4 @@
       background-color: #f1f1f1;
     }
   </style>
-</main>
 <?php include('includes/Footer.html'); ?>
-

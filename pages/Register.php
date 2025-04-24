@@ -1,6 +1,6 @@
 <?php
 // Inicia o PHP
-include '../../includes/db_connection.php';
+include '../includes/db_connection.php';
 
 $mensagem = "";
 
@@ -23,10 +23,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_param("ssss", $nome, $sobrenome, $email, $senha);
 
         if ($stmt->execute()) {
-          header("Location: /pages/login/Login.php");
-          exit;
+            $mensagem = "Cadastro realizado com sucesso!";
         } else {
-          $mensagem = "Erro ao cadastrar: " . $conn->error;
+            $mensagem = "Erro ao cadastrar: " . $conn->error;
         }
     }
 }
@@ -38,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cadastro</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../assets/css/Register.css">
+  <link rel="stylesheet" href="../assets/css/Register.css">
 
 </head>
 <body>

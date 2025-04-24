@@ -11,9 +11,9 @@ services:
     command: >
       sh -c "
         echo 'Aguardando o banco iniciar...' &&
-        sleep 15 &&
+        sleep 30 &&
         php scripts/verifica_tabela_usuarios.php &&
-        sleep 10 &&
+        sleep 5 &&
         php scripts/verifica_tabela_alimentos.php &&
         sleep 5 &&
         php scripts/inserir_alimentos_amostra.php &&

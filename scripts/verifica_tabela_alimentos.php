@@ -40,41 +40,6 @@ if ($tabelaExiste && $tabelaExiste->num_rows == 0) {
     }
 }
 
-// Inserir alimentos com suas categorias
-$alimentos = [
-    // [descricao, categoria, energia, proteina, lipideos, carboidratos]
-    ['Arroz branco cozido', 'Cereais', 128.0, 2.5, 0.2, 28.1],
-    ['Feijão preto cozido', 'Leguminosas', 77.0, 4.5, 0.5, 14.0],
-    ['Alface crua', 'Hortaliças', 14.0, 1.3, 0.2, 2.4],
-    ['Banana prata', 'Frutas', 98.0, 1.3, 0.1, 26.0],
-    ['Carne bovina (contra-filé) grelhada', 'Carnes', 219.0, 32.0, 9.2, 0.0],
-    ['Leite integral UHT', 'Leite e derivados', 61.0, 3.2, 3.3, 4.6],
-    ['Azeite de oliva', 'Óleos e gorduras', 884.0, 0.0, 100.0, 0.0],
-    ['Açúcar refinado', 'Açúcares e doces', 387.0, 0.0, 0.0, 99.6]
-];
-
-// Verificar se já existem alimentos na tabela
-$verificar_alimentos = $conn->query("SELECT COUNT(*) as total FROM alimentos");
-$row = $verificar_alimentos->fetch_assoc();
-
-// Só inserir se não existirem alimentos
-if ($row['total'] == 0) {
-    foreach ($alimentos as $alimento) {
-        // Inserir o alimento com a categoria como texto
-        $stmt = $conn->prepare("INSERT INTO alimentos (descricao, categoria, energia, proteina, lipideos, carboidratos) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssdddd", $alimento[0], $alimento[1], $alimento[2], $alimento[3], $alimento[4], $alimento[5]);
-        
-        if ($stmt->execute()) {
-            echo "Alimento '{$alimento[0]}' inserido com sucesso.<br>";
-        } else {
-            echo "Erro ao inserir alimento '{$alimento[0]}': " . $stmt->error . "<br>";
-        }
-        
-        $stmt->close();
-    }
-} else {
-    echo "Alimentos já existem na tabela. Pulando inserção.<br>";
-}
 
 $conn->close();
 echo "Processo de configuração completo!"; 

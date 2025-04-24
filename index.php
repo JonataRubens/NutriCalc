@@ -1,5 +1,33 @@
 <?php include('includes/NavBar.php'); ?>
-<main class="container">
+  <style>
+    .search-results {
+      margin-top: 20px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    .results-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    .results-table th, .results-table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    .results-table th {
+      background-color: #f2f2f2;
+    }
+    .results-table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    .results-table tr:hover {
+      background-color: #f1f1f1;
+    }
+  </style>
+  
+  <!-- Conteúdo principal -->
+  <main class="container">
     <section class="hero">
       <h1>Tabela Nutricional</h1>
       <p>Plataforma nutricional completa, fornecendo informações detalhadas sobre alimentos e ferramentas de apoio para uso pessoal.</p>
@@ -34,9 +62,10 @@
         <a href="#" class="card" >Calculadora de Calorias</a>
         <a href="#" class="card" >Calculadora de IMC e Peso Ideal</a>
         <a href="pages/Ferramentas/QTDAagua.php" class="card card-agua">Quantidade de Água Ideal</a>
-
+        <a href="pages/Ferramentas/CalcCalorias.php" class="card card-agua">Calculadora de Gasto Calorico</a>
       </div>
     </section>
+    </main>
 
   <script>
     document.getElementById('searchInput').addEventListener('input', function(e) {
@@ -98,33 +127,4 @@
       container.innerHTML = html;
     }
   </script>
-  
-  <style>
-    .search-results {
-      margin-top: 20px;
-      max-height: 400px;
-      overflow-y: auto;
-    }
-    .results-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-    }
-    .results-table th, .results-table td {
-      border: 1px solid #ddd;
-      padding: 8px;
-      text-align: left;
-    }
-    .results-table th {
-      background-color: #f2f2f2;
-    }
-    .results-table tr:nth-child(even) {
-      background-color: #f9f9f9;
-    }
-    .results-table tr:hover {
-      background-color: #f1f1f1;
-    }
-  </style>
-</main>
 <?php include('includes/Footer.html'); ?>
-

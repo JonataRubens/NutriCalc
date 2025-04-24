@@ -47,17 +47,31 @@ $alimentos = [
 
 // Insere os alimentos no banco de dados
 foreach ($alimentos as $alimento) {
-    $stmt = $conn->prepare("INSERT INTO alimentos (descricao, categoria, energia, proteina, lipideos, carboidratos) VALUES (?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssdddd", $alimento[0], $alimento[1], $alimento[2], $alimento[3], $alimento[4], $alimento[5]);
-    
-    if ($stmt->execute()) {
-        echo "Alimento '{$alimento[0]}' inserido com sucesso.<br>";
+    // Verifica se o alimento já existe
+    $check = $conn->prepare("SELECT COUNT(*) FROM alimentos WHERE descricao = ?");
+    $check->bind_param("s", $alimento[0]);
+    $check->execute();
+    $check->bind_result($count);
+    $check->fetch();
+    $check->close();
+
+    if ($count == 0) {
+        // Insere só se ainda não existe
+        $stmt = $conn->prepare("INSERT INTO alimentos (descricao, categoria, energia, proteina, lipideos, carboidratos) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssdddd", $alimento[0], $alimento[1], $alimento[2], $alimento[3], $alimento[4], $alimento[5]);
+
+        if ($stmt->execute()) {
+            echo "Alimento '{$alimento[0]}' inserido com sucesso.<br>";
+        } else {
+            echo "Erro ao inserir alimento '{$alimento[0]}': " . $stmt->error . "<br>";
+        }
+
+        $stmt->close();
     } else {
-        echo "Erro ao inserir alimento '{$alimento[0]}': " . $stmt->error . "<br>";
+        echo "Alimento '{$alimento[0]}' já existe. Ignorado.<br>";
     }
-    
-    $stmt->close();
 }
+
 
 $conn->close();
 echo "Processo de inserção concluído!";

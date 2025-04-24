@@ -1,6 +1,33 @@
-<?php include('../../includes/NavBar.php'); ?>
-<main class="container">
-<hr class="linha-divisoria">
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de Água</title>
+  <link rel="stylesheet" href="../../assets/css/Style.css">
+</head>
+<body>
+
+
+   <!-- Navbar -->
+   <header class="navbar">
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="../../index.php">Página inicial</a></li>
+          <li><a href="../Calculadoras.php">Ferramentas Nutricionais</a></li>
+          <li><a href="../Blog.php">Blog</a></li>
+        </ul>
+        <div class="nav-right">
+          <a href="#" class="btn-entrar">Entrar</a>
+          <a href="../Register.html" class="btn-criar">Criar Conta</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <hr class="linha-divisoria">
+
+  <main class="container">
     <div class="agua-wrapper">
       <h1>Calculadora de consumo diário de água</h1>
       <p>Saiba quantos litros de água você deve beber por dia com base no seu peso corporal.</p>
@@ -64,4 +91,32 @@
 
 </body>
 
-<?php include('../../includes/Footer.html'); ?>
+    <!-- Footer -->
+   <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>NutriCalc</h4>
+          <p>Plataforma de apoio nutricional completa para usuários comuns.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Links rápidos</h4>
+          <ul>
+            <li><a href="../../index.php">Página inicial</a></li>
+            <li><a href="../Calculadoras.php">Ferramentas Nutricionais</a></li>
+            <li><a href="../Blog.php">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <p>Email: nutricalc</p>
+          <p>Suporte: snutricalc</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 NutriCalc. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+</html>

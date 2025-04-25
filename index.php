@@ -1,4 +1,5 @@
 <?php include('includes/NavBar.php'); ?>
+<link rel="stylesheet" href="assets/css/Style.css">
 <link rel="stylesheet" href="assets/css/BarraDePesquisa.css">
   <!-- Conteúdo principal -->
   <main class="container">

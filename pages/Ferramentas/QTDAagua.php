@@ -30,13 +30,13 @@
             <div class="calc-card gratuito" style="border-left: 6px solid #06b6d4;">
                 <h4 >Calculadora de Calorias</h4>
                 <p>Descubra quantas calorias e nutrientes você consome ao montar suas refeições diárias.</p>
-                <a href="#">Calcular calorias</a>
+                <a href="/pages/Ferramentas/CalcCalorias.php">Calcular calorias</a>
             </div>
 
             <div class="calc-card gratuito" style="border-left: 6px solid #ef4444;">
                 <h4>Calculadora de IMC</h4>
                 <p>Verifique se seu peso está adequado para sua altura com base no Índice de Massa Corporal.</p>
-                <a href="#">Calcular IMC</a>
+                <a href="/pages/Ferramentas/Imc.php">Calcular IMC</a>
             </div>
 
         </section>

@@ -14,6 +14,7 @@ require_once __DIR__ . '/db_connection.php';
   <title>Blog - NutriCalc</title>
   <link rel="stylesheet" href="/assets/css/Style.css">
   <link rel="stylesheet" href="/assets/css/User.css">
+  <link rel="stylesheet" href="assets/css/BarraDePesquisa.css">
 </head>
 <body>
 
@@ -23,7 +24,15 @@ require_once __DIR__ . '/db_connection.php';
       <nav>
         <ul>
           <li><a href="/index.php">Página inicial</a></li>
-          <li><a href="/pages/Calculadoras.php">Ferramentas Nutricionais</a></li>
+          <li><a href="">Ferramentas Nutricionais</a>
+          <div class="submenu">
+          <ul>
+            <li><a href="/pages/Ferramentas/Imc.php">Calculadora de IMC</a></li>
+            <li><a href="/pages/Ferramentas/QTDAagua.php">Quantidade de Água Ideal</a></li>
+            <li><a href="/pages/Ferramentas/CalcCalorias.php">Calculadora de Calorias</a></li>
+          </ul>
+        </div>
+        </li>
           <li><a href="/pages/Blog.php">Blog</a></li>
         </ul>
         <div class="nav-right">

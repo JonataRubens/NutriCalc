@@ -1,5 +1,4 @@
 <?php include('includes/NavBar.php'); ?>
-<link rel="stylesheet" href="assets/css/Style.css">
 <link rel="stylesheet" href="assets/css/BarraDePesquisa.css">
   <!-- Conteúdo principal -->
   <main class="container">
@@ -34,8 +33,8 @@
     <section class="conheca">
       <h3>Conheça nossas Ferramentas Nutricionais</h3>
       <div class="cards-simples">
-        <a href="#" class="card" >Calculadora de Calorias</a>
-        <a href="#" class="card" >Calculadora de IMC e Peso Ideal</a>
+        <a href="pages/Ferramentas/CalcCalorias.php" class="card" >Calculadora de Calorias</a>
+        <a href="pages/Ferramentas/Imc.php" class="card" >Calculadora de IMC e Peso Ideal</a>
         <a href="pages/Ferramentas/QTDAagua.php" class="card card-agua">Quantidade de Água Ideal</a>
       </div>
     </section>

@@ -64,18 +64,19 @@
     <!-- Calculadoras -->
     <h3>Conheça nossas Ferramentas Nutricionais</h3>
     <section class="calculadoras">
-      <div class="calc-card gratuito" style="border-left: 6px solid #06b6d4;">
-        <h4>Calculadora de Calorias</h4>
-        <p>Descubra quantas calorias e nutrientes você consome ao montar suas refeições diárias.</p>
-        <a href="#">Calcular calorias</a>
-      </div>
+    <div class="calc-card gratuito" style="border-left: 6px solid #ef4444;">
+                <h4>Calculadora de IMC</h4>
+                <p>Verifique se seu peso está adequado para sua altura com base no Índice de Massa Corporal.</p>
+                <a href="/pages/Ferramentas/Imc.php">Calcular IMC</a>
+            </div>
 
-      <div class="calc-card gratuito" style="border-left: 6px solid #ef4444;">
-        <h4>Calculadora de IMC</h4>
-        <p>Verifique se seu peso está adequado para sua altura com base no Índice de Massa Corporal.</p>
-        <a href="#">Calcular IMC</a>
-      </div>
-    </section>
+            <div class="calc-card gratuito" style="border-left: 6px solid rgb(239, 213, 68);">
+                <h4>Calculadora de Consumo de agua</h4>
+                <p>Verifique se seu consumo de agua esta adeguado com a sua idade e peso.</p>
+                <a href="/pages/Ferramentas/QTDAagua.php">Calculadora de Consumo de agua </a>
+            </div>
+
+        </section>
   </main>
 
   <script>

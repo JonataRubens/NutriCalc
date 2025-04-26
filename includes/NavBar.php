@@ -19,16 +19,16 @@ require_once __DIR__ . '/db_connection.php';
 
   <!-- Navbar -->
   <header class="navbar">
-    <div class="container" class>
+    <div class="container">
       <nav>
         <ul>
           <li><a href="/index.php">Página inicial</a></li>
-          <li><a href="/pages/Calculadoras.php">Ferramentas Nutricionais</a>
+          <li><a href="">Ferramentas Nutricionais</a>
           <div class="submenu">
           <ul>
-            <li><a href="/pages/Ferramentas/Calorias.php">Calculadora de Calorias</a></li>
-            <li><a href="/pages/Ferramentas/IMC.php">Calculadora de IMC</a></li>
+            <li><a href="/pages/Ferramentas/Imc.php">Calculadora de IMC</a></li>
             <li><a href="/pages/Ferramentas/QTDAagua.php">Quantidade de Água Ideal</a></li>
+            <li><a href="/pages/Ferramentas/CalcCalorias.php">Calculadora de Calorias</a></li>
           </ul>
         </div>
         </li>

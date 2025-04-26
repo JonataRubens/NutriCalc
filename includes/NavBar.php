@@ -14,6 +14,7 @@ require_once __DIR__ . '/db_connection.php';
   <title>Blog - NutriCalc</title>
   <link rel="stylesheet" href="/assets/css/Style.css">
   <link rel="stylesheet" href="/assets/css/User.css">
+  <link rel="stylesheet" href="assets/css/BarraDePesquisa.css">
 </head>
 <body>
 

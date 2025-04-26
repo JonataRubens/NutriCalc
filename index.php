@@ -1,5 +1,4 @@
 <?php include('includes/NavBar.php'); ?>
-<link rel="stylesheet" href="assets/css/BarraDePesquisa.css">
   <!-- Conteúdo principal -->
   <main class="container">
     <section class="hero">
@@ -7,10 +6,6 @@
       <p>Plataforma nutricional completa, fornecendo informações detalhadas sobre alimentos e ferramentas de apoio para uso pessoal.</p>
 
       <input type="text" id="searchInput" placeholder="🔍 Pesquisar alimento..." class="search-input">
-
-      <div class="filtros">
-        <label><input type="radio" name="filtro" checked> Todas as tabelas</label>
-      </div>
       
       <div id="searchResults" class="search-results">
         <!-- Resultados da pesquisa serão exibidos aqui -->
@@ -29,7 +24,7 @@
     </section>
 
     <!-- Calculadoras -->
-
+    <hr class="linha-divisoria">
     <section class="conheca">
       <h3>Conheça nossas Ferramentas Nutricionais</h3>
       <div class="cards-simples">

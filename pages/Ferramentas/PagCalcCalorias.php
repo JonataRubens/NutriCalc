@@ -1,11 +1,10 @@
 <?php include('../../includes/NavBar.php'); ?>
-<link rel="stylesheet" href="../../assets/css/CalcCalorias.css">
-
 <main class="container">
- <div class="calorico-wrapper">
+ <div class="text-wrapper">
     <h1>Tabela Nutricional</h1>
       <h2>Calculadora de calorias e nutrientes</h2>
        <p>Calcule as calorias e nutrientes dos alimentos consumidos no seu dia a dia.</p>
+ </div>
    <!-- Calculadora de calorias dos alimentos -->
        <div class="cal_D_Calorias">
             <h3>Calculadora de calorias dos alimentos</h3>
@@ -14,6 +13,7 @@
                 <span class="texto">Exportar</span>
             </button>
        </div>
+
 
       <section class="box_calendario">
             <!-- Dias da Semana-->
@@ -42,7 +42,7 @@
         </svg>
         <span>Resultado do cálculo calórico</span>
     </button>
-    <div class="content open">
+    <div class="content">
         <div class="calorie-info-grid">
             <div class="calorie-box">
                 Total de calorias nas refeições
@@ -74,10 +74,8 @@
             </div>
             <div class="action-buttons">
                 <a href="#" class="action-button">Calcular meu gasto calórico diário</a>
-                <a href="#" class="action-button secondary">Incluir gasto calórico manualmente</a>
             </div>
         </div>
-        <a href="#" class="more-details">Mais detalhes sobre meu gasto calórico diário</a>
     </div>
 
     <button class="collapsible-button">
@@ -101,17 +99,21 @@
             <svg class="seta-abrir" viewBox="0 0 24 24">
                 <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
             </svg>
+            
         </div>
     </div>
+
         <div class="refeicao-conteudo" style="max-height: 0;">
         </div>
     </div>
     <div class="refeicao-card add-refeicao">
-    <div class="refeicao-header" style="justify-content: center;">
-        <div style="display: flex; align-items: center; gap: 8px; color: #888;">
-        <span style="font-size: 24px;">➕</span> Adicionar nova refeição
+        <div class="refeicao-header" style="justify-content: center;">
+            <div style="display: flex; align-items: center; gap: 8px; color: #888;">
+            <span style="font-size: 24px;">➕</span> Adicionar nova refeição
+            
+            </div>
+
         </div>
-    </div>
     </div>
 
 
@@ -122,80 +124,64 @@
     </div>
 
     <!-- Modal de Gasto Calórico -->
-<div id="modalGastoCalorico" class="modal" style="display: none;">
-  <div class="modal-content">
-    <span id="closeModal" class="close-button">&times;</span>
-    <h2>Calculadora de Gasto Calórico</h2>
-        <p>Preencha as informações abaixo para obter seu gasto calórico diário</p>
+    <div id="modalGastoCalorico" class="modal" style="display: none;">
 
-        <div class="formulario-grid">
-        <div class="form-group">
-            <label>Sexo</label>
-            <div class="sexo-buttons">
-            <button type="button" onclick="selectSexo(this, 'male')">Homem</button>
-            <button type="button" onclick="selectSexo(this, 'female')">Mulher</button>
-            
+    <div class="modal-content">
+        <span id="closeModal" class="close-button">&times;</span>
+        <h2>Calculadora de Gasto Calórico</h2>
+            <p>Preencha as informações abaixo para obter seu gasto calórico diário</p>
+
+            <div class="formulario-grid">
+            <div class="form-group">
+                <label>Sexo</label>
+                <div class="sexo-buttons">
+                <button type="button" onclick="selectSexo(this, 'male')">Homem</button>
+                <button type="button" onclick="selectSexo(this, 'female')">Mulher</button>
+                
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label>Idade</label>
-            <input type="number" id="idade" placeholder="Idade">
-        </div>
-        <div class="form-group">
-            <label>Altura</label>
-            <input type="number" id="altura" placeholder="Altura (cm)">
-        </div>
-        <div class="form-group">
-            <label>Peso</label>
-            <input type="number" id="peso" placeholder="Peso (kg)">
-        </div>
-        <div class="form-group">
-            <label>Exercício físico</label>
-             <select id="atividade" required>
-            <option value="">Selecione</option>
-            <option value="1.2">Sedentário</option>
-            <option value="1.375">Levemente ativo</option>
-            <option value="1.55">Moderadamente ativo</option>
-            <option value="1.725">Muito ativo</option>
-            <option value="1.9">Extremamente ativo</option>
-          </select>
-        </div>
-        <div class="form-group">
-            <label>Objetivo</label>
-            <select id="objetivo" required>
-            <option value="">Selecione</option>
-            <option value="deficit">Perder peso</option>
-            <option value="manter">Manter peso</option>
-            <option value="excedente">Ganhar massa</option>
-          </select>
-        </div>
-        </div>
+            <div class="form-group">
+                <label>Idade</label>
+                <input type="number" id="idade" placeholder="Idade">
+            </div>
+            <div class="form-group">
+                <label>Altura</label>
+                <input type="number" id="altura" placeholder="Altura (cm)">
+            </div>
+            <div class="form-group">
+                <label>Peso</label>
+                <input type="number" id="peso" placeholder="Peso (kg)">
+            </div>
+            <div class="form-group">
+                <label>Exercício físico</label>
+                <select id="atividade" required>
+                <option value="">Selecione</option>
+                <option value="1.2">Sedentário</option>
+                <option value="1.375">Levemente ativo</option>
+                <option value="1.55">Moderadamente ativo</option>
+                <option value="1.725">Muito ativo</option>
+                <option value="1.9">Extremamente ativo</option>
+            </select>
+            </div>
+            <div class="form-group">
+                <label>Objetivo</label>
+                <select id="objetivo" required>
+                <option value="">Selecione</option>
+                <option value="deficit">Perder peso</option>
+                <option value="manter">Manter peso</option>
+                <option value="excedente">Ganhar massa</option>
+            </select>
+            </div>
+            </div>
 
-        <div class="calcular-button">
-        <button>Calcular Gasto Calórico</button>
-        </div>
-  </div>
+            <div class="calcular-button">
+            <button>Calcular Gasto Calórico</button>
+            </div>
+    </div>
 
+    
 
-
-</div>
-   <hr class="linha-divisoria">
-      <!-- Calculadoras -->
-    <h3>Conheça nossas Ferramentas Nutricionais</h3>
-    <section class="calculadoras">
-      <div class="calc-card gratuito" style="border-left: 6px solid #06b6d4;">
-        <h4>Calculadora de Calorias</h4>
-        <p>Descubra quantas calorias e nutrientes você consome ao montar suas refeições diárias.</p>
-        <a href="#">Calcular calorias</a>
-      </div>
-
-      <div class="calc-card gratuito" style="border-left: 6px solid #ef4444;">
-        <h4>Calculadora de IMC</h4>
-        <p>Verifique se seu peso está adequado para sua altura com base no Índice de Massa Corporal.</p>
-        <a href="#">Calcular IMC</a>
-      </div>
-    </section>
-  </main>
+    </div>
 
 </main>
 
@@ -265,21 +251,18 @@
 
     // Função para calcular (simples exemplo)
     function calcularGastoCalorico(sexo, idade, altura, peso, exercicio, objetivo) {
+        if (!sexoSelecionado || !idade || !altura || !peso || !exercicio || !objetivo) {
+            alert('Por favor, preencha todos os campos corretamente.');
+            return 0;
+        }
+       
         let bmr;
         if (sexo === 'male') {
             bmr = 10 * peso + 6.25 * altura - 5 * idade + 5;
         } else if (sexo === 'female') {
             bmr = 10 * peso + 6.25 * altura - 5 * idade - 161;
         }
-        if (!sexoSelecionado) {
-            alert('Por favor, selecione o sexo.');
-            return;
-        }
 
-        if (!idade || !altura || !peso || !exercicio || !objetivo) {
-            alert('Por favor, preencha todos os campos corretamente.');
-            return;
-        }
 
         let gastoTotal = bmr * exercicio; // agora multiplica pelo nível de atividade
 
@@ -290,7 +273,7 @@
             gastoTotal += 500; // superávit para ganhar massa
         }
         
-        return Math.round(gastoTotal); // arredonda pra não ficar quebrado
+        return Math.round(gastoTotal); 
     }
 
 
@@ -312,8 +295,6 @@
         // Colocar "ativo" no botão clicado
         button.classList.add('active');
     }
-
-    this.classList.toggle('active');
 
     const refeicaoToggles = document.querySelectorAll('.refeicao-toggle');
 
@@ -346,6 +327,30 @@
         }
     });
     });
+
+    //data
+    const dataAtualSpan = document.getElementById('data-atual');
+    const hoje = new Date();
+
+    
+    const dia = String(hoje.getDate()).padStart(2, '0');
+    const mes = String(hoje.getMonth() + 1).padStart(2, '0'); // Janeiro é 0
+    const ano = hoje.getFullYear();
+
+    dataAtualSpan.textContent = `${dia}/${mes}/${ano}`;
+
+    // Selecionar automaticamente o botão do dia da semana
+    const diasSemana = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
+    const diaSemanaHoje = diasSemana[hoje.getDay()];
+
+    const botoesSemana = document.querySelectorAll('.bts_dias-da-semana button');
+    botoesSemana.forEach(botao => {
+        if (botao.textContent.trim() === diaSemanaHoje) {
+            botao.classList.add('active');
+            selectDate(botao, diaSemanaHoje);
+        }
+    });
+
 
 
   </script>

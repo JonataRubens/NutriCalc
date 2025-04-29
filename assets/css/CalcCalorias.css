@@ -1,40 +1,34 @@
-.container {
-  max-width: 800px;
-  margin: auto;
-  text-align: center;
+.text-wrapper {
+  max-width: 1200px; /* ou o valor que preferir */
+  margin: 0 auto; /* centraliza horizontalmente */
+  text-align: center; /* centraliza o texto */
+  padding: 2rem 1rem; /* espaço interno */
 }
 
-h1 {
+.text-wrapper h1 {
   font-size: 2.5rem;
   margin-bottom: 0.2rem;
 }
 
-h2 {
+.text-wrappe h2 {
   color: #0a0a0a;
   margin-bottom: 1rem;
 }
 
-p {
+.text-wrappe p {
   color: #000000;
   font-size: 1rem;
   margin-bottom: 2rem;
 }
 
 .box_calendario {
-  background-color: #f1f3f5;
-  border-radius: 8px;
-  padding: 1.5rem;
+  background-color: #e9e9e9;
+  border-radius: 20px;
+  padding: 0.5rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.header h3 {
+h3 {
   font-size: 1.1rem;
   margin: 0;
   padding: 0;
@@ -46,6 +40,7 @@ p {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #ddd;
+  margin-bottom: 24px;
 }
 
 .botao-retratil {
@@ -96,12 +91,14 @@ p {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  padding: 0 1rem;
+  padding: 1 1rem;
 }
 
 .bts_dias-da-semana {
   display: flex;
-  gap: 0.05rem;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  margin-top: 10px;
 }
 
 .bts_dias-da-semana button {
@@ -156,26 +153,25 @@ p {
 }
 
 .collapsible-button span {
-  .collapsible-button span {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-  }
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
 }
 
 .content {
-  padding: 0 20px;
+  padding: 0;
   margin-bottom: 15px;
   background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: none;
   overflow: hidden;
   max-height: 0;
-  transition: max-height 0.5s ease, padding 0.5s ease;
+  transition: max-height 0.5s ease, padding 0.5s ease, box-shadow 0.5s ease;
 }
 
 .content.open {
-  padding: 15px 20px; /* Ajuste o padding para quando estiver aberto */
+  padding: 15px 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .calorie-info-grid {
@@ -261,15 +257,8 @@ p {
   color: #555;
 }
 
-.more-details {
-  display: block;
-  margin-top: 15px;
-  color: #3a06b3;
-  text-decoration: none;
-  font-size: 0.9em;
-}
-
 .save-button-container {
+  margin-bottom: 24px;
   text-align: left;
 }
 
@@ -301,12 +290,6 @@ p {
   font-size: 0.9em;
   text-align: center;
   text-decoration: none;
-}
-
-.action-button.secondary {
-  background-color: #fcfcfc; /* Azul bem claro */
-  color: #0d0d0e;
-  border: 1px solid #1a237e;
 }
 
 .modal {
@@ -410,7 +393,7 @@ p {
   color: white;
   padding: 12px 30px;
   border-radius: 30px;
-  border: none;
+
   font-size: 1.1em;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -421,7 +404,7 @@ p {
 }
 
 .sexo-buttons button.active {
-  background-color: #162cf3; /* verde */
+  background-color: #162cf3;
   color: white;
 }
 
@@ -508,12 +491,4 @@ p {
   transition: max-height 0.4s ease;
   background: #fafafa;
   padding: 0 16px;
-}
-
-.linha-divisoria {
-  border: none;
-  border-top: 1px solid #e5e7eb; /* cor cinza clara */
-  margin: 48px auto;
-  max-width: 800px;
-  width: 100%;
 }

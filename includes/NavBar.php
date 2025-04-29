@@ -15,6 +15,7 @@ require_once __DIR__ . '/db_connection.php';
   <link rel="stylesheet" href="/assets/css/Style.css">
   <link rel="stylesheet" href="/assets/css/User.css">
   <link rel="stylesheet" href="assets/css/BarraDePesquisa.css">
+  <link rel="stylesheet" href="/assets/css/CalcCalorias.css">
 </head>
 <body>
 
@@ -29,7 +30,8 @@ require_once __DIR__ . '/db_connection.php';
           <ul>
             <li><a href="/pages/Ferramentas/Imc.php">Calculadora de IMC</a></li>
             <li><a href="/pages/Ferramentas/QTDAagua.php">Quantidade de Água Ideal</a></li>
-            <li><a href="/pages/Ferramentas/CalcCalorias.php">Calculadora de Calorias</a></li>
+            <li><a href="/pages/Ferramentas/CalcCalorias.php">Calculadora de Gasto Calorias</a></li>
+            <li><a href="/pages/Ferramentas/PagCalcCalorias.php">Calculadora de Calorias</a></li>
           </ul>
         </div>
         </li>

@@ -95,5 +95,6 @@
       html += '</tbody></table>';
       container.innerHTML = html;
     }
+
   </script>
  <?php include('includes/Footer.html'); ?>

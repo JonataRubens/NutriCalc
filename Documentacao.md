@@ -82,8 +82,6 @@ Geração de PDFs, Calculadora Avançada de Calorias, Perfil com dados do usuár
 
 ---
 
----
-
 ## 🧾 Histórico de Atribuições e Participações da Equipe
 
 Durante o desenvolvimento do projeto NutriCalc, as tarefas foram inicialmente divididas conforme especialidades e disponibilidade dos integrantes. A seguir, um resumo das atribuições e andamento do trabalho em equipe:

@@ -16,6 +16,9 @@ require_once __DIR__ . '/db_connection.php';
   <link rel="stylesheet" href="/assets/css/User.css">
   <link rel="stylesheet" href="assets/css/BarraDePesquisa.css">
   <link rel="stylesheet" href="/assets/css/CalcCalorias.css">
+  <link rel="stylesheet" href="/assets/css/Modal.css">
+
+
 </head>
 <body>
 
@@ -53,13 +56,17 @@ require_once __DIR__ . '/db_connection.php';
               </div>
             </div>
           <?php else: ?>
-            <a href="/pages/login/Login.php?redirect=<?= urlencode($_SERVER['REQUEST_URI']) ?>" class="btn-entrar">Entrar</a>
-            <a href="/pages/login/Register.php" class="btn-criar">Criar Conta</a>
+            <a href="javascript:void(0);" onclick="openLoginModal()" class="btn-entrar">Entrar</a>
+            <a href="javascript:void(0);" onclick="openRegisterModal()" class="btn-criar">Criar Conta</a>
           <?php endif; ?>
         </div>
       </nav>
     </div>
-  </header>
+
+    <?php include('ModalLogin.php'); ?>
+    <?php include('ModalRegister.php'); ?>
+
+  </header>  
 
   <script>
     function toggleDropdown() {

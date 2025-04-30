@@ -30,6 +30,6 @@
       
           <h2>✅ Conclusão</h2>
           <p>A água é essencial para o funcionamento ideal do corpo. Com a Calculadora de Água do NutriCalc, você pode estabelecer uma meta personalizada de hidratação e melhorar sua saúde de forma simples e natural.</p>
-          <p><a href="../Ferramentas/QTDAagua.php">Calcule agora sua ingestão diária ideal de água</a>.</p>
+          <p><a href="#">Calcule agora sua ingestão diária ideal de água</a>.</p>
         </div>
 <?php include('../../includes/Footer.html'); ?>

@@ -25,7 +25,7 @@
               <div class="calc-card gratuito" >
                 <h4>Calculadora de Gasto Calórico</h4>
                 <p>Descubra quantas calórias seu corpo gasta por dia.</p>
-                <a href="#">Leia mais</a>
+                <a href="posts/GastoCalorico.php">Leia mais</a>
             </div>
         </section>
 </main>

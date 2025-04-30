@@ -39,7 +39,7 @@
 | Área                          | Responsáveis                     |
 |-------------------------------|----------------------------------|
 | Banco de Dados                | Caio e Afonso                   |
-| Desenvolvimento Back-End      | Caio, Afonso e Jonata           |
+| Desenvolvimento Back-End      | Caio, Afonso, Marcus Vinicius, Carlinhos e Jonata |
 | Desenvolvimento Front-End     |Marcus Vinicius, Carlinhos e Jonata|
 | Testes Unitários              | Todas as duplas em suas áreas    |
 
@@ -83,10 +83,48 @@
 "Como usuário, quero uma calculadora precisa de calorias com visual moderno para acompanhar meu consumo diário de forma mais eficiente."
 
 **📝 Regras de Negócio**:
--  Cálculo baseado em: idade, peso, altura, gênero e nível de atividade
+- ✅ Cálculo baseado em: idade, peso, altura, gênero e nível de atividade
 -  Exibição de macros (proteínas, carboidratos, gorduras)
--  Todos os alimentos devem estar no Banco de Dados
+- ✅ Todos os alimentos devem estar no Banco de Dados
 -  Testes unitários 
+
+### RF-05: Geração de PDF com Informações Pessoais e Cálculos
+**User Story:**
+"Como usuário, quero gerar um PDF com meus dados pessoais e os cálculos nutricionais para registrar e acompanhar minha saúde."
+
+**📝 Regras de Negócio:**
+
+-  A geração do PDF só estará disponível se o usuário estiver logado.
+-  O perfil pode ser completo pelo usuario, mas é opcional (idade, peso, altura, sexo, atividade física).
+-  Os cálculos devem ser baseados nas informações fornecidas pelo usuário.
+-  O layout do PDF deve ser legível, responsivo e com dados organizados.
+-  Deve incluir a data de geração e nome do usuário.
+
+**Tarefas Técnicas:**
+-  Adcionar mais infomacoes do usuario ao banco
+-  Desenvolver função de geração de PDF
+-  Integrar dados pessoais do banco no conteúdo do PDF
+-  Incluir resultados de cálculos nutricionais no documento
+-  Criar verificação de login e preenchimento do perfil antes da geração
+-  Testar layout e compatibilidade com diferentes navegadores
+
+### 📦RF-06: Geração de PDF com Lista de Alimentos
+**User Story:**
+"Como usuário, quero baixar um PDF com todos os alimentos cadastrados para consultar offline ou compartilhar."
+
+**📝 Regras de Negócio:**
+
+- Disponível apenas para usuários logados.
+- Deve listar todos os alimentos com seus respectivos nutrientes (calorias, proteínas, lipídios, carboidratos).
+- Deve ter cabeçalho, logo da aplicação e data de emissão.
+- Layout organizado em formato de tabela.
+
+**Tarefas Técnicas:**
+
+-  ✔️ (50% Completo) Implementar script para extrair dados da tabela de alimentos
+-  Gerar PDF em formato tabular com mPDF ou DomPDF
+-  Bloquear acesso à geração caso o usuário não esteja autenticado
+-  Incluir nome do usuário e data na exportação
 
 ---
 
@@ -110,30 +148,23 @@ Permitir montagem de refeições personalizadas e cálculos nutricionais.
 - ✅ Cálculo e exibição de nutrientes totais
 - ✅ Implementação do cálculos Nutricionais
 
-### 🧮Sprint 03 (06/05/2025 - 20/05/2025)
+### 🧮Sprint 03 (30/04/2025 - 20/05/2025)
 
 **Objetivo**: 
-Finalizar a calculadora nutricional e melhorar a experiência visual em toda a aplicação.
+Geração de PDFs, Calculadora Avançada de Calorias, Perfil com dados do user
 
-**Detalhes das Melhorias**:
-**Blog**:
-   - Atualização dos artigos sobre nutrição
-   - Cards com imagens e resumos
-   - Sistema de tags
-**Calculadoras**:
-   - Novo visual com gráficos interativos
-   - Implementação da adição de alimentos com alimentos dos Banco de Dados
-
-## 📌 Tarefas Técnicas Pendentes
-- ❌ Desenvolvimento de relatórios em PDF
-- ❌ Lógica de adição de refeições diárias
+**Entregas**:
+- ❌ Adição de mais informações ao perfil de usuario
+- ❌ Calculadora Avançada (RF-04)
+- ❌ Implementação da adicao de dados do perfil do usuario para geracao de PDFs
+- ❌ Geração de PDF com informações pessoais + resultados de cálculos (RF-05)
+- ❌ Geração de PDF com lista de alimentos cadastrados (RF-06)
+- ❌ Bloqueio da geração se não estiver logado ou perfil incompleto
 - ❌ Implementação de testes
-- ✔️  (50% Completo) Criar visualização de resultados em pdf
+- ❌ Estilização dos posts blog
+
 ---
 
-
-
-      
 ## Como Executar 
 
 Para executar esta aplicação, siga estes passos:

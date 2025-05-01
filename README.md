@@ -20,7 +20,6 @@
 - Acesso sem login para funcionalidades básicas
 - Login opcional para relatórios em PDF
 
-📄 [Documentação Detalhada](https://docs.google.com/document/d/16bmeSKUb60Sma7MMCSvWFXq1465XLaLWFufkiDN6FjE/edit?usp=sharing)  
 🎨 [Protótipos no Figma](https://www.figma.com/proto/lQPOqAeOSFHSjUynHLdZet/Untitled?node-id=4-185&p=f&t=uzYsCdXIex9B338e-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2)
 
 ---
@@ -126,42 +125,49 @@
 -  Bloquear acesso à geração caso o usuário não esteja autenticado
 -  Incluir nome do usuário e data na exportação
 
+### 📦RF-07: Criação da página de admin, Adição de informações ao user
+**User Story:**
+"Eu como super usuario quero ter uma tela de login para poder administrar usuarios e alimentos onde poderá ser realizado CRUD"
+
+**📝 Regras de Negócio:**
+- Só vai ter 1 superUser onde será registrado diretamente ao BD
+- Será possivel fazer operacoes crud dentro da pagina admin
+- Terá uma url a parte do do projeto
+- A adição de dados é opcional
+
+**Tarefas Técnicas:**
+- Criar página de admin
+- CRUD dentro da pagina admin
+- Adição de mais dados de usuario
+
 ---
 
 ## 🚀 Roadmap de Sprints
 
-### 🧮Sprint 01 (08/04/2025 - 22/04/2025)
+### 🧮Sprint 01 (08/04/2025 - 29/04/2025)
 **Objetivo**:  
-Oferecer experiência inicial de navegação e acesso ao sistema com cadastro e login.
+Oferecer experiência inicial de navegação e acesso ao sistema com cadastro e login. Permitir montagem de refeições personalizadas e cálculos nutricionais.
 
 **Entregas**:
 - ✅ Tela inicial acessível sem login
 - ✅ Componentes de navegação (Criar Conta/Fazer Login)
 - ✅ Implementação do RF-01 (Cadastro)
-
-### 🧮Sprint 02 (22/04/2025 - 30/04/2025)
-**Objetivo**:  
-Permitir montagem de refeições personalizadas e cálculos nutricionais.
-
-**Entregas**:
 - ✅ Sistema de busca de alimentos (RF-03)
 - ✅ Cálculo e exibição de nutrientes totais
 - ✅ Implementação do cálculos Nutricionais
 
-### 🧮Sprint 03 (30/04/2025 - 20/05/2025)
+### 🧮Sprint 02 (30/04/2025 - 13/05/2025)
 
 **Objetivo**: 
-Geração de PDFs, Calculadora Avançada de Calorias, Perfil com dados do user
+Geração de PDFs, Calculadora Avançada de Calorias, Perfil com dados do user, Pagina de admin para controle de usuarios e alimentos no bd
 
 **Entregas**:
-- ❌ Adição de mais informações ao perfil de usuario
-- ❌ Calculadora Avançada (RF-04)
-- ❌ Implementação da adicao de dados do perfil do usuario para geracao de PDFs
-- ❌ Geração de PDF com informações pessoais + resultados de cálculos (RF-05)
-- ❌ Geração de PDF com lista de alimentos cadastrados (RF-06)
-- ❌ Bloqueio da geração se não estiver logado ou perfil incompleto
-- ❌ Implementação de testes
-- ❌ Estilização dos posts blog
+- ❌ Adição de mais informações ao perfil de usuario (afonso)
+- ❌ Calculadora Avançada (RF-04) (carlos)
+- ❌ Geração de PDF com informações pessoais + resultados de cálculos, lista de alimentos cadastrados  (RF-05) (marcos)
+- ❌ Bloqueio da geração se não estiver logado ou perfil incompleto (marcos)
+- ❌ Implementação da pagina de admin (RF-07) (caio) 
+- ❌ Estilização da barra de pesquisa (jonata)
 
 ---
 

@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const email = document.getElementById('registerEmail').value;
     const senha = document.getElementById('registerSenha').value;
 
-    fetch('/pages/login/RegisterAjax.php', {
+    fetch('/NutriCalc/pages/login/RegisterAjax.php', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: `nome=${encodeURIComponent(nome)}&sobrenome=${encodeURIComponent(sobrenome)}&email=${encodeURIComponent(email)}&senha=${encodeURIComponent(senha)}`

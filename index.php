@@ -46,7 +46,7 @@
         return;
       }
       
-      fetch(`includes/search_alimentos.php?term=${encodeURIComponent(searchTerm)}`)
+      fetch(`/NutriCalc/includes/search_alimentos.php?term=${encodeURIComponent(searchTerm)}`)
         .then(response => response.json())
         .then(data => {
           displayResults(data, resultsContainer);
@@ -59,7 +59,7 @@
 
     function searchByCategory(category) {
       const resultsContainer = document.getElementById('searchResults');
-      fetch(`includes/search_alimentos.php?term=${encodeURIComponent(category)}`)
+      fetch(`/NutriCalc/includes/search_alimentos.php?term=${encodeURIComponent(category)}`)
         .then(response => response.json())
         .then(data => {
           displayResults(data, resultsContainer);

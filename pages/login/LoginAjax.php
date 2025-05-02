@@ -12,20 +12,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $senha = $_POST['senha'];
 
     // Busca o usuário pelo e-mail
-    $stmt = $conn->prepare("SELECT id, nome, senha FROM usuarios WHERE email = ?");
+    $stmt = $conn->prepare("SELECT id, nome, senha, role FROM usuarios WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $stmt->store_result();
 
     // Verifica se encontrou o usuário
     if ($stmt->num_rows == 1) {
-        $stmt->bind_result($id, $nome, $senha_hash);
+        $stmt->bind_result($id, $nome, $senha_hash, $role);
         $stmt->fetch();
 
         // Verifica a senha
         if (password_verify($senha, $senha_hash)) {
             $_SESSION['usuario_id'] = $id;
             $_SESSION['usuario_nome'] = $nome;
+            $_SESSION['usuario_role'] = $role;
             $response['success'] = true;
         } else {
             $response['message'] = "Senha incorreta.";

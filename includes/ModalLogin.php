@@ -50,7 +50,7 @@
             const email = document.getElementById('modalEmail').value;
             const senha = document.getElementById('modalSenha').value;
             
-            fetch('/pages/login/LoginAjax.php', {
+            fetch('/NutriCalc/pages/login/LoginAjax.php', {
                 method: 'POST',
                 headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',

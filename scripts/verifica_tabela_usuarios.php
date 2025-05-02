@@ -13,6 +13,7 @@ if ($tabelaExiste && $tabelaExiste->num_rows == 0) {
             sobrenome VARCHAR(100) NOT NULL,
             email VARCHAR(150) NOT NULL UNIQUE,
             senha VARCHAR(255) NOT NULL,
+            role ENUM('user', 'admin') DEFAULT 'user',
             criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         );
     ";
@@ -23,5 +24,6 @@ if ($tabelaExiste && $tabelaExiste->num_rows == 0) {
         echo "Erro ao criar tabela: " . $conn->error;
     }
 } else {
-    echo "Tabela 'usuarios' já existe.";
+    echo "Tabela 'usuarios' já existe. Setup não será executado novamente.";
+    exit;
 }

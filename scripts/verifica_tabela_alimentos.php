@@ -25,21 +25,11 @@ if ($tabelaExiste && $tabelaExiste->num_rows == 0) {
         echo "Erro ao criar tabela: " . $conn->error . "<br>";
     }
 } else {
-    echo "Tabela 'alimentos' já existe.<br>";
-    
-    // Verificar se a coluna categoria existe e adicioná-la se necessário
-    $verificar_coluna = $conn->query("SHOW COLUMNS FROM alimentos LIKE 'categoria'");
-    if ($verificar_coluna->num_rows == 0) {
-        $sql_adicionar_coluna = "ALTER TABLE alimentos ADD COLUMN categoria VARCHAR(100) AFTER descricao";
-        
-        if ($conn->query($sql_adicionar_coluna) === TRUE) {
-            echo "Coluna 'categoria' adicionada na tabela 'alimentos'.<br>";
-        } else {
-            echo "Erro ao adicionar coluna: " . $conn->error . "<br>";
-        }
-    }
+    echo "Tabela 'alimentos' já existe. Setup não será executado novamente.<br>";
+    $conn->close();
+    exit;
 }
 
 
 $conn->close();
-echo "Processo de configuração completo!"; 
+echo "Processo de configuração completo!";

@@ -12,11 +12,11 @@ require_once __DIR__ . '/db_connection.php';
 <head>
   <meta charset="UTF-8">
   <title>Blog - NutriCalc</title>
-  <link rel="stylesheet" href="/assets/css/Style.css">
-  <link rel="stylesheet" href="/assets/css/User.css">
-  <link rel="stylesheet" href="assets/css/BarraDePesquisa.css">
-  <link rel="stylesheet" href="/assets/css/CalcCalorias.css">
-  <link rel="stylesheet" href="/assets/css/Modal.css">
+  <link rel="stylesheet" href="/NutriCalc/assets/css/Style.css">
+  <link rel="stylesheet" href="/NutriCalc/assets/css/User.css">
+  <link rel="stylesheet" href="/NutriCalc/assets/css/BarraDePesquisa.css">
+  <link rel="stylesheet" href="/NutriCalc/assets/css/CalcCalorias.css">
+  <link rel="stylesheet" href="/NutriCalc/assets/css/Modal.css">
 
 
 </head>
@@ -49,10 +49,14 @@ require_once __DIR__ . '/db_connection.php';
                 <span class="seta">&#9662;</span>
               </div>
               <div id="dropdown-menu" class="dropdown-menu">
+                  <?php if (isset($_SESSION['usuario_role']) && $_SESSION['usuario_role'] === 'admin'): ?>
+                      <a href="/NutriCalc/pages/admin/admin.php">
+                        <span class="admin-icon">🛠️</span> Painel
+                      </a>
+                  <?php endif; ?>
                   <a href="#" onclick="logout(event)">
                     <span class="logout-icon">⎋</span> Sair
                   </a>
-                </a>
               </div>
             </div>
           <?php else: ?>
@@ -83,7 +87,7 @@ require_once __DIR__ . '/db_connection.php';
 
     function logout(e) {
     e.preventDefault();
-    fetch('/pages/login/Logout.php')
+    fetch('/NutriCalc/pages/login/Logout.php')
       .then(response => {
         if (response.ok) {
           // Atualiza a página para refletir o logout (ex: troca nav bar)

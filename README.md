@@ -140,6 +140,22 @@
 - CRUD dentro da pagina admin
 - Adição de mais dados de usuario
 
+### 📦RF-08: Criação da opcao de lembretes/notas
+**User Story:**
+"Eu como Usuario estando logado quero que seja possivel a adicao de lembretes para mim poder ter onde guardar estatistica corporais"
+
+**📝 Regras de Negócio:**
+- Sera possivel apenas se estiver logado 
+- Será possivel mesmo com o perfil incompleto
+- CRUD das notas responsivel e de facil entendimento
+- Visualizar todas as notas em um so lugar
+- Abrir as notas e que seja possivel a edicao e exclusao da notas sem afetar as outras notas
+
+**Tarefas Técnicas:**
+- Criar uma pagina para visualizacao de todas as notas
+- CRUD Dentro de Notas
+- Implementar logica de sessao nas notas afim de impedir link diretos
+
 ---
 
 ## 🚀 Roadmap de Sprints
@@ -159,7 +175,7 @@ Oferecer experiência inicial de navegação e acesso ao sistema com cadastro e 
 ### 🧮Sprint 02 (30/04/2025 - 13/05/2025)
 
 **Objetivo**: 
-Geração de PDFs, Calculadora Avançada de Calorias, Perfil com dados do user, Pagina de admin para controle de usuarios e alimentos no bd
+Geração de PDFs, Calculadora Avançada de Calorias, Perfil com dados do user, Pagina de admin para controle de usuarios e alimentos no bd, Criar um sistema de Lembretes/notas
 
 **Entregas**:
 - ❌ Adição de mais informações ao perfil de usuario (afonso)
@@ -167,7 +183,7 @@ Geração de PDFs, Calculadora Avançada de Calorias, Perfil com dados do user, 
 - ❌ Geração de PDF com informações pessoais + resultados de cálculos, lista de alimentos cadastrados  (RF-05) (marcos)
 - ❌ Bloqueio da geração se não estiver logado ou perfil incompleto (marcos)
 - ❌ Implementação da pagina de admin (RF-07) (caio) 
-- ❌ Estilização da barra de pesquisa (jonata)
+- ✅ Criacao de Notas/Lembretes (RF-08 )(Jonata)
 
 ---
 

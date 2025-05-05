@@ -27,8 +27,8 @@ require_once __DIR__ . '/db_connection.php';
     <div class="container">
       <nav>
         <ul>
-          <li><a href="/index.php">Página inicial</a></li>
-          <li><a href="">Ferramentas Nutricionais</a>
+          <li><a href="/index.php">🏠 Página inicial</a></li>
+          <li><a href="">🛠️ Ferramentas Nutricionais</a>
           <div class="submenu">
           <ul>
             <li><a href="/pages/Ferramentas/Imc.php">Calculadora de IMC</a></li>
@@ -38,7 +38,7 @@ require_once __DIR__ . '/db_connection.php';
           </ul>
         </div>
         </li>
-          <li><a href="/pages/Blog.php">Blog</a></li>
+          <li><a href="/pages/Blog.php">📑 Blog</a></li>
         </ul>
         <div class="nav-right">
           <?php if (isset($_SESSION['usuario_nome'])): ?>
@@ -49,8 +49,11 @@ require_once __DIR__ . '/db_connection.php';
                 <span class="seta">&#9662;</span>
               </div>
               <div id="dropdown-menu" class="dropdown-menu">
+                  <a href="#" onclick="Nots(event)">
+                    <span class="logout-icon">📝</span> Notas
+                  </a>
                   <a href="#" onclick="logout(event)">
-                    <span class="logout-icon">⎋</span> Sair
+                    <span class="logout-icon">⏻</span> Sair
                   </a>
                 </a>
               </div>
@@ -94,4 +97,10 @@ require_once __DIR__ . '/db_connection.php';
         console.error('Erro ao fazer logout:', error);
       });
   }
+
+  function Nots(event) {
+  event.preventDefault();
+  window.location.href = '/pages/Notas.php';
+}
+
   </script>

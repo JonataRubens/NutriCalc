@@ -20,6 +20,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 include('../includes/NavBar.php');
 ?>
+<link rel="stylesheet" href="/assets/css/MinhasNotas.css">
 
 <main>
     <h2>Minhas Notas</h2>
@@ -59,10 +60,8 @@ function openModal(titulo, resumo, completo, id) {
     document.getElementById("modalTitulo").innerText = titulo;
     document.getElementById("modalConteudo").innerHTML = completo;
     document.getElementById("notaIdParaExcluir").value = id;
-
-    console.log("ID da nota para exclusão:", id); // 👈 Adicione isso
-
     document.getElementById("notaModal").style.display = "block";
+    
 }
 
 function closeModal() {

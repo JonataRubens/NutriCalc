@@ -2,8 +2,11 @@
 session_start();
 require_once '../../includes/db_connection.php';
 
-// Se ainda não está usando sessões, pode testar com: $id_usuario = 1;
-$id_usuario = $_SESSION['user_id'] ?? 1;
+if (!isset($_SESSION['usuario_id'])) {
+    header('Location: ../index.php');
+    exit();
+}
+$id_usuario = $_SESSION['usuario_id'];
 
 // Quando o formulário for enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -26,6 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 include('../../includes/NavBar.php');
 ?>
+<link rel="stylesheet" href="/assets/css/MinhasNotas.css">
+<link rel="stylesheet" href="/assets/css/NewsNotas.css">
 <main>
     <body>
         <h2>Criar Nova Nota</h2>
@@ -38,10 +43,12 @@ include('../../includes/NavBar.php');
             <label for="conteudo">Conteúdo:</label><br>
             <textarea name="conteudo" id="conteudo" maxlength="500" rows="5" required></textarea><br><br>
 
-            <button type="submit">Salvar Nota</button>
+            <button type="submit" class="botao botao-salvar">💾 Salvar Nota</button>
+            
         </form>
+        <a href="../Notas.php" class="botao botao-voltar">⬅️ Voltar</a>
 
-        <p><a href="../Notas.php">⬅️ Voltar para Minhas Notas</a></p>
+        
     </body>
 </main>
 <?php include('../../includes/Footer.html'); ?>

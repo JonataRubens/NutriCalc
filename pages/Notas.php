@@ -1,8 +1,13 @@
 <?php
+session_start();
 require_once '../includes/db_connection.php';
+// Bloqueia o acesso se não estiver logado
+if (!isset($_SESSION['usuario_id'])) {
+    header('Location: ../index.php');
+    exit();
+}
 
-// SUBSTITUA por um ID de usuário existente no seu banco
-$id_usuario = 1;
+$id_usuario = $_SESSION['usuario_id'];
 
 $stmt = $conn->prepare("SELECT * FROM notas WHERE id_usuario = ? ORDER BY data_criacao DESC");
 if (!$stmt) {
@@ -13,21 +18,56 @@ $stmt->bind_param("i", $id_usuario);
 $stmt->execute();
 
 $result = $stmt->get_result();
+include('../includes/NavBar.php');
 ?>
-<?php include('../includes/NavBar.php'); ?>
+
 <main>
     <h2>Minhas Notas</h2>
-    <a href="Nots/NewNotas.php">➕ Nova Nota</a>
+    <a class="nova-nota" href="Nots/NewNotas.php">➕ Nova Nota</a>
     <div class="notas-container">
         <?php while ($nota = $result->fetch_assoc()): ?>
-            <div class="nota">
-                <h3><?= htmlspecialchars($nota['titulo']) ?></h3>
-                <div class="botoes">
-                    <a href="#">✏️ Editar</a>
-                    <a href="#" onclick="return confirm('Tem certeza que deseja excluir esta nota?')">🗑️ Excluir</a>
-                </div>
+            <div class="nota-card" onclick="openModal(`<?= htmlspecialchars($nota['titulo']) ?>`, `<?= nl2br(htmlspecialchars(substr($nota['conteudo'], 0, 100))) ?>`, `<?= nl2br(htmlspecialchars($nota['conteudo'])) ?>`, `<?= $nota['id'] ?>`)">
+            <h3><?= htmlspecialchars(substr($nota['titulo'], 0, 40)) ?><?= strlen($nota['titulo']) > 40 ? '...' : '' ?></h3>
+                <p><?= nl2br(htmlspecialchars(substr($nota['conteudo'], 0, 50))) ?>...</p>
+                <button class="btn-ver-mais">🔍 Ver Nota</button>
             </div>
         <?php endwhile; ?>
     </div>
 </main>
+
+<!-- Modal -->
+<div id="notaModal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">×</span>
+
+        <div class="nota-actions-top">
+            <button class="btn-editar" onclick="editarNota()">✏️ Editar</button>
+
+            <form method="POST" action="Nots/ExcluirNotas.php" onsubmit="return confirm('Tem certeza que deseja excluir esta nota?');">
+                <input type="hidden" name="id" id="notaIdParaExcluir" value="">
+                <button type="submit" class="btn-excluir">🗑️ Excluir</button>
+            </form>
+        </div>
+        <h3 id="modalTitulo"></h3>
+        <p id="modalConteudo"></p>
+    </div>
+</div>
+
+
+<script>
+function openModal(titulo, resumo, completo, id) {
+    document.getElementById("modalTitulo").innerText = titulo;
+    document.getElementById("modalConteudo").innerHTML = completo;
+    document.getElementById("notaIdParaExcluir").value = id;
+
+    console.log("ID da nota para exclusão:", id); // 👈 Adicione isso
+
+    document.getElementById("notaModal").style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("notaModal").style.display = "none";
+}
+</script>
+
 <?php include('../includes/Footer.html'); ?>

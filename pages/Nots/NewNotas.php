@@ -33,10 +33,10 @@ include('../../includes/NavBar.php');
 
         <form method="POST" action="">
             <label for="titulo">Título:</label><br>
-            <input type="text" name="titulo" id="titulo" required><br><br>
+            <input type="text" name="titulo" maxlength="75" id="titulo" required><br><br>
 
             <label for="conteudo">Conteúdo:</label><br>
-            <textarea name="conteudo" id="conteudo" rows="5" required></textarea><br><br>
+            <textarea name="conteudo" id="conteudo" maxlength="500" rows="5" required></textarea><br><br>
 
             <button type="submit">Salvar Nota</button>
         </form>

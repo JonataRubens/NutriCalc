@@ -1,0 +1,193 @@
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.nova-nota {
+    display: block;
+    margin: 0 auto 2rem auto;
+    width: fit-content;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.nova-nota:hover {
+    background-color: #45a049;
+}
+
+.notas-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+    justify-content: center;
+}
+
+.nota-card {
+    flex: 1 1 calc(33.33% - 2rem); 
+    max-width: 280px;
+    min-height: 320px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nota-card:hover {
+    transform: scale(1.02);
+}
+
+.nota-card h3 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-top: 0;
+    word-wrap: break-word;
+}
+
+.nota {
+    flex: 1 1 300px; /* permite que ele cresça mas respeite um mínimo */
+    max-width: 400px;
+    min-height: 200px;
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    background-color: white;
+}
+
+.notas-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.nota-card p {
+    word-wrap: break-word;       /* quebra palavras muito longas */
+    overflow-wrap: break-word;   /* padrão moderno */
+    white-space: normal;         /* garante quebra de linha */
+}
+
+/*MODAL*/
+
+
+.nota-card {
+    background-color: #fdfdfd;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    min-height: 180px;
+    padding: 1.5rem;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.nota-card:hover {
+    transform: scale(1.02);
+}
+
+.nota-card h3 {
+    margin-top: 5;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 10% auto;
+    position: relative;
+}
+
+.modal-content .close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#modalTitulo{
+    padding-top:11px;
+}
+ /*BOTA VER MAIS*/
+
+ .btn-ver-mais {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-ver-mais:hover {
+    background-color: #2980b9;
+}
+
+#modalConteudo {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+/*BOTA editar/excluir */
+.btn-editar,
+.btn-excluir {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+.btn-editar:hover, .btn-excluir:hover{
+    background-color: #f0f0f0;
+}
+
+.nota-actions-top {
+    position: flex;
+    top: 0.5rem;
+    left: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}

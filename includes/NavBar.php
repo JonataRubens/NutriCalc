@@ -17,6 +17,7 @@ require_once __DIR__ . '/db_connection.php';
   <link rel="stylesheet" href="assets/css/BarraDePesquisa.css">
   <link rel="stylesheet" href="/assets/css/CalcCalorias.css">
   <link rel="stylesheet" href="/assets/css/Modal.css">
+  <link rel="stylesheet" href="/assets/css/MinhasNotas.css">
 
 
 </head>

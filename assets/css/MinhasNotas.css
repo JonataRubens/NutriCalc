@@ -178,6 +178,7 @@ h2 {
     font-size: 0.95rem;
     cursor: pointer;
     transition: background-color 0.2s, box-shadow 0.2s;
+    text-decoration: none;
 }
 .btn-editar:hover, .btn-excluir:hover{
     background-color: #f0f0f0;

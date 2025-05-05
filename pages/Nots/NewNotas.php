@@ -43,7 +43,7 @@ include('../../includes/NavBar.php');
             <label for="conteudo">Conteúdo:</label><br>
             <textarea name="conteudo" id="conteudo" maxlength="500" rows="5" required></textarea><br><br>
 
-            <button type="submit" class="botao botao-salvar">💾 Salvar Nota</button>
+            <button type="submit" class="botao botao-salvar">✔ Salvar Nota</button>
             
         </form>
         <a href="../Notas.php" class="botao botao-voltar">⬅️ Voltar</a>

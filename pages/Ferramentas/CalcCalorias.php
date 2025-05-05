@@ -1,7 +1,7 @@
 <?php include('../../includes/NavBar.php'); ?>
 <link rel="stylesheet" href="../../assets/css/Calorias.css">
 
-
+<hr class="linha-divisoria">
   <main class="container">
     <div class="calorico-wrapper">
       <h1>Calculadora de Gasto Calórico</h1>
@@ -76,6 +76,12 @@
                 <a href="/pages/Ferramentas/QTDAagua.php">Calculadora de Consumo de agua </a>
             </div>
 
+            <div class="calc-card gratuito" style="border-left: 6px solid rgb(136, 41, 199);">
+                <h4 >Calculadora de Gasto calorico</h4>
+                <p>Saiba quantas calorias seu corpo gasta por dia com base em informações simples.</p>
+                <a href="/pages/Ferramentas/CalcCalorias.php">Calcular Gasto calorias</a>
+            </div>
+
         </section>
   </main>
 
@@ -99,7 +105,7 @@
       const resultado_GCalorDiv = document.getElementById("resultado_GCalor");
 
       if (!sexo || !idade || !altura || !peso || !atividade || !objetivo) {
-        resultado_GCalorDiv.style.color = "#c53030";
+        
         resultado_GCalorDiv.innerHTML = "Por favor, preencha todos os campos corretamente.";
         return;
       }

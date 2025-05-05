@@ -23,7 +23,7 @@ include('../includes/NavBar.php');
 <link rel="stylesheet" href="/assets/css/MinhasNotas.css">
 
 <main>
-    <h2>Minhas Notas</h2>
+    <h2>Meus Lembretes</h2>
     <a class="nova-nota" href="Nots/NewNotas.php">➕ Nova Nota</a>
     <div class="notas-container">
         <?php while ($nota = $result->fetch_assoc()): ?>
@@ -42,7 +42,7 @@ include('../includes/NavBar.php');
         <span class="close" onclick="closeModal()">×</span>
 
         <div class="nota-actions-top">
-            <button class="btn-editar" onclick="editarNota()">✏️ Editar</button>
+            <a id="btnEditar" class="btn-editar">✏️ Editar</a>
 
             <form method="POST" action="Nots/ExcluirNotas.php" onsubmit="return confirm('Tem certeza que deseja excluir esta nota?');">
                 <input type="hidden" name="id" id="notaIdParaExcluir" value="">
@@ -60,7 +60,9 @@ function openModal(titulo, resumo, completo, id) {
     document.getElementById("modalTitulo").innerText = titulo;
     document.getElementById("modalConteudo").innerHTML = completo;
     document.getElementById("notaIdParaExcluir").value = id;
+    document.getElementById("btnEditar").href = `Nots/EditarNotas.php?id=${id}`;
     document.getElementById("notaModal").style.display = "block";
+
     
 }
 

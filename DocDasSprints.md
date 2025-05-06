@@ -45,7 +45,9 @@ Geração de PDFs, Calculadora Avançada de Calorias, Perfil com dados do user, 
 
 ---
 
-## 🧾 Histórico de Atribuições e Participações da Equipe
+## 🧾 Histórico de Atribuições e Participações da Equipe 
+
+##  🧾 Atribuições Sprint 01 (08/04/2025 - 29/04/2025)
 
 Durante o desenvolvimento do projeto NutriCalc, as tarefas foram inicialmente divididas conforme disponibilidade dos integrantes. A seguir, um resumo das atribuições e andamento do trabalho em equipe:
 
@@ -68,39 +70,36 @@ Com o avanço do projeto e o início da Sprint 02, todos os membros da equipe pa
 
 ---
 
-## 🧾 Atribuições Atuais – Sprint 02 (30/04/2025 - 13/05/2025)
+## 🧾 Atribuições – Sprint 02 (30/04/2025 - 13/05/2025)
 
 Com a evolução do projeto NutriCalc e o aumento da complexidade das funcionalidades, as atribuições foram redistribuídas para melhor aproveitamento das habilidades da equipe e cumprimento das entregas propostas:
 
-- ⚙️ **Caio**: Responsável pela **implementação da página de administração** do sistema (RF-07), com foco no controle dos alimentos e usuários cadastrados no banco de dados.  
+- **Caio**: Responsável pela **implementação da página de administração** do sistema (RF-07), com foco no controle dos alimentos e usuários cadastrados no banco de dados.  
   - Atribuições específicas:
     - Criar interface de gerenciamento (CRUD) para alimentos e usuários;
     - Restringir acesso apenas a usuários com perfil de administrador;
     - Garantir integração segura com o banco.
 
-- 🧾 **Afonso**: Responsável por **adicionar novos campos ao perfil do usuário**, que serão utilizados na geração de relatórios em PDF.  
+- **Afonso**: Responsável por **adicionar novos campos ao perfil do usuário**, que serão utilizados na geração de relatórios em PDF.  
   - Atribuições específicas:
     - Estender a tabela de usuários no banco;
     - Modificar a página de perfil para incluir novos dados;
     - Garantir que as informações estejam acessíveis para exportação no relatório.
     - Estilizacao do retorno da pesquisa na pagina home
 
-- 🧮 **Carlos**: Responsável pelo desenvolvimento da **calculadora avançada de calorias** (RF-04), permitindo que o usuário monte refeições diárias com base nos alimentos do banco.  
+- **Carlos**: Responsável pelo desenvolvimento da **calculadora avançada de calorias** (RF-04), permitindo que o usuário monte refeições diárias com base nos alimentos do banco.  
   - Atribuições específicas:
     - Criar interface para seleção de alimentos por refeição (café, almoço, jantar);
     - Implementar lógica de cálculo nutricional total;
     - Integrar dados com os alimentos cadastrados via BD.
 
-- 📄 **Marcus**: Responsável pela **geração automática de relatórios em PDF** com dados pessoais do usuário, resumo de cálculos e alimentos utilizados (RF-05).  
+- **Marcus**: Responsável pela **geração automática de relatórios em PDF** com dados pessoais do usuário, resumo de cálculos e alimentos utilizados (RF-05).  
   - Atribuições específicas:
     - Criar layout e estrutura do documento;
     - Utilizar biblioteca de geração de PDF 
     - Integrar os dados do perfil e da calculadora no documento final.
 
-- 📝 **Jonata**: Responsável pela **implementação do sistema de lembretes/notas** e apoio técnico geral à equipe.  
+- ✅ **Jonata**: Responsável pela **implementação do sistema de lembretes/notas** (RF-08) e apoio técnico geral à equipe.  
   - Atribuições específicas:
     - Criar CRUD de notas vinculadas ao usuário logado;
     - Garantir autenticação e privacidade dos dados;
-    - Auxiliar colegas nas integrações e revisão de código (função de integrador técnico).
-
-

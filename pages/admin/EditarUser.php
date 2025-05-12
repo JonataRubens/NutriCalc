@@ -206,7 +206,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <!-- Links "Home" e "Site" à esquerda -->
             <nav>
                 <ul>
-                    <li><a href="admin_dashboard.php">Home</a></li>
+                    <li><a href="Dashboard.php">Home</a></li>
                     <li><a href="/index.php">Site</a></li>
                 </ul>
             </nav>

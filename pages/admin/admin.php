@@ -4,7 +4,7 @@ session_start();
 // Verifica se o usuário já está logado
 if (isset($_SESSION['user_id'])) {
     // Se já estiver logado, redireciona para o painel administrativo
-    header('Location: admin_dashboard.php');
+    header('Location: Dashboard.php');
     exit();
 }
 

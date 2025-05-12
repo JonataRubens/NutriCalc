@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_id'] = $user['id']; // Armazena o ID do usuário na sessão
 
             // Redireciona para o painel administrativo (não importa se superusuário ou normal)
-            header('Location: admin_dashboard.php');
+            header('Location: Dashboard.php');
             exit();
         } else {
             $error = "Senha incorreta!";

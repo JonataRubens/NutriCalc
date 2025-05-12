@@ -1,0 +1,113 @@
+/* Estilo geral para a barra de navegação */
+.navbar {
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    justify-content: space-between; /* Garante que os itens fiquem nos extremos */
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Container para a navegação */
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Links "Home" e "Site" à esquerda */
+.navbar .container nav {
+    display: flex;
+    justify-content: flex-start; /* Alinha os links à esquerda */
+}
+
+.navbar .container nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar .container nav ul li {
+    margin-right: 20px;
+}
+
+.navbar .container nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar .container nav ul li a:hover {
+    background-color: #0056b3;
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* Abas "Usuários" e "Alimentos" à direita */
+.navbar .container .nav-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Alinha as abas à direita */
+}
+
+.navbar .container .nav-right div {
+    color: white;
+    margin-left: 20px; /* Ajusta o espaçamento entre as abas */
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar .container .nav-right div:hover {
+    background-color: #0056b3;
+    border-radius: 5px;
+}
+
+.navbar .container .nav-right span {
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar .container nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar .container nav ul li {
+        margin-bottom: 10px;
+    }
+
+    .navbar .container .nav-right {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar .container .nav-right div {
+        margin-bottom: 10px;
+    }
+}
+ a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }

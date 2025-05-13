@@ -47,7 +47,7 @@ require_once __DIR__ . '/db_connection.php';
               </div>
               <div id="dropdown-menu" class="dropdown-menu">
                   <a href="#" onclick="Perfil(event)">
-                    <span class="logout-icon">📝</span> Perfil
+                    <span class="logout-icon">👤</span> Perfil
                   </a>
                   <a href="#" onclick="Nots(event)">
                     <span class="logout-icon">📝</span> Notas
@@ -103,6 +103,6 @@ require_once __DIR__ . '/db_connection.php';
 
 function Perfil(event) {
   event.preventDefault();
-  window.location.href = '/pages/perfil/perfil.php';}
+  window.location.href = '/pages/perfil/Perfil.php';}
 
   </script>

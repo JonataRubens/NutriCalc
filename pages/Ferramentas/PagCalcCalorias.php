@@ -184,7 +184,6 @@
     </div>
 
 </main>
-<<<<<<< Updated upstream
 
   <script>
     let date = null;
@@ -356,7 +355,5 @@
 
   </script>
 
-=======
 <script src="/assets/js/CalcAvancada.js"></script>
->>>>>>> Stashed changes
 <?php include('../../includes/Footer.html'); ?>

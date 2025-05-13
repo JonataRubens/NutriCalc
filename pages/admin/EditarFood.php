@@ -3,7 +3,7 @@ session_start();
 
 // Verifica se o usuário está logado
 if (!isset($_SESSION['user_id'])) {
-    header('Location: admin_login.php');
+    header('Location: admin.php');
     exit();
 }
 
@@ -36,7 +36,7 @@ if (isset($_GET['id'])) {
         $nome_usuario_logado = $user_data['nome'];
     } else {
         // Se o usuário não for encontrado, redireciona para a página de login
-        header('Location: admin_login.php');
+        header('Location: admin.php');
         exit();
     }
 }
@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_param("ssddddi", $descricao, $categoria, $energia, $proteina, $lipideos, $carboidratos, $id);
     $stmt->execute();
 
-    header('Location: admin_dashboard.php'); // Redireciona de volta para o painel
+    header('Location: admin.php'); // Redireciona de volta para o painel
 }
 ?>
 

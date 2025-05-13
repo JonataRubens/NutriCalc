@@ -3,7 +3,7 @@ session_start();
 
 // Verifica se o usuário está logado
 if (!isset($_SESSION['user_id'])) {
-    header('Location: admin_login.php');
+    header('Location: admin.php');
     exit();
 }
 
@@ -18,6 +18,6 @@ if (isset($_GET['id'])) {
     $stmt->bind_param("i", $id);
     $stmt->execute();
 
-    header('Location: admin_dashboard.php'); // Redireciona de volta para o painel
+    header('Location: Dashboard.php'); // Redireciona de volta para o painel
 }
 ?>

@@ -16,6 +16,10 @@ services:
         sleep 5 &&
         php scripts/verifica_tabela_alimentos.php &&
         sleep 5 &&
+        php scripts/TabelasNots.php &&
+        sleep 5 &&
+        php scripts/verifica_tabela_perfil.php &&
+        sleep 5 &&
         php scripts/inserir_alimentos_amostra.php &&
         apache2-foreground
       "

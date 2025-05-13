@@ -1,12 +1,9 @@
 <?php
-// Começa o PHP antes de qualquer HTML
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-
 require_once __DIR__ . '/db_connection.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -49,6 +46,9 @@ require_once __DIR__ . '/db_connection.php';
                 <span class="seta">&#9662;</span>
               </div>
               <div id="dropdown-menu" class="dropdown-menu">
+                  <a href="#" onclick="Perfil(event)">
+                    <span class="logout-icon">📝</span> Perfil
+                  </a>
                   <a href="#" onclick="Nots(event)">
                     <span class="logout-icon">📝</span> Notas
                   </a>
@@ -68,7 +68,6 @@ require_once __DIR__ . '/db_connection.php';
 
     <?php include('ModalLogin.php'); ?>
     <?php include('ModalRegister.php'); ?>
-
   </header>  
 
   <script>
@@ -82,7 +81,6 @@ require_once __DIR__ . '/db_connection.php';
         document.getElementById('dropdown-menu')?.classList.remove('ativo');
       }
     });
-
 
     function logout(e) {
     e.preventDefault();
@@ -102,5 +100,9 @@ require_once __DIR__ . '/db_connection.php';
   event.preventDefault();
   window.location.href = '/pages/Notas.php';
 }
+
+function Perfil(event) {
+  event.preventDefault();
+  window.location.href = '/pages/perfil/perfil.php';}
 
   </script>

@@ -166,33 +166,33 @@
 - Implementar logica de sessao nas notas afim de impedir links diretos
 
 
-### 📦RF-09: Experiencia de usuario final
+### 📦RF-09: Ranking de alimentos, Adição de "meus alimentos" 
 **User Story:**
 "Eu como usuario logado quero um ranking de alimentos mais saudaveis e que seja possivel a adicao de meus alimentos"
 
 **📝 Regras de Negócio:**
-- Meus alimentos nao serao adicionado ao BD
+- Todos os alimentos de "Meus alimentos" não serão adicionados junto aos alimentos do BD
+- Cada usuario terá a aba seus alimentos
 - O ranking poderá levar em consideração 3 topicos no maximo
-- A adição de alimentos é opcioanl
+- A adição de alimentos é opcional
 
 **Tarefas Técnicas:**
-- Criar o ranking 
+- Criar o ranking de alimentos saudaveis
 - Criação da aba meus alimentos
-- Criação dos ranking na home
 
-### 📦RF-10: Caluculadora avançada 2
+### 📦RF-10: Calculadora avançada 2
 **User Story:**
-"Eu como usuario quero uma  calculadora de ciclos de hormonios"
+"Eu como usuario quero uma calculadora de ciclos de hormonios"
 
 **📝 Regras de Negócio:**
 - Essa calculadora só sera acessada com o usuario logado, e salva no id de usuario
 - será possivel o salvamentos desses dados por meio da geracao de pdf
-
+- Precisará ser levado em consideração os dados dos usuario já preenchidos sendo obrigatorio esses dados
 
 **Tarefas Técnicas:**
-- Criar a calculadora
+- Criar a calculadora hormonal
 - Só sera possivel o uso se estiver logado
-- ser possivel a impressao desses dados em pdf
+- ser possivel o download desses dados em pdf
 
 ---
 
@@ -227,7 +227,7 @@ Geração de PDFs, Calculadora Avançada de Calorias, Perfil com dados do user, 
 ### 🧮Sprint 03 (13/05/2025 - 27/05/2025)
 
 **Objetivo**: 
-Geração de PDFs, Calculadora Avançada de Calorias, Perfil com dados do user, Pagina de admin para controle de usuarios e alimentos no bd, Criar um sistema de Lembretes/notas
+Criação de calculadora hormonal, ranking de alimentos mais saudaveis a fim de deixar claro para o usuario alimentos saudaveis com base em 3 filtros, ferramenta de substituição de alimentos onde no futuro será usado com a aba meus alimentos
 
 **Entregas**:
 - Lista de Substituições (RF-09)

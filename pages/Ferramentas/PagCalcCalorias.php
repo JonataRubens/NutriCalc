@@ -8,10 +8,12 @@
    <!-- Calculadora de calorias dos alimentos -->
        <div class="cal_D_Calorias">
             <h3>Calculadora de calorias dos alimentos</h3>
+            <form action="../../scripts/./dompdf/Geradorpdf.php" method="post" target="_blank">
             <button class="botao-retratil">
                 <span class="icone">📤</span>
                 <span class="texto">Exportar</span>
             </button>
+            </form>
        </div>
 
 
@@ -355,4 +357,5 @@
 
   </script>
 
+<script src="/assets/js/CalcAvancada.js"></script>
 <?php include('../../includes/Footer.html'); ?>

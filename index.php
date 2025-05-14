@@ -26,7 +26,7 @@
     <!-- Calculadoras -->
     <hr class="linha-divisoria">
     <section class="conheca">
-      <h3>Conheça nossas Ferramentas Nutricionais</h3>
+      <h3>Nossas Principais Ferramentas Nutricionais</h3>
       <div class="cards-simples">
         <a href="pages/Ferramentas/PagCalcCalorias.php" class="card" >Calculadora de Calorias</a>
         <a href="pages/Ferramentas/Imc.php" class="card" >Calculadora de IMC e Peso Ideal</a>

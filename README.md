@@ -19,8 +19,16 @@
 - Calcular gasto energético basal
 - Acesso sem login para funcionalidades básicas
 - Login opcional para relatórios em PDF
+- Sistema de Notas/Lembretes
 
-🎨 [Protótipos no Figma](https://www.figma.com/proto/lQPOqAeOSFHSjUynHLdZet/Untitled?node-id=4-185&p=f&t=uzYsCdXIex9B338e-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2)
+**🎨[Protótipo inicial no Figma](https://www.figma.com/proto/lQPOqAeOSFHSjUynHLdZet/Untitled?node-id=4-185&p=f&t=uzYsCdXIex9B338e-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2)**
+
+**📄[Documentação das sprints e designações da equipe](https://github.com/JonataRubens/NutriCalc/blob/develop/DocDasSprints.md).**
+
+## 🗣️ Meios de comunicação da equipe
+- [Link do Trelo (Fluxo de designações de maneira mais visual e formal)](https://trello.com/invite/b/681a0e4615979a30d0ec83b0/ATTIc2e4c7c4927d05db55ad57c97f0570443321E019/nutricalc).
+- Whatsapp
+- GitHub
 
 ---
 
@@ -34,13 +42,14 @@
 
 ---
 
-## 👥 Responsáveis por Área
-| Área                          | Responsáveis                     |
+## 👥 Especialidades por Área
+⚠️**Isso não é uma regra e todos podem trabalhar fora das suas Especialidades**
+| Área                          | Especialidades                     |
 |-------------------------------|----------------------------------|
-| Banco de Dados                | Caio e Afonso                   |
+| Banco de Dados                | Caio, Afonso e Jonata                   |
 | Desenvolvimento Back-End      | Caio, Afonso, Marcus Vinicius, Carlinhos e Jonata |
 | Desenvolvimento Front-End     |Marcus Vinicius, Carlinhos e Jonata|
-| Testes Unitários              | Todas as duplas em suas áreas    |
+| Testes Unitários              | Todos em suas áreas    |
 
 ---
 
@@ -55,36 +64,36 @@
 - Senha deve conter no mínimo 8 caracteres
 
 **Tarefas Técnicas**:
-- ✅ Criar formulário de cadastro
-- ✅ Implementar validação de campos
-- ✅ Desenvolver lógica de armazenamento no BD
+- Criar formulário de cadastro
+- Implementar validação de campos
+- Desenvolver lógica de armazenamento no BD
 
 ### RF-02: Autenticação de Usuário
 **User Story**:  
 "Como usuário, quero fazer login, mas que seja opcional. Quero que seja possivel a verificação de estar logado"
 
 **Tarefas Técnicas**:
-- ✅ Desenvolver formulário de login
-- ✅ Implementar sistema de autenticação
-- ✅ Lógica de login/Registro/Logout e visualização
+- Desenvolver formulário de login
+- Implementar sistema de autenticação
+- Lógica de login/Registro/Logout e visualização
 
 ### RF-03: Cálculos Nutricionais
 **User Story**:  
 "Como usuário, quero calcular informações nutricionais das minhas refeições para ter um acompanhamento mais saudável."
 
 **Tarefas Técnicas**:
-- ✅ Desenvolver interface de registro de refeições
-- ✅ Implementar algoritmos de cálculo nutricional
-- ✔️ (50% Completo) Criar visualização de resultados
+- Desenvolver interface de registro de refeições
+- Implementar algoritmos de cálculo nutricional
+- Criar visualização de resultados
 
 ### RF-04: Calculadora Avançada de Calorias
 **User Story**:  
 "Como usuário, quero uma calculadora precisa de calorias com visual moderno para acompanhar meu consumo diário de forma mais eficiente."
 
 **📝 Regras de Negócio**:
-- ✅ Cálculo baseado em: idade, peso, altura, gênero e nível de atividade
+- Cálculo baseado em: idade, peso, altura, gênero e nível de atividade
 -  Exibição de macros (proteínas, carboidratos, gorduras)
-- ✅ Todos os alimentos devem estar no Banco de Dados
+- Todos os alimentos devem estar no Banco de Dados
 -  Testes unitários 
 
 ### RF-05: Geração de PDF com Informações Pessoais e Cálculos
@@ -120,7 +129,7 @@
 
 **Tarefas Técnicas:**
 
--  ✔️ (50% Completo) Implementar script para extrair dados da tabela de alimentos
+-  Implementar script para extrair dados da tabela de alimentos
 -  Gerar PDF em formato tabular com mPDF ou DomPDF
 -  Bloquear acesso à geração caso o usuário não esteja autenticado
 -  Incluir nome do usuário e data na exportação
@@ -140,6 +149,63 @@
 - CRUD dentro da pagina admin
 - Adição de mais dados de usuario
 
+### 📦RF-08: Criação da opcao de lembretes/notas
+**User Story:**
+"Eu como Usuario estando logado quero que seja possivel a adicao de lembretes para mim poder ter onde guardar estatistica corporais ou mensagens"
+
+**📝 Regras de Negócio:**
+- Sera possivel apenas se estiver logado 
+- Será possivel mesmo com o perfil incompleto
+- CRUD das notas responsivel e de facil entendimento
+- Visualizar todas as notas em um so lugar
+- Abrir as notas e que seja possivel a edicao e exclusao da notas sem afetar as outras notas
+
+**Tarefas Técnicas:**
+- Criar uma pagina para visualizacao de todas as notas
+- CRUD Dentro de Notas
+- Implementar logica de sessao nas notas afim de impedir links diretos
+
+
+### 📦RF-09: Ranking de alimentos, Adição de "meus alimentos" 
+**User Story:**
+"Eu como usuario logado quero um ranking de alimentos mais saudaveis e que seja possivel a adicao de meus alimentos"
+
+**📝 Regras de Negócio:**
+- Todos os alimentos de "Meus alimentos" não serão adicionados junto aos alimentos do BD
+- Cada usuario terá a aba seus alimentos
+- O ranking poderá levar em consideração 3 topicos no maximo
+- A adição de alimentos é opcional
+
+**Tarefas Técnicas:**
+- Criar o ranking de alimentos saudaveis
+- Criação da aba meus alimentos
+
+### 📦RF-10: Calculadora avançada 2
+**User Story:**
+"Eu como usuario quero uma calculadora de ciclos de hormonios"
+
+**📝 Regras de Negócio:**
+- Essa calculadora só sera acessada com o usuario logado, e salva no id de usuario
+- será possivel o salvamentos desses dados por meio da geracao de pdf
+- Precisará ser levado em consideração os dados dos usuario já preenchidos sendo obrigatorio esses dados
+
+**Tarefas Técnicas:**
+- Criar a calculadora hormonal
+- Só sera possivel o uso se estiver logado
+- ser possivel o download desses dados em pdf
+
+### 📦 RF-11 Api e testes
+**User Story:**
+"Eu como Usuario Administrador afim de deixar tudo pronto para uso externo o uso de api se torna necessario, e os testes andam lado a lado para assim garantir um codigo polido e funcional"
+
+**📝 Regras de Negócio:**
+- A API estará acessivel no painel administrativo
+- terá arquivos separados para cada teste em determinado aplicação
+
+**Tarefas Técnicas:**
+- Criação de API
+- Implementação de testes unitarios
+  
 ---
 
 ## 🚀 Roadmap de Sprints
@@ -149,25 +215,39 @@
 Oferecer experiência inicial de navegação e acesso ao sistema com cadastro e login. Permitir montagem de refeições personalizadas e cálculos nutricionais.
 
 **Entregas**:
-- ✅ Tela inicial acessível sem login
-- ✅ Componentes de navegação (Criar Conta/Fazer Login)
-- ✅ Implementação do RF-01 (Cadastro)
-- ✅ Sistema de busca de alimentos (RF-03)
-- ✅ Cálculo e exibição de nutrientes totais
-- ✅ Implementação do cálculos Nutricionais
+- Tela inicial acessível sem login
+- Componentes de navegação (Criar Conta/Fazer Login)
+- Implementação do RF-01 (Cadastro)
+- Sistema de busca de alimentos (RF-03)
+- Cálculo e exibição de nutrientes totais
+- Implementação do cálculos Nutricionais
 
 ### 🧮Sprint 02 (30/04/2025 - 13/05/2025)
 
 **Objetivo**: 
-Geração de PDFs, Calculadora Avançada de Calorias, Perfil com dados do user, Pagina de admin para controle de usuarios e alimentos no bd
+Geração de PDFs, Calculadora Avançada de Calorias, Perfil com dados do user, Pagina de admin para controle de usuarios e alimentos no bd, Criar um sistema de Lembretes/notas
 
 **Entregas**:
-- ❌ Adição de mais informações ao perfil de usuario (afonso)
-- ❌ Calculadora Avançada (RF-04) (carlos)
-- ❌ Geração de PDF com informações pessoais + resultados de cálculos, lista de alimentos cadastrados  (RF-05) (marcos)
-- ❌ Bloqueio da geração se não estiver logado ou perfil incompleto (marcos)
-- ❌ Implementação da pagina de admin (RF-07) (caio) 
-- ❌ Estilização da barra de pesquisa (jonata)
+- Adição de mais informações ao perfil de usuario (afonso)
+- Calculadora Avançada (RF-04) (carlos)
+- Geração de PDF com informações pessoais + resultados de cálculos, lista de alimentos cadastrados  (RF-05) (marcos)
+- Bloqueio da geração se não estiver logado ou perfil incompleto (marcos)
+- Implementação da pagina de admin (RF-07) (caio) 
+- Criacao de Notas/Lembretes (RF-08 )(Jonata)
+
+
+### 🧮Sprint 03 (13/05/2025 - 27/05/2025)
+
+**Objetivo**: 
+Criação de calculadora hormonal, ranking de alimentos mais saudaveis a fim de deixar claro para o usuario alimentos saudaveis com base em 3 filtros, ferramenta de substituição de alimentos onde no futuro será usado com a aba meus alimentos, implementação de API e testes
+
+**Entregas**:
+- Lista de Substituições (RF-09)
+- Calculadora Avançada2 (RF-10)
+- Meus alimentos (RF-09)
+- Ranking de alimentos mais saudaveis (RF-09)
+- Testes unitarios (RF-11)
+- API (RF-11)
 
 ---
 

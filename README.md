@@ -165,6 +165,35 @@
 - CRUD Dentro de Notas
 - Implementar logica de sessao nas notas afim de impedir links diretos
 
+
+### 📦RF-09: Experiencia de usuario final
+**User Story:**
+"Eu como usuario logado quero um ranking de alimentos mais saudaveis e que seja possivel a adicao de meus alimentos"
+
+**📝 Regras de Negócio:**
+- Meus alimentos nao serao adicionado ao BD
+- O ranking poderá levar em consideração 3 topicos no maximo
+- A adição de alimentos é opcioanl
+
+**Tarefas Técnicas:**
+- Criar o ranking 
+- Criação da aba meus alimentos
+- Criação dos ranking na home
+
+### 📦RF-10: Caluculadora avançada 2
+**User Story:**
+"Eu como usuario quero uma  calculadora de ciclos de hormonios"
+
+**📝 Regras de Negócio:**
+- Essa calculadora só sera acessada com o usuario logado, e salva no id de usuario
+- será possivel o salvamentos desses dados por meio da geracao de pdf
+
+
+**Tarefas Técnicas:**
+- Criar a calculadora
+- Só sera possivel o uso se estiver logado
+- ser possivel a impressao desses dados em pdf
+
 ---
 
 ## 🚀 Roadmap de Sprints
@@ -193,6 +222,18 @@ Geração de PDFs, Calculadora Avançada de Calorias, Perfil com dados do user, 
 - Bloqueio da geração se não estiver logado ou perfil incompleto (marcos)
 - Implementação da pagina de admin (RF-07) (caio) 
 - Criacao de Notas/Lembretes (RF-08 )(Jonata)
+
+
+### 🧮Sprint 03 (13/05/2025 - 27/05/2025)
+
+**Objetivo**: 
+Geração de PDFs, Calculadora Avançada de Calorias, Perfil com dados do user, Pagina de admin para controle de usuarios e alimentos no bd, Criar um sistema de Lembretes/notas
+
+**Entregas**:
+- Lista de Substituições (RF-09)
+- Calculadora Avançada2 (RF-10)
+- Meus alimentos (RF-09)
+- Ranking de alimentos mais saudaveis (RF-09)
 
 ---
 

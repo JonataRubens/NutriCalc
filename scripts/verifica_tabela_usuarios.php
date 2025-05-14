@@ -13,6 +13,7 @@ if ($tabelaExiste && $tabelaExiste->num_rows == 0) {
             sobrenome VARCHAR(100) NOT NULL,
             email VARCHAR(150) NOT NULL UNIQUE,
             senha VARCHAR(255) NOT NULL,
+            role ENUM('admin', 'user') NOT NULL DEFAULT 'user',
             criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         );
     ";

@@ -1,11 +1,7 @@
 <?php
-session_start();
-
-// Verifica se o usuário está logado
-if (!isset($_SESSION['user_id'])) {
-    header('Location: admin_login.php');
-    exit();
-}
+include __DIR__ . '/../../includes/RoleMiddleware.php';
+// Verifica se o usuário está logado e tem a função de administrador
+roleMiddleware(['admin']);
 
 include __DIR__ . '/../../includes/db_connection.php';
 

@@ -20,6 +20,8 @@ services:
         sleep 5 &&
         php scripts/verifica_tabela_perfil.php &&
         sleep 5 &&
+        php scripts/CreateAdminUser.php &&
+        sleep 5 &&
         php scripts/inserir_alimentos_amostra.php &&
         apache2-foreground
       "

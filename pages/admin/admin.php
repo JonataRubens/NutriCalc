@@ -27,7 +27,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Verifica se a senha está correta
         if (password_verify($senha, $user['senha'])) {
             $_SESSION['user_id'] = $user['id']; // Armazena o ID do usuário na sessão
-
+            
+            // NOVO: Armazena o papel do usuário na sessão
+            $_SESSION['role'] = $user['role']; 
             // Redireciona para o painel administrativo (não importa se superusuário ou normal)
             header('Location: Dashboard.php');
             exit();

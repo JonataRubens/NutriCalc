@@ -194,17 +194,19 @@
 - Só sera possivel o uso se estiver logado
 - ser possivel o download desses dados em pdf
 
-### 📦 RF-11 Api e testes
+### 📦 RF-11 Api, testes e MVC
 **User Story:**
 "Eu como Usuario Administrador afim de deixar tudo pronto para uso externo o uso de api se torna necessario, e os testes andam lado a lado para assim garantir um codigo polido e funcional"
 
 **📝 Regras de Negócio:**
 - A API estará acessivel no painel administrativo
 - terá arquivos separados para cada teste em determinado aplicação
+- Organização no padrão MVC
 
 **Tarefas Técnicas:**
 - Criação de API
 - Implementação de testes unitarios
+- Reorganizar código fonte no padrão MVC
   
 ---
 
@@ -239,7 +241,7 @@ Geração de PDFs, Calculadora Avançada de Calorias, Perfil com dados do user, 
 ### 🧮Sprint 03 (13/05/2025 - 27/05/2025)
 
 **Objetivo**: 
-Criação de calculadora hormonal, ranking de alimentos mais saudaveis a fim de deixar claro para o usuario alimentos saudaveis com base em 3 filtros, ferramenta de substituição de alimentos onde no futuro será usado com a aba meus alimentos, implementação de API e testes
+Criação de calculadora hormonal, ranking de alimentos mais saudaveis a fim de deixar claro para o usuario alimentos saudaveis com base em 3 filtros, ferramenta de substituição de alimentos onde no futuro será usado com a aba meus alimentos, implementação de API, testes e reorganização no padrão MVC
 
 **Entregas**:
 - Lista de Substituições (RF-09)
@@ -248,6 +250,7 @@ Criação de calculadora hormonal, ranking de alimentos mais saudaveis a fim de 
 - Ranking de alimentos mais saudaveis (RF-09)
 - Testes unitarios (RF-11)
 - API (RF-11)
+- Reorganização no padrão MVC (RF-11)
 
 ---
 

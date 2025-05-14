@@ -99,7 +99,18 @@ Com a evolução do projeto NutriCalc e o aumento da complexidade das funcionali
     - Utilizar biblioteca de geração de PDF 
     - Integrar os dados do perfil e da calculadora no documento final.
 
-- ✅ **Jonata**: Responsável pela **implementação do sistema de lembretes/notas** (RF-08) e apoio técnico geral à equipe.  
+-  **Jonata**: Responsável pela **implementação do sistema de lembretes/notas** (RF-08) e apoio técnico geral à equipe.  
   - Atribuições específicas:
     - Criar CRUD de notas vinculadas ao usuário logado;
     - Garantir autenticação e privacidade dos dados;
+
+**Entregas**:
+- ✅ implementação da página de administração ⚠️ Implementado por Jonata
+- ✅ adicionar novos campos ao perfil do usuário 
+- ❌ calculadora avançada de calorias
+- ✅ geração automática de relatórios em PDF
+- ✅ implementação do sistema de lembretes/notas ⚠️ Implementado por Jonata
+
+
+ # 🧾 Atribuições – Sprint 03 (13/05/2025 - 27/05/2025)
+ (em construção)

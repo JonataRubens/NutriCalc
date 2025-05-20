@@ -1,100 +1,49 @@
-<?php include('includes/NavBar.php'); ?>
-  <!-- Conteúdo principal -->
-  <main class="container">
-    <section class="hero">
-      <h1>Tabela Nutricional</h1>
-      <p>Plataforma nutricional completa, fornecendo informações detalhadas sobre alimentos e ferramentas de apoio para uso pessoal.</p>
+<?php
+// Front Controller do padrão MVC
+// Este arquivo recebe todas as requisições e faz o roteamento para o Controller adequado
 
-      <input type="text" id="searchInput" placeholder="🔍 Pesquisar alimento..." class="search-input">
-      
-      <div id="searchResults" class="search-results">
-        <!-- Resultados da pesquisa serão exibidos aqui -->
-      </div>
-    </section>
+session_start();
 
-    <!-- Grupos alimentares -->
-    <section class="grupos">
-      <h3>Grupos alimentares</h3>
-      <div class="grid-grupos">
-        <button onclick="searchByCategory('Bebidas')">Bebidas</button>
-        <button onclick="searchByCategory('Carnes')">Carnes</button>
-        <button onclick="searchByCategory('Cereais')">Cereais</button>
-        <button onclick="searchByCategory('Frutas')">Frutas</button>
-      </div>
-    </section>
-
-    <!-- Calculadoras -->
-    <hr class="linha-divisoria">
-    <section class="conheca">
-      <h3>Nossas Principais Ferramentas Nutricionais</h3>
-      <div class="cards-simples">
-        <a href="pages/Ferramentas/PagCalcCalorias.php" class="card" >Calculadora de Calorias</a>
-        <a href="pages/Ferramentas/Imc.php" class="card" >Calculadora de IMC e Peso Ideal</a>
-        <a href="pages/Ferramentas/QTDAagua.php" class="card card-agua">Quantidade de Água Ideal</a>
-      </div>
-    </section>
-
-  </main>
-
-  <script>
-    document.getElementById('searchInput').addEventListener('input', function(e) {
-      const searchTerm = e.target.value.trim();
-      const resultsContainer = document.getElementById('searchResults');
-      
-      if (searchTerm.length < 3) {
-        resultsContainer.innerHTML = '';
-        return;
-      }
-      
-      fetch(`includes/SearchAlimentos.php?term=${encodeURIComponent(searchTerm)}`)
-        .then(response => response.json())
-        .then(data => {
-          displayResults(data, resultsContainer);
-        })
-        .catch(error => {
-          console.error('Erro ao buscar alimentos:', error);
-          resultsContainer.innerHTML = '<p>Erro ao realizar a pesquisa.</p>';
-        });
-    });
-
-    function searchByCategory(category) {
-      const resultsContainer = document.getElementById('searchResults');
-      fetch(`includes/SearchAlimentos.php?term=${encodeURIComponent(category)}`)
-        .then(response => response.json())
-        .then(data => {
-          displayResults(data, resultsContainer);
-        })
-        .catch(error => {
-          console.error('Erro ao buscar alimentos por categoria:', error);
-          resultsContainer.innerHTML = '<p>Erro ao realizar a pesquisa por categoria.</p>';
-        });
+// Autoload simples para Controllers e Models
+spl_autoload_register(function ($class) {
+    $paths = [
+        __DIR__ . '/app/Controllers/' . $class . '.php',
+        __DIR__ . '/app/Models/' . $class . '.php',
+    ];
+    foreach ($paths as $path) {
+        if (file_exists($path)) {
+            require_once $path;
+            return;
+        }
     }
+});
 
-    function displayResults(data, container) {
-      if (data.length === 0) {
-        container.innerHTML = '<p>Nenhum alimento encontrado.</p>';
-        return;
-      }
-      
-      let html = '<h3>Resultados da Pesquisa</h3>';
-      html += '<table class="results-table">';
-      html += '<thead><tr><th>Descrição</th><th>Categoria</th><th>Energia (kcal)</th><th>Proteína (g)</th><th>Lipídios (g)</th><th>Carboidratos (g)</th></tr></thead>';
-      html += '<tbody>';
-      
-      data.forEach(alimento => {
-        html += `<tr>
-          <td>${alimento.descricao}</td>
-          <td>${alimento.categoria}</td>
-          <td>${alimento.energia}</td>
-          <td>${alimento.proteina}</td>
-          <td>${alimento.lipideos}</td>
-          <td>${alimento.carboidratos}</td>
-        </tr>`;
-      });
-      
-      html += '</tbody></table>';
-      container.innerHTML = html;
+// Função para limpar a URL
+function getUrl() {
+    $url = isset($_GET['url']) ? $_GET['url'] : '';
+    $url = rtrim($url, '/');
+    $url = filter_var($url, FILTER_SANITIZE_URL);
+    return explode('/', $url);
+}
+
+// Roteamento básico
+$url = getUrl();
+$controllerName = !empty($url[0]) ? ucfirst($url[0]) . 'Controller' : 'HomeController';
+$method = isset($url[1]) ? $url[1] : 'index';
+$params = array_slice($url, 2);
+
+// Verifica se o controller existe
+if (file_exists(__DIR__ . '/app/Controllers/' . $controllerName . '.php')) {
+    $controller = new $controllerName();
+    if (method_exists($controller, $method)) {
+        call_user_func_array([$controller, $method], $params);
+    } else {
+        // Método não encontrado
+        http_response_code(404);
+        echo "Método não encontrado.";
     }
-
-  </script>
- <?php include('includes/Footer.html'); ?>
+} else {
+    // Controller não encontrado
+    http_response_code(404);
+    echo "Página não encontrada.";
+}

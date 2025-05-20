@@ -1,0 +1,29 @@
+<!-- Footer parcial para ser incluído nas views -->
+<footer class="footer">
+ <div class="container">
+   <div class="footer-grid">
+     <div class="footer-col">
+       <h4>NutriCalc</h4>
+       <p>Plataforma de apoio nutricional completa para usuários comuns.</p>
+     </div>
+     <div class="footer-col">
+       <h4>Links rápidos</h4>
+       <ul>
+         <li><a href="/">Página inicial</a></li>
+         <li><a href="/Ferramentas/PagCalcCalorias">Ferramentas Nutricionais</a></li>
+         <li><a href="/Blog">Blog</a></li>
+       </ul>
+     </div>
+     <div class="footer-col">
+       <h4>Contato</h4>
+       <p>Email: nutricalc</p>
+       <p>Suporte: snutricalc</p>
+     </div>
+   </div>
+   <div class="footer-bottom">
+     <p>&copy; 2025 NutriCalc. Todos os direitos reservados.</p>
+   </div>
+ </div>
+</footer>
+</body>
+</html>

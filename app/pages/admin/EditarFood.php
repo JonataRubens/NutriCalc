@@ -1,13 +1,16 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
 
 // Verifica se o usuário está logado
 if (!isset($_SESSION['user_id'])) {
-    header('Location: admin.php');
+    header('Location: /Urls.php?page=admin');
     exit();
 }
 
-include __DIR__ . '/../../includes/db_connection.php';
+include_once __DIR__ . '/../../../public/includes/db_connection.php';
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
@@ -36,7 +39,7 @@ if (isset($_GET['id'])) {
         $nome_usuario_logado = $user_data['nome'];
     } else {
         // Se o usuário não for encontrado, redireciona para a página de login
-        header('Location: admin.php');
+        header('Location: /Urls.php?page=admin');
         exit();
     }
 }
@@ -55,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_param("ssddddi", $descricao, $categoria, $energia, $proteina, $lipideos, $carboidratos, $id);
     $stmt->execute();
 
-    header('Location: admin.php'); // Redireciona de volta para o painel
+    header('Location: /Urls.php?page=admin&action=dash'); // Redireciona de volta para o painel
 }
 ?>
 
@@ -215,15 +218,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <!-- Links "Home" e "Site" à esquerda -->
             <nav>
                 <ul>
-                    <li><a href="Dashboard.php">Home</a></li>
-                    <li><a href="/index.php">Site</a></li>
+                    <li><a href="/Urls.php?page=admin&action=dash">Home</a></li>
+                    <li><a href="/">Site</a></li>
                 </ul>
             </nav>
 
             <!-- Abas "Usuários" e "Alimentos" à direita -->
             <div class="nav-right">
                 <span>Bem-vindo, <?= $nome_usuario_logado ?>!</span>
-                <a href="Logout.php">Sair</a> <!-- Link de Sair -->
+                <a href="/Urls.php?page=logout-admin">Sair</a> <!-- Link de Sair -->
             </div>
         </div>
     </div>

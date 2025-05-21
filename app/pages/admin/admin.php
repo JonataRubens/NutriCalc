@@ -1,20 +1,18 @@
 <?php
 session_start();
+include_once __DIR__ . '/../../../public/includes/db_connection.php';
 
-// Verifica se o usuário já está logado
+// Se já está logado, redireciona para o dashboard
 if (isset($_SESSION['user_id'])) {
-    // Se já estiver logado, redireciona para o painel administrativo
-    header('Location: Dashboard.php');
+    header('Location: /Urls.php?page=admin&action=dash');
     exit();
 }
 
-include_once __DIR__ . '/../../../public/includes/db_connection.php';
+// Processa o login
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = $_POST['email'] ?? '';
+    $senha = $_POST['senha'] ?? '';
 
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
-
-    // Verifica se o usuário existe no banco de dados
     $sql = "SELECT * FROM usuarios WHERE email = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $email);
@@ -23,13 +21,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($result->num_rows == 1) {
         $user = $result->fetch_assoc();
-
-        // Verifica se a senha está correta
         if (password_verify($senha, $user['senha'])) {
-            $_SESSION['user_id'] = $user['id']; // Armazena o ID do usuário na sessão
-
-            // Redireciona para o painel administrativo (não importa se superusuário ou normal)
-            header('Location: Dashboard.php');
+            $_SESSION['user_id'] = $user['id'];
+            header('Location: /Urls.php?page=admin&action=dash');
             exit();
         } else {
             $error = "Senha incorreta!";
@@ -37,11 +31,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         $error = "Usuário não encontrado!";
     }
-
     $conn->close();
 }
-?>
 
+// Exibe o formulário de login normalmente (HTML igual ao seu)
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -134,7 +128,7 @@ h1 {
 <body>
     <div class="form-login">
         <h1>Login</h1>
-        <form method="POST" action="admin.php">
+        <form method="POST" action="/Urls.php?page=admin">
             <label for="email">Email</label>
             <input type="email" name="email" required><br>
 

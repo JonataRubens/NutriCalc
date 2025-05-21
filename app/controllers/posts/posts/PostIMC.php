@@ -1,4 +1,4 @@
-<?php include('../../includes/NavBar.php'); ?>
+<?php include('../public/includes/NavBar.php'); ?>
     <div class="post-content">
       <h1>Entenda o IMC com a Calculadora de Peso Ideal</h1>
       <p>O <strong>Índice de Massa Corporal (IMC)</strong> é um dos indicadores mais utilizados no mundo para avaliar se uma pessoa está com o peso adequado para a sua altura. Simples e rápido, ele permite identificar situações de magreza, peso normal, sobrepeso e obesidade.</p>
@@ -34,4 +34,4 @@
       <p>O IMC é uma ferramenta simples, mas poderosa para cuidar da saúde. Use nossa <strong>Calculadora de IMC e Peso Ideal</strong> para verificar se seu peso está dentro do recomendado e trace metas com segurança e responsabilidade.</p>
       <p><a href="#">Acesse a calculadora agora mesmo</a> e descubra seu índice ideal.</p>
     </div>
-<?php include('../../includes/Footer.html'); ?>
+<?php include('../public/includes/Footer.html'); ?>

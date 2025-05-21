@@ -1,36 +1,37 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 // Verifica se o usuário está logado
 if (!isset($_SESSION['user_id'])) {
-    header('Location: admin.php');
+    header('Location: /Urls.php?page=admin');
     exit();
 }
-
-include __DIR__ . '/../../includes/db_connection.php';
+include_once __DIR__ . '/../../../public/includes/db_connection.php';
 
 // Definindo o número de registros por página
-$registros_por_pagina = 10; 
+$registros_por_pagina = 15; 
 
 // Calculando o número da página atual
-$pagina_atual = isset($_GET['page']) ? $_GET['page'] : 1;
+$pagina_atual = isset($_GET['p']) ? (int)$_GET['p'] : 1;
 $inicio = ($pagina_atual - 1) * $registros_por_pagina;
 
-// Consultando os alimentos com paginação
-$sql_alimentos = "SELECT * FROM alimentos LIMIT $inicio, $registros_por_pagina";
+// Alimentos
+$pagina_alimentos = isset($_GET['p_alimentos']) ? (int)$_GET['p_alimentos'] : 1;
+$inicio_alimentos = ($pagina_alimentos - 1) * $registros_por_pagina;
+$sql_alimentos = "SELECT * FROM alimentos LIMIT $inicio_alimentos, $registros_por_pagina";
 $alimentos = $conn->query($sql_alimentos);
-
-// Consultando o total de alimentos para calcular o número de páginas
 $sql_total_alimentos = "SELECT COUNT(*) AS total FROM alimentos";
 $result_total_alimentos = $conn->query($sql_total_alimentos);
 $total_alimentos = $result_total_alimentos->fetch_assoc()['total'];
-$total_paginas = ceil($total_alimentos / $registros_por_pagina);
+$total_paginas_alimentos = ceil($total_alimentos / $registros_por_pagina);
 
-// Consultando os usuários com paginação
-$sql_usuarios = "SELECT * FROM usuarios LIMIT $inicio, $registros_por_pagina";
+// Usuários
+$pagina_usuarios = isset($_GET['p_usuarios']) ? (int)$_GET['p_usuarios'] : 1;
+$inicio_usuarios = ($pagina_usuarios - 1) * $registros_por_pagina;
+$sql_usuarios = "SELECT * FROM usuarios LIMIT $inicio_usuarios, $registros_por_pagina";
 $usuarios = $conn->query($sql_usuarios);
-
-// Consultando o total de usuários para calcular o número de páginas
 $sql_total_usuarios = "SELECT COUNT(*) AS total FROM usuarios";
 $result_total_usuarios = $conn->query($sql_total_usuarios);
 $total_usuarios = $result_total_usuarios->fetch_assoc()['total'];
@@ -50,22 +51,31 @@ $total_paginas_usuarios = ceil($total_usuarios / $registros_por_pagina);
         $nome_usuario_logado = $user_data['nome'];
     } else {
         // Se o usuário não for encontrado, redireciona para a página de login
-        header('Location: admin.php');
+        header('Location: /Urls.php?page=admin');
         exit();
     }
 
 // Adicionando um novo usuário
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_user'])) {
-    $nome = $_POST['nome'];
-    $sobrenome = $_POST['sobrenome'];
     $email = $_POST['email'];
-    $senha = password_hash($_POST['senha'], PASSWORD_BCRYPT); // Criptografando a senha
-
-    $sql = "INSERT INTO usuarios (nome, sobrenome, email, senha) VALUES (?, ?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssss", $nome, $sobrenome, $email, $senha);
-    $stmt->execute();
+    $check = $conn->prepare("SELECT id FROM usuarios WHERE email = ?");
+    $check->bind_param("s", $email);
+    $check->execute();
+    $check->store_result();
+    if ($check->num_rows > 0) {
+        $error = "Este e-mail já está cadastrado!";
+    } else {
+        // Inserir normalmente
+        $nome = $_POST['nome'];
+        $sobrenome = $_POST['sobrenome'];
+        $senha = password_hash($_POST['senha'], PASSWORD_BCRYPT);
+        $sql = "INSERT INTO usuarios (nome, sobrenome, email, senha) VALUES (?, ?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ssss", $nome, $sobrenome, $email, $senha);
+        $stmt->execute();
+    }
 }
+
 // Adicionando um novo alimento
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_food'])) {
     $descricao = $_POST['descricao'];
@@ -125,8 +135,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_food'])) {
         <!-- Links "Home" e "Site" à esquerda -->
         <nav>
             <ul>
-                <li><a href="Dashboard.php">Home</a></li>
-                <li><a href="/index.php">Site</a></li>
+                <li><a href="/Urls.php?page=admin">Home</a></li>
+                <li><a href="/">Site</a></li>
             </ul>
         </nav>
 
@@ -135,7 +145,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_food'])) {
             <div onclick="openTab('usuarios')">Usuários</div>
             <div onclick="openTab('alimentos')">Alimentos</div>
             <span>Bem-vindo, <?= $nome_usuario_logado ?>!</span>
-            <a href="Logout.php">Sair</a>
+            <a href="/Urls.php?page=logout-admin">Sair</a>
         </div>
     </div>
 </div>
@@ -144,7 +154,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_food'])) {
     <!-- Conteúdo das Abas -->
     <!-- Aba de Usuários -->
     <div id="usuarios" class="tab-content active">
-        <h2>Usuários Cadastrados</h2>
+        <h2 id="usuarios">Usuários Cadastrados</h2>
         <table border="1">
             <tr>
                 <th>ID</th>
@@ -158,17 +168,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_food'])) {
                 <td><?= $user['nome'] . ' ' . $user['sobrenome'] ?></td>
                 <td><?= $user['email'] ?></td>
                 <td>
-                    <a href="EditarUser.php?id=<?= $user['id'] ?>">Editar</a> |
-                    <a href="DelUser.php?id=<?= $user['id'] ?>">Excluir</a>
+                    <a href="/Urls.php?page=admin&action=edit&tipo=user&id=<?= $user['id'] ?>" >Editar</a> |
+                    <a href="/Urls.php?page=admin&action=delete&tipo=user&id=<?= $user['id'] ?>">Excluir</a>
                 </td>
             </tr>
             <?php } ?>
         </table>
 
         <div class="pagination">
-            <!-- Paginador de Usuários -->
             <?php for ($i = 1; $i <= $total_paginas_usuarios; $i++) { ?>
-                <a href="?page=<?= $i ?>" class="<?= ($i == $pagina_atual) ? 'active' : '' ?>"><?= $i ?></a>
+                <a href="/Urls.php?page=admin&action=dash&p_usuarios=<?= $i ?>&tab=usuarios#usuarios"
+                class="<?= ($i == $pagina_usuarios) ? 'active' : '' ?>">
+                <?= $i ?>
+                </a>
             <?php } ?>
         </div>
 
@@ -191,9 +203,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_food'])) {
     </div>
 
     <!-- Aba de Alimentos -->
-    <!-- Aba de Alimentos -->
     <div id="alimentos" class="tab-content">
-        <h2>Alimentos Cadastrados</h2>
+        <h2 id="alimentos">Alimentos Cadastrados</h2>
         <table border="1">
             <tr>
                 <th>ID</th>
@@ -215,17 +226,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_food'])) {
                 <td><?= $alimento['lipideos'] ?></td>
                 <td><?= $alimento['carboidratos'] ?></td>
                 <td>
-                    <a href="EditarFood.php?id=<?= $alimento['id'] ?>">Editar</a> |
-                    <a href="DelFood.php?id=<?= $alimento['id'] ?>">Excluir</a>
+                    <a href="/Urls.php?page=admin&action=edit&tipo=food&id=<?= $alimento['id'] ?>">Editar</a> |
+                    <a href="/Urls.php?page=admin&action=delete&tipo=food&id=<?= $alimento['id'] ?>">Excluir</a>
                 </td>
             </tr>
             <?php } ?>
         </table>
 
         <div class="pagination">
-            <!-- Paginador de Alimentos -->
-            <?php for ($i = 1; $i <= $total_paginas; $i++) { ?>
-                <a href="?page=<?= $i ?>" class="<?= ($i == $pagina_atual) ? 'active' : '' ?>"><?= $i ?></a>
+            <?php for ($i = 1; $i <= $total_paginas_alimentos; $i++) { ?>
+               <a href="/Urls.php?page=admin&action=dash&p_alimentos=<?= $i ?>&tab=alimentos#alimentos"
+                class="<?= ($i == $pagina_alimentos) ? 'active' : '' ?>">
+                <?= $i ?>
+                </a>
+
             <?php } ?>
         </div>
 
@@ -255,15 +269,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_food'])) {
 
      <script>
         function openTab(tabName) {
-            // Esconde todas as abas
             var tabs = document.querySelectorAll('.tab-content');
             tabs.forEach(function(tab) {
                 tab.classList.remove('active');
             });
-
-            // Mostra a aba que foi clicada
             document.getElementById(tabName).classList.add('active');
         }
-    </script>
+
+        // Ativa a aba correta ao carregar a página, conforme o parâmetro da URL
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const tab = urlParams.get('tab');
+            if (tab === 'alimentos') {
+                openTab('alimentos');
+            } else {
+                openTab('usuarios');
+            }
+        }
+</script>
 </body>
 </html>

@@ -1,9 +1,10 @@
 <?php
 session_start();
-require_once '../../includes/db_connection.php';
+require_once __DIR__ . '/../../../public/includes/db_connection.php';
+require_once __DIR__ . '/../../models/Nota.php'; // Inclui o model
 
 if (!isset($_SESSION['usuario_id'])) {
-    header('Location: ../index.php');
+    header('Location: /');
     exit();
 }
 $id_usuario = $_SESSION['usuario_id'];
@@ -14,20 +15,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $conteudo = $_POST['conteudo'] ?? '';
 
     if (!empty($titulo) && !empty($conteudo)) {
-        $stmt = $conn->prepare("INSERT INTO notas (id_usuario, titulo, conteudo) VALUES (?, ?, ?)");
-        $stmt->bind_param("iss", $id_usuario, $titulo, $conteudo);
-
-        if ($stmt->execute()) {
-            header("Location: ../Notas.php");
+        // Usando o model para criar a nota
+        $notaModel = new Nota($conn);
+        if ($notaModel->criar($titulo, $conteudo, $id_usuario)) {
+            header("Location: /Urls.php?page=notas");
             exit();
         } else {
-            $erro = "Erro ao salvar a nota: " . $conn->error;
+            $erro = "Erro ao salvar a nota.";
         }
     } else {
         $erro = "Título e conteúdo são obrigatórios.";
     }
 }
-include('../../includes/NavBar.php');
+include('../public/includes/NavBar.php');
 ?>
 <link rel="stylesheet" href="/assets/css/MinhasNotas.css">
 <link rel="stylesheet" href="/assets/css/NewsNotas.css">
@@ -46,9 +46,9 @@ include('../../includes/NavBar.php');
             <button type="submit" class="botao botao-salvar">✔ Salvar Nota</button>
             
         </form>
-        <a href="../Notas.php" class="botao botao-voltar">⬅️ Voltar</a>
+        <a href="/Urls.php?page=notas" class="botao botao-voltar">⬅️ Voltar</a>
 
         
     </body>
 </main>
-<?php include('../../includes/Footer.html'); ?>
+<?php include('../public/includes/Footer.html'); ?>

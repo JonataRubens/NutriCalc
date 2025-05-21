@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once __DIR__ . '/../../includes/db_connection.php';
+include_once __DIR__ . '/../../../public/includes/db_connection.php';
 
 
 header('Content-Type: application/json');

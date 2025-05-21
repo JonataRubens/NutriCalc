@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . '/../includes/db_connection.php';
+include __DIR__ . '/../app/includes/db_connection.php';
 
 // Verifica se a tabela 'usuarios' existe
 $tabelaExiste = $conn->query("SHOW TABLES LIKE 'usuarios'");

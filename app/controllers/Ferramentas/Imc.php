@@ -1,4 +1,4 @@
-<?php include('../../includes/NavBar.php'); ?>
+<?php include('../public/includes/NavBar.php'); ?>
 <main class="container">
 <hr class="linha-divisoria">
     <div class="agua-wrapper">
@@ -88,5 +88,4 @@
 
 
 </body>
-
-<?php include('../../includes/Footer.html'); ?>
+<?php include('../public/includes/Footer.html'); ?>

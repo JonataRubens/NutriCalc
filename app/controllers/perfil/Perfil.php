@@ -1,58 +1,42 @@
 <?php
+// app/controllers/perfil/Perfil.php
 session_start();
-require_once('../../includes/db_connection.php');
+require_once __DIR__ . '/../../../public/includes/db_connection.php';
+require_once __DIR__ . '/../../models/Perfil.php';
 
 if (!isset($_SESSION['usuario_id'])) {
-    header("Location: /login.php");
+    header("Location: /");
     exit;
 }
 
 $usuario_id = $_SESSION['usuario_id'];
 $mensagem = "";
-$perfil = [
-    'peso' => '',
-    'idade' => '',
-    'altura' => '',
-    'ativo' => '',
-    'sexo' => '',
-    'objetivo' => '',
-];
 
-// Verifica se perfil existe
-$stmt = $conn->prepare("SELECT * FROM perfil_usuario WHERE usuario_id = ?");
-$stmt->bind_param("i", $usuario_id);
-$stmt->execute();
-$resultado = $stmt->get_result();
-if ($resultado->num_rows > 0) {
-    $perfil = $resultado->fetch_assoc();
-}
-$stmt->close();
+// Usando o model
+$perfilModel = new Perfil($conn);
+$perfil = $perfilModel->buscarPorUsuario($usuario_id);
 
 // Salva ou atualiza perfil
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $peso = floatval($_POST['peso']);
-    $idade = intval($_POST['idade']);
-    $altura = floatval($_POST['altura']);
-    $ativo = isset($_POST['ativo']) ? 1 : 0;
-    $sexo = $_POST['sexo'];
-    $objetivo = $_POST['objetivo'];
-
-    if ($perfil['usuario_id'] ?? false) {
-        // Atualizar
-        $stmt = $conn->prepare("UPDATE perfil_usuario SET peso = ?, idade = ?, altura = ?, ativo = ?, sexo = ?, objetivo = ? WHERE usuario_id = ?");
-        $stmt->bind_param("diidssi", $peso, $idade, $altura, $ativo, $sexo, $objetivo, $usuario_id);
-        $mensagem = $stmt->execute() ? "Perfil atualizado com sucesso!" : "Erro ao atualizar perfil.";
-    } else {
-        // Inserir
-        $stmt = $conn->prepare("INSERT INTO perfil_usuario (usuario_id, peso, idade, altura, ativo, sexo, objetivo) VALUES (?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("idiidss", $usuario_id, $peso, $idade, $altura, $ativo, $sexo, $objetivo);
-        $mensagem = $stmt->execute() ? "Perfil criado com sucesso!" : "Erro ao criar perfil.";
-    }
-    $stmt->close();
-
+    $dados = [
+        'peso' => floatval($_POST['peso']),
+        'idade' => intval($_POST['idade']),
+        'altura' => floatval($_POST['altura']),
+        'ativo' => isset($_POST['ativo']) ? 1 : 0,
+        'sexo' => $_POST['sexo'],
+        'objetivo' => $_POST['objetivo']
+    ];
+    
+    $mensagem = $perfilModel->salvar($usuario_id, $dados);
+    
     // Redireciona após qualquer operação
-    header("Location: perfil.php?mensagem=" . urlencode($mensagem));
+    header("Location: /Urls.php?page=perfil&mensagem=" . urlencode($mensagem));
     exit;
+}
+
+// Mensagem da query string
+if (isset($_GET['mensagem'])) {
+    $mensagem = htmlspecialchars($_GET['mensagem']);
 }
 
 // Mensagem da query string
@@ -68,13 +52,13 @@ if (isset($_GET['mensagem'])) {
     $mensagem = htmlspecialchars($_GET['mensagem']);
 }
 ?>
-<!DOCTYPE html>
-<html lang="pt-BR">
+
+<main>
 <head>
   <meta charset="UTF-8">
   <title>Perfil do Usuário</title>
 </head>
-<?php include('../../includes/NavBar.php'); ?>
+<?php include('../public/includes/NavBar.php'); ?>
 <link rel="stylesheet" href="/assets/css/Perfil.css">
 <body>
 
@@ -130,5 +114,6 @@ if (isset($_GET['mensagem'])) {
     <button type="submit"><?= isset($perfil['usuario_id']) ? 'Atualizar' : 'Salvar' ?> Perfil</button>
   </form>
 </div>
+  </main>
 
-<?php include('../../includes/Footer.html'); ?>
+<?php include('../public/includes/Footer.html'); ?>

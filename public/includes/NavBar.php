@@ -24,18 +24,18 @@ require_once __DIR__ . '/db_connection.php';
     <div class="container">
       <nav>
         <ul>
-          <li><a href="/index.php">🏠 Página inicial</a></li>
+          <li><a href="/">🏠 Página inicial</a></li>
           <li><a href="">🛠️ Ferramentas Nutricionais</a>
           <div class="submenu">
           <ul>
-            <li><a href="/pages/Ferramentas/Imc.php">Calculadora de IMC</a></li>
-            <li><a href="/pages/Ferramentas/QTDAagua.php">Quantidade de Água Ideal</a></li>
-            <li><a href="/pages/Ferramentas/CalcCalorias.php">Calculadora de Gasto Calorias</a></li>
-            <li><a href="/pages/Ferramentas/PagCalcCalorias.php">Calculadora de Calorias</a></li>
+            <li><a href="Urls.php?page=imc">Calculadora de IMC</a></li>
+            <li><a href="Urls.php?page=agua">Quantidade de Água Ideal</a></li>
+            <li><a href="Urls.php?page=cal-gasto">Calculadora de Gasto Calorias</a></li>
+            <li><a href="Urls.php?page=calculadora-calorias">Calculadora de Calorias</a></li>
           </ul>
         </div>
         </li>
-          <li><a href="/pages/Blog.php">📑 Blog</a></li>
+          <li><a href="Urls.php?page=blog">📑 Blog</a></li>
         </ul>
         <div class="nav-right">
           <?php if (isset($_SESSION['usuario_nome'])): ?>
@@ -66,8 +66,8 @@ require_once __DIR__ . '/db_connection.php';
       </nav>
     </div>
 
-    <?php include('ModalLogin.php'); ?>
-    <?php include('ModalRegister.php'); ?>
+    <?php include __DIR__ . '/../../app/views/ModalLogin.php'; ?>
+    <?php include __DIR__ . '/../../app/views/ModalRegister.php'; ?>
   </header>  
 
   <script>
@@ -84,7 +84,7 @@ require_once __DIR__ . '/db_connection.php';
 
     function logout(e) {
     e.preventDefault();
-    fetch('/pages/login/Logout.php')
+    fetch('/Urls.php?page=logout')
       .then(response => {
         if (response.ok) {
           // Atualiza a página para refletir o logout (ex: troca nav bar)
@@ -98,11 +98,11 @@ require_once __DIR__ . '/db_connection.php';
 
   function Nots(event) {
   event.preventDefault();
-  window.location.href = '/pages/Notas.php';
+  window.location.href = '/Urls.php?page=notas';
 }
 
 function Perfil(event) {
   event.preventDefault();
-  window.location.href = '/pages/perfil/Perfil.php';}
+  window.location.href = '/Urls.php?page=perfil';}
 
   </script>

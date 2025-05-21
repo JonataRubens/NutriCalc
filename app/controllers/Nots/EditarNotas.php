@@ -1,8 +1,13 @@
 <?php
 session_start();
-require_once '../../includes/db_connection.php';
+require_once __DIR__ . '/../../../public/includes/db_connection.php';
+require_once __DIR__ . '/../../models/Nota.php'; // Inclui o model
 
-$id_usuario = $_SESSION['usuario_id'] ?? 1;
+if (!isset($_SESSION['usuario_id'])) {
+    die('Acesso não autorizado.');
+}
+
+$id_usuario = $_SESSION['usuario_id'];
 
 if (!isset($_GET['id'])) {
     die('ID da nota não fornecido.');
@@ -10,17 +15,13 @@ if (!isset($_GET['id'])) {
 
 $id_nota = intval($_GET['id']);
 
-// Busca a nota
-$stmt = $conn->prepare("SELECT titulo, conteudo FROM notas WHERE id = ? AND id_usuario = ?");
-$stmt->bind_param("ii", $id_nota, $id_usuario);
-$stmt->execute();
-$result = $stmt->get_result();
+// Usando o model para buscar a nota
+$notaModel = new Nota($conn);
+$nota = $notaModel->buscarPorId($id_nota, $id_usuario);
 
-if ($result->num_rows !== 1) {
+if (!$nota) {
     die('Nota não encontrada.');
 }
-
-$nota = $result->fetch_assoc();
 
 // Atualiza se enviado via POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -28,19 +29,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $novoConteudo = $_POST['conteudo'] ?? '';
 
     if (!empty($novoTitulo) && !empty($novoConteudo)) {
-        $update = $conn->prepare("UPDATE notas SET titulo = ?, conteudo = ? WHERE id = ? AND id_usuario = ?");
-        $update->bind_param("ssii", $novoTitulo, $novoConteudo, $id_nota, $id_usuario);
-        if ($update->execute()) {
-            header("Location: ../Notas.php");
+        // Usando o model para atualizar a nota
+        if ($notaModel->atualizar($id_nota, $novoTitulo, $novoConteudo, $id_usuario)) {
+            header("Location: /Urls.php?page=notas");
             exit();
         } else {
-            $erro = "Erro ao atualizar nota: " . $conn->error;
+            $erro = "Erro ao atualizar nota.";
         }
     } else {
         $erro = "Título e conteúdo são obrigatórios.";
     }
 }
-include('../../includes/NavBar.php');
+include('../public/includes/NavBar.php');
 ?>
 
 <link rel="stylesheet" href="/assets/css/MinhasNotas.css">
@@ -59,6 +59,6 @@ include('../../includes/NavBar.php');
         <button type="submit">✔ Salvar Alterações</button>
     </form>
 
-    <a href="../Notas.php" class="botao botao-voltar">⬅️ Voltar</a>
+    <a href="/Urls.php?page=notas" class="botao botao-voltar">⬅️ Voltar</a>
 </main>
-<?php include('../../includes/Footer.html'); ?>
+<?php include('../public/includes/Footer.html'); ?>

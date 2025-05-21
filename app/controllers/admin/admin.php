@@ -8,7 +8,7 @@ if (isset($_SESSION['user_id'])) {
     exit();
 }
 
-include('../../includes/db_connection.php');
+include_once __DIR__ . '/../../../public/includes/db_connection.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $email = $_POST['email'];

@@ -1,4 +1,4 @@
-<?php include('../../includes/NavBar.php'); ?>
+<?php include('../public/includes/NavBar.php'); ?>
 <link rel="stylesheet" href="../../assets/css/Calorias.css">
 
 <hr class="linha-divisoria">
@@ -130,4 +130,4 @@
     });
   </script>
 
-<?php include('../../includes/Footer.html'); ?>
+<?php include('../public/includes/Footer.html'); ?>

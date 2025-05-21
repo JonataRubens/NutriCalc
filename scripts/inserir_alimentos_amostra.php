@@ -1,5 +1,6 @@
 <?php
-include __DIR__ . '/../includes/db_connection.php';
+include __DIR__ . '/../public/includes/db_connection.php';
+
 
 // Array de alimentos de diferentes categorias baseados na tabela TACO
 // [descricao, categoria, energia, proteina, lipideos, carboidratos]

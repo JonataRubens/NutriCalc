@@ -1,5 +1,6 @@
 <?php
-include __DIR__ . '/../includes/db_connection.php';
+include __DIR__ . '/../public/includes/db_connection.php';
+
 // Verifica se a tabela 'perfil_usuario' existe
 $tabelaExiste = $conn->query("SHOW TABLES LIKE 'perfil_usuario'");
 

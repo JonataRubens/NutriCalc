@@ -1,4 +1,4 @@
-<?php include('../includes/NavBar.php'); ?>
+<?php include('../public/includes/NavBar.php'); ?>
 <main class="container">
     <h1>Blog NutriCalc</h1>
     <p>Saiba mais sobre nossas calculadoras e como elas funcionam.</p>
@@ -29,4 +29,4 @@
             </div>
         </section>
 </main>
-<?php include('../includes/Footer.html'); ?>
+<?php include('../public/includes/Footer.html'); ?>

@@ -1,4 +1,4 @@
-<?php include('../../includes/NavBar.php'); ?>
+<?php include('../public/includes/NavBar.php'); ?>
 <main class="container">
  <div class="text-wrapper">
     <h1>Tabela Nutricional</h1>
@@ -358,4 +358,4 @@
   </script>
 
 <script src="/assets/js/CalcAvancada.js"></script>
-<?php include('../../includes/Footer.html'); ?>
+<?php include('../public/includes/Footer.html'); ?>

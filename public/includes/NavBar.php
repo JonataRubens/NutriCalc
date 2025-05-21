@@ -32,6 +32,7 @@ require_once __DIR__ . '/db_connection.php';
             <li><a href="Urls.php?page=agua">Quantidade de Água Ideal</a></li>
             <li><a href="Urls.php?page=cal-gasto">Calculadora de Gasto Calorias</a></li>
             <li><a href="Urls.php?page=calculadora-calorias">Calculadora de Calorias</a></li>
+            <li><a href="Urls.php?page=monstro">Monstro</a></li>
           </ul>
         </div>
         </li>

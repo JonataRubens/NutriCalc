@@ -1,4 +1,4 @@
-<?php include('../../includes/NavBar.php'); ?>
+<?php include('../public/includes/NavBar.php'); ?>
 <div class="post-content">
   <h1>Como funciona a Calculadora de Gasto Calórico</h1>
 
@@ -50,4 +50,4 @@
   <h2>🚀 Comece agora</h2>
   <p>Entender seu gasto calórico é o primeiro passo para uma alimentação inteligente. <strong><a href="#">Clique aqui para usar a calculadora de gasto calórico</a></strong> e comece a tomar decisões mais saudáveis hoje mesmo!</p>
 </div>
-<?php include('../../includes/Footer.html'); ?>
+<?php include('../public/includes/Footer.html'); ?>

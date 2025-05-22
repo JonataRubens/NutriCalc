@@ -31,8 +31,12 @@ require_once __DIR__ . '/db_connection.php';
             <li><a href="Urls.php?page=imc">Calculadora de IMC</a></li>
             <li><a href="Urls.php?page=agua">Quantidade de Água Ideal</a></li>
             <li><a href="Urls.php?page=cal-gasto">Calculadora de Gasto Calorias</a></li>
+<<<<<<< HEAD
             <li><a href="Urls.php?page=calculadora-calorias">Calculadora de Calorias</a></li>
             <li><a href="Urls.php?page=monstro">Monstro</a></li>
+=======
+            <li><a href="Urls.php?page=meus-alimentos">MeusAlimentos</a></li>
+>>>>>>> develop
           </ul>
         </div>
         </li>
@@ -85,7 +89,7 @@ require_once __DIR__ . '/db_connection.php';
 
     function logout(e) {
     e.preventDefault();
-    fetch('/Urls.php?page=logout')
+    fetch('/Urls.php?page=logout&type=user')
       .then(response => {
         if (response.ok) {
           // Atualiza a página para refletir o logout (ex: troca nav bar)

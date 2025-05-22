@@ -1,4 +1,4 @@
-<?php include('../../includes/NavBar.php'); ?>
+<?php include('../public/includes/NavBar.php'); ?>
         <div class="post-content">
           <h1>Quantos Litros de Água Você Deve Beber por Dia?</h1>
           <p>Manter-se hidratado é uma das práticas mais simples — e mais negligenciadas — para uma vida saudável. A <strong>Calculadora de Água Ideal</strong> do NutriCalc ajuda você a descobrir a quantidade ideal de ingestão de água com base no seu peso.</p>
@@ -32,4 +32,4 @@
           <p>A água é essencial para o funcionamento ideal do corpo. Com a Calculadora de Água do NutriCalc, você pode estabelecer uma meta personalizada de hidratação e melhorar sua saúde de forma simples e natural.</p>
           <p><a href="#">Calcule agora sua ingestão diária ideal de água</a>.</p>
         </div>
-<?php include('../../includes/Footer.html'); ?>
+<?php include('../public/includes/Footer.html'); ?>

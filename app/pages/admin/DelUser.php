@@ -1,13 +1,15 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 // Verifica se o usuário está logado
 if (!isset($_SESSION['user_id'])) {
-    header('Location: admin.php');
+    header('Location: /Urls.php?page=logout-admin');
     exit();
 }
 
-include __DIR__ . '/../../includes/db_connection.php';
+include_once __DIR__ . '/../../../public/includes/db_connection.php';
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
@@ -18,6 +20,6 @@ if (isset($_GET['id'])) {
     $stmt->bind_param("i", $id);
     $stmt->execute();
 
-    header('Location: Dashboard.php'); // Redireciona de volta para o painel
+    header('Location: /Urls.php?page=admin&action=dash'); // Redireciona de volta para o painel
 }
 ?>

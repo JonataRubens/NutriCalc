@@ -28,9 +28,9 @@
     <section class="conheca">
       <h3>Nossas Principais Ferramentas Nutricionais</h3>
       <div class="cards-simples">
-        <a href="/Rotas/Urls.php?page=calculadora-calorias" class="card" >Calculadora de Calorias</a>
-        <a href="/Rotas/Urls.php?page=imc" class="card" >Calculadora de IMC e Peso Ideal</a>
-        <a href="/Rotas/Urls.php?page=agua" class="card card-agua">Quantidade de Água Ideal</a>
+        <a href="/Urls.php?page=meus-alimentos" class="card" >Calculadora de Calorias</a>
+        <a href="/Urls.php?page=imc" class="card" >Calculadora de IMC e Peso Ideal</a>
+        <a href="/Urls.php?page=agua" class="card card-agua">Quantidade de Água Ideal</a>
       </div>
     </section>
 

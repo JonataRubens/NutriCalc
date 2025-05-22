@@ -18,8 +18,8 @@ if ($page == 'register') {
 }
 
 switch ($page) {
-    case 'calculadora-calorias':
-        require_once '../app/controllers/Ferramentas/PagCalcCalorias.php';
+    case 'meus-alimentos':
+        require_once '../app/controllers/Ferramentas/MeusAlimentos.php';
         break;
     case 'imc':
         require_once '../app/controllers/Ferramentas/Imc.php';
@@ -58,15 +58,61 @@ switch ($page) {
         break;
 
     case 'admin':
-        require_once '../app/controllers/admin/admin.php';
+        $action = $_GET['action'] ?? '';
+        $tipo = $_GET['tipo'] ?? ''; // tipo pode ser 'user' ou 'food'
+        $id = $_GET['id'] ?? null;
+
+        if ($action === 'dash') {
+            if (session_status() == PHP_SESSION_NONE) session_start();
+            if (!isset($_SESSION['user_id'])) {
+                header('Location: /Urls.php?page=admin');
+                exit();
+            }
+            require_once '../app/pages/admin/Dashboard.php';
+        } elseif ($action === 'edit' && $tipo && $id) {
+            if (session_status() == PHP_SESSION_NONE) session_start();
+            if (!isset($_SESSION['user_id'])) {
+                header('Location: /Urls.php?page=admin');
+                exit();
+            }
+            if ($tipo === 'user') {
+                require_once '../app/pages/admin/EditarUser.php';
+            } elseif ($tipo === 'food') {
+                require_once '../app/pages/admin/EditarFood.php';
+            }
+        } elseif ($action === 'delete' && $tipo && $id) {
+            if (session_status() == PHP_SESSION_NONE) session_start();
+            if (!isset($_SESSION['user_id'])) {
+                header('Location: /Urls.php?page=admin');
+                exit();
+            }
+            if ($tipo === 'user') {
+                require_once '../app/pages/admin/DelUser.php';
+            } elseif ($tipo === 'food') {
+                require_once '../app/pages/admin/DelFood.php';
+            }
+        } else {
+            require_once '../app/pages/admin/admin.php';
+        }
         break;
-    
 
 
+    case 'logout-admin':
+        require_once '../app/pages/admin/LogoutAdmin.php';
+        break;
 
-
-
-
+    case 'post-calorias':
+        require_once '../app/controllers/posts/posts/PostCalorias.php';
+        break;
+    case 'post-imc':
+        require_once '../app/controllers/posts/posts/PostIMC.php';
+        break;
+    case 'post-agua':
+        require_once '../app/controllers/posts/posts/PostQTDAgua.php';
+        break;
+    case 'post-gasto-calorico':
+        require_once '../app/controllers/posts/posts/GastoCalorico.php';
+        break;
 
 
     default:

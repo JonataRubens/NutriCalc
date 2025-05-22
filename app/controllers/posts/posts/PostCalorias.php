@@ -1,4 +1,4 @@
-<?php include('../../includes/NavBar.php'); ?>
+<?php include('../public/includes/NavBar.php'); ?>
       <div class="post-content">
       <h1>Como funciona a Calculadora de Calorias</h1>
     
@@ -52,4 +52,4 @@
       <p>Ter consciência do que você consome é um passo importante para cuidar da saúde. Com a Calculadora de Calorias do NutriCalc, você transforma informação nutricional em ação!</p>
       <p><strong><a href="#">Clique aqui e comece a calcular agora mesmo!</a></strong></p>
     </div>
-    <?php include('../../includes/Footer.html'); ?>
+    <?php include('../public/includes/Footer.html'); ?>

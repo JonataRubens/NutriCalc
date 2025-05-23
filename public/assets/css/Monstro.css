@@ -13,7 +13,10 @@ body {
 
 /* Container principal */
 .anabo-container {
-  max-width: 400px;
+  display: flex;
+  justify-content: center; /* Centraliza a calculadora inicialmente */
+  gap: 30px; /* Espaço entre calculadora e resultado */
+  width: fit-content; /* Ajusta o tamanho conforme o conteúdo */
   margin: 50px auto;
   background: #fff;
   padding: 30px;
@@ -21,7 +24,11 @@ body {
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
-/* Título */
+/* Formulário */
+.anabo-formulario {
+  width: 500px; /* largura fixa conforme solicitado */
+}
+
 .anabo-formulario h2 {
   margin-bottom: 10px;
   font-size: 22px;
@@ -35,7 +42,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* Inputs */
 .anabo-formulario input,
 .anabo-formulario select {
   width: 100%;
@@ -94,11 +100,13 @@ body {
 
 /* Resultado */
 .anabo-resultado {
-  margin-top: 25px;
-  padding: 15px;
+  display: none; /* Oculto inicialmente */
+  width: 300px; /* Largura fixa */
+  padding: 20px;
   background-color: #f9f9f9;
   border-left: 4px solid #000;
   border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
 .anabo-resultado p {
@@ -109,13 +117,20 @@ body {
 .anabo-resultado strong {
   color: #000;
 }
-.anabo-resultado {
-  display: none; 
-  margin-top: 25px;
-  padding: 15px;
-  background-color: #f9f9f9;
-  border-left: 4px solid #000;
-  border-radius: 8px;
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .anabo-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .anabo-formulario {
+    width: 90%;
+  }
+
+  .anabo-resultado {
+    width: 90%;
+    margin-top: 25px;
+  }
 }
-
-

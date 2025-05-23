@@ -33,6 +33,11 @@ switch ($page) {
     case 'blog':
         require_once '../app/controllers/posts/Blog.php';
         break;
+    
+    case 'MeusAlimentos':
+        require_once '../app/controllers/Ferramentas/MeusAlimentos.php';
+        break;
+
     case 'monstro':
         require_once '../app/controllers/Ferramentas/Monstro.php';
         break;

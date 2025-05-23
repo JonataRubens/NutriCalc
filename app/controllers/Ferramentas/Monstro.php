@@ -1,15 +1,6 @@
 <?php include('../public/includes/NavBar.php'); ?>
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Calculadora de Primeiro Ciclo</title>
 <link rel="stylesheet" href="../../assets/css/Monstro.css">
- 
-</head>
-<body>
   <main>
     <div class="anabo-container">
       <form class="anabo-formulario" method="POST">
@@ -106,7 +97,6 @@
       </div>
     </div>
   </main>
-</body>
-</html>
+
 
 <?php include('../public/includes/Footer.html'); ?>

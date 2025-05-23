@@ -89,9 +89,9 @@ if (!isset($_SESSION['usuario_id'])) {
           $recomendado = ($gordura < 18 && $atividade !== 'Sedentário');
           $dose_min = 250;
           $dose_max = 500;
-          $semanas = 8;
+          $semanas = 12;
           $ampolas = ceil($dose_max * $semanas / 250);
-          $custo_medio = 30 * $ampolas;
+          $custo_medio = 60 * $ampolas;
 
           echo "<h3>Resultado:</h3>";
           echo "<p>Calorias ideais por dia: <strong>" . round($calorias) . " kcal</strong></p>";

@@ -46,6 +46,15 @@
     <!-- RESULTADO APARECE APENAS DEPOIS DO SUBMIT -->
     <div class="anabo-resultado" style="<?php echo ($_SERVER['REQUEST_METHOD'] === 'POST') ? 'display:block;' : 'display:none;'; ?>">
       <?php
+      session_start();
+// Verifica se o usuário está logado
+if (!isset($_SESSION['usuario_id'])) {
+    echo "<script>
+            alert('Recurso disponível apenas para usuários logados.');
+            window.location.href = 'index.php';
+          </script>";
+    exit();
+}
       if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $sexo = $_POST['sexo'] ?? null;
         $idade = isset($_POST['idade']) ? (int) $_POST['idade'] : null;

@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 // Verifica se o usuário está logado
 if (!isset($_SESSION['usuario_id'])) {
     echo "<script>
@@ -17,15 +18,26 @@ $nome_arquivo = preg_replace('/[^a-zA-Z0-9_-]/', '_', $usuario_nome);
 
 // Caminho correto para o autoload do Composer
 require_once __DIR__ . '/autoload.inc.php';
+define('BASE_PATH', realpath(__DIR__ . '/../../'));
+require_once BASE_PATH . '/public/includes/db_connection.php';
+require_once BASE_PATH . '/app/models/Perfil.php';
 
 use Dompdf\Dompdf;
 use Dompdf\Options;
 
-// Pega os dados do POST
-$sexo = $_POST['sexo'] ?? '';
-$idade = $_POST['idade'] ?? '';
-$altura = $_POST['altura'] ?? '';
-$peso = $_POST['peso'] ?? '';
+// Carrega perfil do banco
+$perfilModel = new Perfil($conn);
+$perfil = $perfilModel->buscarPorUsuario($_SESSION['usuario_id']);
+
+if (!$perfil) {
+    echo "<script>
+            alert('Perfil não encontrado.');
+            window.close();
+          </script>";
+    exit();
+}
+
+// Pega outros dados do POST
 $gordura = $_POST['gordura'] ?? '';
 $atividade = $_POST['atividade'] ?? '';
 $anabolizante = $_POST['anabolizante'] ?? '';
@@ -42,10 +54,10 @@ $custo = $_POST['custo'] ?? '';
 $html = "
   <h1>Relatório do Primeiro Ciclo</h1>
   <h3>Usuário: {$usuario_nome}</h3>
-  <p><strong>Sexo:</strong> {$sexo}</p>
-  <p><strong>Idade:</strong> {$idade} anos</p>
-  <p><strong>Altura:</strong> {$altura} cm</p>
-  <p><strong>Peso:</strong> {$peso} kg</p>
+  <p><strong>Sexo:</strong> {$perfil['sexo']}</p>
+  <p><strong>Idade:</strong> {$perfil['idade']} anos</p>
+  <p><strong>Altura:</strong> {$perfil['altura']} m</p>
+  <p><strong>Peso:</strong> {$perfil['peso']} kg</p>
   <p><strong>Percentual de Gordura:</strong> {$gordura}%</p>
   <p><strong>Atividade Física:</strong> {$atividade}</p>
 
@@ -75,6 +87,7 @@ $dompdf->render();
 
 // Envia o PDF para o navegador com o nome do usuário no nome do arquivo
 $dompdf->stream("relatorio-ciclo-{$nome_arquivo}.pdf", ["Attachment" => false]);
-exit;
 
+exit;
 ?>
+

@@ -134,3 +134,19 @@ body {
     margin-top: 25px;
   }
 }
+.btn-pdf {
+  margin-top: 15px;
+  width: 100%;
+  padding: 12px;
+  background-color: #e63946;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-pdf:hover {
+  background-color: #c81d2b;
+}

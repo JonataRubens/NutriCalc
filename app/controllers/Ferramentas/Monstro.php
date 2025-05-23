@@ -1,6 +1,23 @@
 <?php include('../public/includes/NavBar.php'); ?>
 
+<?php
+// Garante que a sessão só será iniciada se ainda não estiver ativa
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Verifica se o usuário está logado
+if (!isset($_SESSION['usuario_id'])) {
+    echo "<script>
+            alert('Recurso disponível apenas para usuários logados.');
+            window.location.href = 'index.php';
+          </script>";
+    exit();
+}
+?>
+
 <link rel="stylesheet" href="../../assets/css/Monstro.css">
+
 <main>
   <div class="anabo-container">
     <form class="anabo-formulario" method="POST">
@@ -10,7 +27,6 @@
       <div class="anabo-sexo">
         <input type="radio" id="sexo-homem" name="sexo" value="Homem" required />
         <label for="sexo-homem">Homem</label>
-
         <input type="radio" id="sexo-mulher" name="sexo" value="Mulher" />
         <label for="sexo-mulher">Mulher</label>
       </div>
@@ -43,24 +59,14 @@
       <button type="submit">Calcular ciclo</button>
     </form>
 
-    <!-- RESULTADO APARECE APENAS DEPOIS DO SUBMIT -->
     <div class="anabo-resultado" style="<?php echo ($_SERVER['REQUEST_METHOD'] === 'POST') ? 'display:block;' : 'display:none;'; ?>">
       <?php
-      session_start();
-// Verifica se o usuário está logado
-if (!isset($_SESSION['usuario_id'])) {
-    echo "<script>
-            alert('Recurso disponível apenas para usuários logados.');
-            window.location.href = 'index.php';
-          </script>";
-    exit();
-}
       if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $sexo = $_POST['sexo'] ?? null;
-        $idade = isset($_POST['idade']) ? (int) $_POST['idade'] : null;
-        $altura = isset($_POST['altura']) ? (int) $_POST['altura'] : null;
-        $peso = isset($_POST['peso']) ? (float) $_POST['peso'] : null;
-        $gordura = isset($_POST['gordura']) ? (float) $_POST['gordura'] : null;
+        $idade = (int) ($_POST['idade'] ?? 0);
+        $altura = (int) ($_POST['altura'] ?? 0);
+        $peso = (float) ($_POST['peso'] ?? 0);
+        $gordura = (float) ($_POST['gordura'] ?? 0);
         $atividade = $_POST['atividade'] ?? null;
         $anabolizante = $_POST['anabolizante'] ?? null;
 
@@ -101,7 +107,6 @@ if (!isset($_SESSION['usuario_id'])) {
           echo "<p><strong>Malefícios:</strong> acne, ginecomastia, queda de cabelo, alterações hormonais, risco hepático e cardiovascular.</p>";
           echo "<p><strong>Aviso:</strong> Consulte sempre um profissional da saúde antes de iniciar qualquer protocolo hormonal.</p>";
 
-          // FORMULÁRIO DE GERAÇÃO DE PDF
           echo '<form action="Urls.php?page=PDF" method="POST" target="_blank">';
           foreach ($_POST as $key => $value) {
             echo '<input type="hidden" name="' . htmlspecialchars($key) . '" value="' . htmlspecialchars($value) . '">';
@@ -121,6 +126,8 @@ if (!isset($_SESSION['usuario_id'])) {
     </div>
   </div>
 </main>
+
+
 
 
 

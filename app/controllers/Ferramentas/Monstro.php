@@ -57,6 +57,7 @@ if (!isset($_SESSION['usuario_id'])) {
       </select>
 
       <button type="submit">Calcular ciclo</button>
+       <p>Preencha suas informações em Perfil para um relatorio mais completo</p>
     </form>
 
     <div class="anabo-resultado" style="<?php echo ($_SERVER['REQUEST_METHOD'] === 'POST') ? 'display:block;' : 'display:none;'; ?>">

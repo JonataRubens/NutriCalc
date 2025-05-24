@@ -1,7 +1,6 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+    session_start();}
 require_once __DIR__ . '/db_connection.php';
 ?>
 <!DOCTYPE html>
@@ -31,7 +30,8 @@ require_once __DIR__ . '/db_connection.php';
             <li><a href="Urls.php?page=imc">Calculadora de IMC</a></li>
             <li><a href="Urls.php?page=agua">Quantidade de Água Ideal</a></li>
             <li><a href="Urls.php?page=cal-gasto">Calculadora de Gasto Calorias</a></li>
-            <li><a href="Urls.php?page=meus-alimentos">MeusAlimentos</a></li>
+            <li><a href="Urls.php?page=MeusAlimentos">MeusAlimentos</a></li>
+            <li><a href="Urls.php?page=monstro">Monstro</a></li>
           </ul>
         </div>
         </li>

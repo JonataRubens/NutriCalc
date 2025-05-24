@@ -21,6 +21,7 @@ switch ($page) {
     case 'meus-alimentos':
         require_once '../app/controllers/Ferramentas/MeusAlimentos.php';
         break;
+    
     case 'imc':
         require_once '../app/controllers/Ferramentas/Imc.php';
         break;
@@ -30,8 +31,17 @@ switch ($page) {
     case 'cal-gasto':
         require_once '../app/controllers/Ferramentas/CalcCalorias.php';
         break;
+    
     case 'blog':
         require_once '../app/controllers/posts/Blog.php';
+        break;
+    
+    case 'MeusAlimentos':
+        require_once '../app/controllers/Ferramentas/MeusAlimentos.php';
+        break;
+
+    case 'monstro':
+        require_once '../app/controllers/Ferramentas/Monstro.php';
         break;
     
     case 'notas':
@@ -110,6 +120,16 @@ switch ($page) {
     case 'post-gasto-calorico':
         require_once '../app/controllers/posts/posts/GastoCalorico.php';
         break;
+
+
+    case 'PDF':
+        require_once '../scripts/dompdf/Geradorpdf.php';
+        break;
+
+    case 'autoload':
+        require_once '../scripts/dompdf/vendor/autoload.php';
+        break;
+
 
 
     default:

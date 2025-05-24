@@ -17,6 +17,7 @@ $perfilModel = new Perfil($conn);
 $perfil = $perfilModel->buscarPorUsuario($usuario_id);
 
 // Salva ou atualiza perfil
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $dados = [
         'peso' => floatval($_POST['peso']),
@@ -83,7 +84,7 @@ if (isset($_GET['mensagem'])) {
     <div class="form-row">
       <div class="form-group">
         <label for="altura">Altura (m)</label>
-        <input type="number" step="0.01" name="altura" id="altura" required value="<?= htmlspecialchars($perfil['altura']) ?>">
+        <input type="text" name="altura" id="altura" required value="<?= htmlspecialchars($perfil['altura']) ?>">
       </div>
       <div class="form-group">
         <label for="sexo">Sexo</label>
@@ -106,9 +107,9 @@ if (isset($_GET['mensagem'])) {
         </select>
       </div>
       <div class="form-group" style="align-items: center; display: flex;">
-        <label>
+        <!-- <label>
           <input type="checkbox" name="ativo" <?= $perfil['ativo'] ? 'checked' : '' ?>> Estou ativo fisicamente
-        </label>
+        </label> -->
       </div>
     </div>
     <button type="submit"><?= isset($perfil['usuario_id']) ? 'Atualizar' : 'Salvar' ?> Perfil</button>

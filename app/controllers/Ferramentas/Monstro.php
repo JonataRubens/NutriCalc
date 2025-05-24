@@ -24,16 +24,16 @@ if (!isset($_SESSION['usuario_id'])) {
       <h2>Calculadora do Primeiro Ciclo</h2>
       <p>Descubra se você está apto para iniciar um ciclo hormonal e receba orientações iniciais com base em dados simples.</p>
 
-      <div class="anabo-sexo">
+      <!-- <div class="anabo-sexo">
         <input type="radio" id="sexo-homem" name="sexo" value="Homem" required />
         <label for="sexo-homem">Homem</label>
         <input type="radio" id="sexo-mulher" name="sexo" value="Mulher" />
         <label for="sexo-mulher">Mulher</label>
-      </div>
+      </div> -->
 
-      <input type="number" name="idade" placeholder="Idade" required />
+      <!-- <input type="number" name="idade" placeholder="Idade" required />
       <input type="number" name="altura" placeholder="Altura (cm)" required />
-      <input type="number" name="peso" placeholder="Peso (kg)" required />
+      <input type="number" name="peso" placeholder="Peso (kg)" required /> -->
       <input type="number" name="gordura" placeholder="Percentual de gordura (%)" required />
 
       <select name="atividade" required>
@@ -70,7 +70,7 @@ if (!isset($_SESSION['usuario_id'])) {
         $atividade = $_POST['atividade'] ?? null;
         $anabolizante = $_POST['anabolizante'] ?? null;
 
-        if (!$sexo || !$idade || !$altura || !$peso || !$gordura || !$atividade || !$anabolizante) {
+        if (!$gordura || !$atividade || !$anabolizante) {
           echo "<p style='color:red;'>Por favor, preencha todos os campos corretamente.</p>";
         } else {
           $tmb = $sexo === 'Homem'

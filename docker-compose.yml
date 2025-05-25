@@ -21,6 +21,8 @@ services:
         php scripts/verifica_tabela_perfil.php &&
         sleep 5 &&
         php scripts/inserir_alimentos_amostra.php &&
+        sleep 5 &&
+        php scripts/lista_alimentos_table.php &&
         apache2-foreground
       "
   db: # serviço do banco de dados

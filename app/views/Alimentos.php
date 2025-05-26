@@ -303,9 +303,34 @@ button:focus {
   width: 100%;
   box-sizing: border-box;
 }
+.search-bar-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 500px;
+  margin-bottom: 20px;
+}
 
+.search-bar-wrapper .input-wrapper {
+  flex-grow: 1;
+}
+
+.btn-pdf {
+  background-color: #3b82f6;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-pdf:hover {
+  opacity: 0.85;
+}
 
 </style>
+
 
 
 </head>
@@ -313,11 +338,23 @@ button:focus {
   <main class="container1">
     <h1>Meus Alimentos</h1>
 
-    <div class="input-wrapper">
-      <input type="text" id="searchInput" placeholder="🔍 Pesquisar alimento..." class="search-input" />
-      <button id="clearBtn" aria-label="Limpar campo de pesquisa">&times;</button>
-    </div>
 
+  <div class="search-bar-wrapper">
+  <div class="input-wrapper">
+    <input type="text" id="searchInput" placeholder="🔍 Pesquisar alimento..." class="search-input" />
+    <button id="clearBtn" aria-label="Limpar campo de pesquisa">&times;</button>
+  </div>
+
+  <form method="post" action="/Urls.php?page=alimentospdf" target="_blank" id="formRelatorio">
+  <input type="hidden" name="lista_alimentos" id="inputListaAlimentos">
+  <button type="submit" class="btn-pdf">
+    Gerar Relatório
+  </button>
+</form>
+</div>
+
+
+    
     <div id="searchResults" class="search-results">
       <!-- Resultados da pesquisa com botão Adicionar -->
     </div>
@@ -329,6 +366,8 @@ button:focus {
   </main>
   </div>
 
+
+ 
 <script>
   const clearBtn = document.getElementById('clearBtn');
   const searchInput = document.getElementById('searchInput');
@@ -520,6 +559,10 @@ button:focus {
   // Carrega a lista salva do usuário ao inicializar
   carregarListaSalva();
 
+  document.querySelector('form[action="/Urls.php?page=alimentospdf"]').addEventListener('submit', function(e) {
+  const inputHidden = this.querySelector('input[name="lista_alimentos"]');
+  inputHidden.value = JSON.stringify(selectedAlimentos);
+});
 
 </script>
 

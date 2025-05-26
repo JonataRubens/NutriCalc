@@ -114,6 +114,9 @@ switch ($page) {
         require_once '../app/controllers/posts/posts/GastoCalorico.php';
         break;
 
+ case 'alimentospdf':
+        require_once '../scripts/dompdf/Alimentospdf.php';
+        break;
 
     case 'PDF':
         require_once '../scripts/dompdf/Geradorpdf.php';

@@ -392,17 +392,21 @@ button:focus {
 
   let selectedAlimentos = [];
 
-  // Carrega a lista salva do usuário
+  // Carrega a lista salva do usuário do localStorage
   function carregarListaSalva() {
-    fetch('includes/gerenciar_lista.php?acao=carregar')
-      .then(res => res.json())
-      .then(data => {
-        selectedAlimentos = data;
-        mostrarListaSelecionada();
-      })
-      .catch(err => {
-        console.error('Erro ao carregar lista:', err);
-      });
+    const lista = localStorage.getItem('selectedAlimentos');
+    if (lista) {
+      selectedAlimentos = JSON.parse(lista);
+      mostrarListaSelecionada();
+    } else {
+      selectedAlimentos = [];
+      mostrarListaSelecionada();
+    }
+  }
+
+  // Salva a lista no localStorage
+  function salvarLista() {
+    localStorage.setItem('selectedAlimentos', JSON.stringify(selectedAlimentos));
   }
 
   // Função para buscar alimentos do backend
@@ -411,12 +415,17 @@ button:focus {
       document.getElementById('searchResults').style.display = 'none';
       return;
     }
-    
     document.getElementById('searchResults').style.display = 'block';
-    
-    fetch(`includes/search_alimentos.php?term=${encodeURIComponent(term)}`)
+    fetch(`/api/Alimentos.php`)
       .then(res => res.json())
-      .then(data => mostrarResultadosBusca(data))
+      .then(data => {
+        const termo = term.toLowerCase();
+        const filtrados = data.filter(alimento =>
+          alimento.descricao.toLowerCase().includes(termo) ||
+          alimento.categoria.toLowerCase().includes(termo)
+        );
+        mostrarResultadosBusca(filtrados);
+      })
       .catch(err => {
         console.error('Erro ao buscar alimentos:', err);
         document.getElementById('searchResults').innerHTML = '<p>Erro ao carregar alimentos.</p>';
@@ -430,12 +439,9 @@ button:focus {
       container.innerHTML = '<p>Alimento não encontrado.</p>';
       return;
     }
-    
     let html = '<table><thead><tr><th>Descrição</th><th>Categoria</th><th>Energia</th><th>Proteína</th><th>Lipídios</th><th>Carboidratos</th><th>Ação</th></tr></thead><tbody>';
-    
     alimentos.forEach(alimento => {
-      const jaSelecionado = selectedAlimentos.some(sel => sel.id === alimento.id);
-      
+      const jaSelecionado = selectedAlimentos.some(sel => String(sel.id) === String(alimento.id));
       html += `<tr data-id="${alimento.id}">
         <td>${alimento.descricao}</td>
         <td>${alimento.categoria}</td>
@@ -443,10 +449,9 @@ button:focus {
         <td>${alimento.proteina}</td>
         <td>${alimento.lipideos}</td>
         <td>${alimento.carboidratos}</td>
-        <td>${jaSelecionado ? '' : `<button onclick="adicionarAlimento(${alimento.id})">Adicionar</button>`}</td>
+        <td>${jaSelecionado ? '<span style=\'color:#10b981;font-weight:bold\'>Adicionado</span>' : `<button onclick=\"adicionarAlimento(${alimento.id})\">Adicionar</button>`}</td>
       </tr>`;
     });
-    
     html += '</tbody></table>';
     container.innerHTML = html;
   }
@@ -458,9 +463,7 @@ button:focus {
       container.innerHTML = '<p>Lista vazia.</p>';
       return;
     }
-    
     let html = '<table><thead><tr><th>Descrição</th><th>Categoria</th><th>Energia</th><th>Proteína</th><th>Lipídios</th><th>Carboidratos</th><th>Ação</th></tr></thead><tbody>';
-    
     selectedAlimentos.forEach(alimento => {
       html += `<tr data-id="${alimento.id}">
         <td>${alimento.descricao}</td>
@@ -469,19 +472,17 @@ button:focus {
         <td>${alimento.proteina}</td>
         <td>${alimento.lipideos}</td>
         <td>${alimento.carboidratos}</td>
-        <td><button onclick="removerAlimento(${alimento.id})">Remover</button></td>
+        <td><button onclick=\"removerAlimento(${alimento.id})\">Remover</button></td>
       </tr>`;
     });
-    
     html += '</tbody></table>';
     container.innerHTML = html;
   }
 
-  // Adiciona alimento na lista selecionada e salva no banco
+  // Adiciona alimento na lista selecionada e salva no localStorage
   function adicionarAlimento(id) {
     const row = document.querySelector(`#searchResults tr[data-id="${id}"]`);
     if (!row) return;
-    
     const alimento = {
       id: id,
       descricao: row.cells[0].textContent,
@@ -491,60 +492,20 @@ button:focus {
       lipideos: row.cells[4].textContent,
       carboidratos: row.cells[5].textContent
     };
-    
-    // Salva no banco de dados
-    const formData = new FormData();
-    formData.append('acao', 'adicionar');
-    formData.append('id_alimento', alimento.id);
-    formData.append('descricao', alimento.descricao);
-    formData.append('categoria', alimento.categoria);
-    formData.append('energia', alimento.energia);
-    formData.append('proteina', alimento.proteina);
-    formData.append('lipideos', alimento.lipideos);
-    formData.append('carboidratos', alimento.carboidratos);
-    
-    fetch('includes/gerenciar_lista.php', {
-      method: 'POST',
-      body: formData
-    })
-    .then(res => res.json())
-    .then(data => {
-      if (data.success) {
-        selectedAlimentos.push(alimento);
-        mostrarListaSelecionada();
-        buscarAlimentos(document.getElementById('searchInput').value.trim());
-      } else {
-        alert(data.error || 'Erro ao adicionar alimento');
-      }
-    })
-    .catch(err => {
-      console.error('Erro ao adicionar alimento:', err);
-    });
+    if (!selectedAlimentos.some(a => String(a.id) === String(alimento.id))) {
+      selectedAlimentos.push(alimento);
+      salvarLista();
+      mostrarListaSelecionada();
+      buscarAlimentos(document.getElementById('searchInput').value.trim());
+    }
   }
 
-  // Remove alimento da lista selecionada e do banco
+  // Remove alimento da lista selecionada e do localStorage
   function removerAlimento(id) {
-    const formData = new FormData();
-    formData.append('acao', 'remover');
-    formData.append('id_alimento', id);
-    
-    fetch('includes/gerenciar_lista.php', {
-      method: 'POST',
-      body: formData
-    })
-    .then(res => res.json())
-    .then(data => {
-      if (data.success) {
-        selectedAlimentos = selectedAlimentos.filter(a => a.id !== id);
-        mostrarListaSelecionada();
-        buscarAlimentos(document.getElementById('searchInput').value.trim());
-      } else {
-        alert('Erro ao remover alimento');
-      }
-    })
-    .catch(err => {
-      console.error('Erro ao remover alimento:', err);
-    });
+    selectedAlimentos = selectedAlimentos.filter(a => String(a.id) !== String(id));
+    salvarLista();
+    mostrarListaSelecionada();
+    buscarAlimentos(document.getElementById('searchInput').value.trim());
   }
 
   // Pesquisa com debounce

@@ -45,8 +45,8 @@
         resultsContainer.innerHTML = '';
         return;
       }
-      
-      fetch(`includes/search_alimentos.php?term=${encodeURIComponent(searchTerm)}`)
+      // Busca por termo usando a API
+      fetch(`/api/Alimentos.php?termo=${encodeURIComponent(searchTerm)}`)
         .then(response => response.json())
         .then(data => {
           displayResults(data, resultsContainer);
@@ -59,7 +59,8 @@
 
     function searchByCategory(category) {
       const resultsContainer = document.getElementById('searchResults');
-      fetch(`includes/search_alimentos.php?term=${encodeURIComponent(category)}`)
+      // Busca por categoria usando a API
+      fetch(`/api/Alimentos.php?categoria=${encodeURIComponent(category)}`)
         .then(response => response.json())
         .then(data => {
           displayResults(data, resultsContainer);

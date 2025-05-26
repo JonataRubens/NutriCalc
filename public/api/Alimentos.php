@@ -1,17 +1,26 @@
 <?php
 header('Content-Type: application/json');
 require_once __DIR__ . '/../includes/db_connection.php';
+require_once __DIR__ . '/../../app/controllers/AlimentosController.php';
 
 $method = $_SERVER['REQUEST_METHOD'];
 
 switch ($method) {
     case 'GET':
-        $result = $conn->query("SELECT * FROM alimentos");
-        $alimentos = [];
-        while ($row = $result->fetch_assoc()) {
-            $alimentos[] = $row;
+        // Filtro por termo
+        if (isset($_GET['termo'])) {
+            $termo = $_GET['termo'];
+            $alimentos = AlimentosController::filtrar($conn, $termo);
+            echo json_encode($alimentos);
+        // Filtro por categoria
+        } elseif (isset($_GET['categoria'])) {
+            $categoria = $_GET['categoria'];
+            $alimentos = AlimentosController::filtrarPorCategoria($conn, $categoria);
+            echo json_encode($alimentos);
+        } else {
+            $alimentos = AlimentosController::listar($conn);
+            echo json_encode($alimentos);
         }
-        echo json_encode($alimentos);
         break;
 
     case 'POST':
@@ -21,13 +30,35 @@ switch ($method) {
             echo json_encode(['error' => 'Dados incompletos']);
             exit;
         }
-        $stmt = $conn->prepare("INSERT INTO alimentos (descricao, categoria, energia, proteina, lipideos, carboidratos) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssdddd", $data['descricao'], $data['categoria'], $data['energia'], $data['proteina'], $data['lipideos'], $data['carboidratos']);
-        if ($stmt->execute()) {
-            echo json_encode(['success' => true, 'id' => $conn->insert_id]);
+        $result = AlimentosController::adicionar($conn, $data);
+        if (isset($result['success'])) {
+            echo json_encode($result);
         } else {
             http_response_code(500);
-            echo json_encode(['error' => 'Erro ao inserir alimento']);
+            echo json_encode($result);
+        }
+        break;
+
+    case 'PUT':
+        parse_str(file_get_contents('php://input'), $put_vars);
+        $id = isset($_GET['id']) ? intval($_GET['id']) : null;
+        if (!$id) {
+            http_response_code(400);
+            echo json_encode(['error' => 'ID não informado']);
+            exit;
+        }
+        $data = json_decode(json_encode($put_vars), true);
+        if (!isset($data['descricao'], $data['categoria'], $data['energia'], $data['proteina'], $data['lipideos'], $data['carboidratos'])) {
+            http_response_code(400);
+            echo json_encode(['error' => 'Dados incompletos']);
+            exit;
+        }
+        $result = AlimentosController::editar($conn, $id, $data);
+        if (isset($result['success'])) {
+            echo json_encode($result);
+        } else {
+            http_response_code(500);
+            echo json_encode($result);
         }
         break;
 
@@ -37,13 +68,12 @@ switch ($method) {
             echo json_encode(['error' => 'ID não informado']);
             exit;
         }
-        $stmt = $conn->prepare("DELETE FROM alimentos WHERE id = ?");
-        $stmt->bind_param("i", $_GET['id']);
-        if ($stmt->execute()) {
-            echo json_encode(['success' => true]);
+        $result = AlimentosController::deletar($conn, $_GET['id']);
+        if (isset($result['success'])) {
+            echo json_encode($result);
         } else {
             http_response_code(500);
-            echo json_encode(['error' => 'Erro ao deletar alimento']);
+            echo json_encode($result);
         }
         break;
 

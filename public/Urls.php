@@ -18,9 +18,6 @@ if ($page == 'register') {
 }
 
 switch ($page) {
-    case 'meus-alimentos':
-        require_once '../app/controllers/Ferramentas/MeusAlimentos.php';
-        break;
     
     case 'imc':
         require_once '../app/controllers/Ferramentas/Imc.php';
@@ -34,10 +31,6 @@ switch ($page) {
     
     case 'blog':
         require_once '../app/controllers/posts/Blog.php';
-        break;
-    
-    case 'MeusAlimentos':
-        require_once '../app/controllers/Ferramentas/MeusAlimentos.php';
         break;
 
     case 'monstro':
@@ -130,7 +123,12 @@ switch ($page) {
         require_once '../scripts/dompdf/vendor/autoload.php';
         break;
 
+    
 
+
+    case 'meus-alimentos':
+        require_once '../app/views/Alimentos.php';
+        break;
 
     default:
         echo "Página não encontrada";

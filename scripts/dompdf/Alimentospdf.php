@@ -20,12 +20,40 @@ if (!$lista) {
     exit();
 }
 
-require_once __DIR__ . '/vendor/autoload.php'; // Se estiver usando dompdf ou mPDF
+// Caminho correto para o autoload do Composer
+require_once __DIR__ . '/vendor/autoload.php';
+define('BASE_PATH', realpath(__DIR__ . '/../../'));
+require_once BASE_PATH . '/public/includes/db_connection.php';
+require_once BASE_PATH . '/app/models/Perfil.php';
 
 use Dompdf\Dompdf;
+use Dompdf\Options;
 
-// Cria o conteúdo HTML
-$html = '<h1>Relatório de Alimentos</h1>';
+// Pega dados da sessão
+$usuario_nome = $_SESSION['usuario_nome'] ?? 'Usuário não identificado';
+
+// Carrega perfil do banco
+$perfilModel = new Perfil($conn);
+$perfil = $perfilModel->buscarPorUsuario($_SESSION['usuario_id']);
+
+if (!$perfil) {
+    echo "<script>
+            alert('Perfil não encontrado.');
+            window.close();
+          </script>";
+    exit();
+}
+
+// Início do HTML
+$html = "<h1>Relatório de Alimentos</h1>";
+$html .= "<h3>Usuário: {$usuario_nome}</h3>";
+$html .= "<p><strong>Sexo:</strong> {$perfil['sexo']}</p>";
+$html .= "<p><strong>Idade:</strong> {$perfil['idade']} anos</p>";
+$html .= "<p><strong>Altura:</strong> {$perfil['altura']} m</p>";
+$html .= "<p><strong>Peso:</strong> {$perfil['peso']} kg</p>";
+
+// Tabela de alimentos
+$html .= '<h4>Lista de Alimentos Selecionados</h4>';
 $html .= '<table border="1" cellspacing="0" cellpadding="5">';
 $html .= '<thead>
             <tr>
@@ -51,12 +79,19 @@ foreach ($lista as $alimento) {
 
 $html .= '</tbody></table>';
 
-// Gera o PDF
-$dompdf = new Dompdf();
+// Configurações do DOMPDF
+$options = new Options();
+$options->set('defaultFont', 'Helvetica');
+$dompdf = new Dompdf($options);
 $dompdf->loadHtml($html);
 $dompdf->setPaper('A4', 'portrait');
 $dompdf->render();
 
-// Baixa o PDF
-$dompdf->stream('relatorio_alimentos.pdf', ['Attachment' => 0]); // 0 = abre no navegador
+// Nome limpo para o arquivo
+$nome_arquivo = preg_replace('/[^a-zA-Z0-9_-]/', '_', $usuario_nome);
+
+// Exibe o PDF no navegador
+$dompdf->stream("relatorio-alimentos-{$nome_arquivo}.pdf", ["Attachment" => false]);
+
+exit;
 ?>

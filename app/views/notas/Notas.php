@@ -1,8 +1,8 @@
 <?php
 // app/views/Notas.php
 session_start();
-require_once __DIR__ . '/../../public/includes/db_connection.php';
-require_once __DIR__ . '/../models/Nota.php';
+require_once __DIR__ . '/../../../public/includes/db_connection.php';
+require_once __DIR__ . '/../../models/Nota.php';
 
 // Bloqueia o acesso se não estiver logado
 if (!isset($_SESSION['usuario_id'])) {
@@ -21,7 +21,7 @@ if (!$notas) {
     die("Erro ao buscar notas do usuário");
 }
 
-include(__DIR__ . '/../../public/includes/NavBar.php');
+include(__DIR__ . '/../../../public/includes/NavBar.php');
 ?>
 <link rel="stylesheet" href="/assets/css/MinhasNotas.css">
 
@@ -80,4 +80,4 @@ function closeModal() {
 }
 </script>
 
-<?php include(__DIR__ . '/../../public/includes/Footer.html'); ?>
+<?php include(__DIR__ . '/../../../public/includes/Footer.html'); ?>

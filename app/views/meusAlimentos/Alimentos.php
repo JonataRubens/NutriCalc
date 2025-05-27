@@ -8,7 +8,7 @@ if (!isset($_SESSION['usuario_id'])) {
     exit();
 }
 include('../public/includes/NavBar.php');
-include __DIR__ . '/../../public/includes/db_connection.php';
+include __DIR__ . '/../../../public/includes/db_connection.php';
 ?>
 <title>Lista de Alimentos</title>
 

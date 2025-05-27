@@ -38,7 +38,7 @@ switch ($page) {
         break;
     
     case 'notas':
-        require_once '../app/views/Notas.php';
+        require_once '../app/views/notas/Notas.php';
         break;
 
     case 'newnotas':
@@ -133,7 +133,7 @@ switch ($page) {
 
 
     case 'meus-alimentos':
-        require_once '../app/views/Alimentos.php';
+        require_once '../app/views/meusAlimentos/Alimentos.php';
         break;
 
     default:

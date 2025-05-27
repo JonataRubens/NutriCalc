@@ -28,7 +28,7 @@
     <section class="conheca">
       <h3>Nossas Principais Ferramentas Nutricionais</h3>
       <div class="cards-simples">
-        <a href="/Urls.php?page=meus-alimentos" class="card" >Calculadora de Calorias</a>
+        <a href="/Urls.php?page=cal-gasto" class="card" >Calculadora de Calorias</a>
         <a href="/Urls.php?page=imc" class="card" >Calculadora de IMC e Peso Ideal</a>
         <a href="/Urls.php?page=agua" class="card card-agua">Quantidade de Água Ideal</a>
       </div>

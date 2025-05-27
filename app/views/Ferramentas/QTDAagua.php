@@ -27,22 +27,17 @@
     <!-- Calculadoras -->
     <h3>Conheça nossas Ferramentas Nutricionais</h3>
     <section class="calculadoras">
-            <div class="calc-card gratuito" style="border-left: 6px solid #06b6d4;">
-                <h4 >Calculadora de Calorias</h4>
-                <p>Descubra quantas calorias e nutrientes você consome ao montar suas refeições diárias.</p>
-                <a href="/pages/Ferramentas/PagCalcCalorias.php">Calcular calorias</a>
-            </div>
 
             <div class="calc-card gratuito" style="border-left: 6px solid #ef4444;">
                 <h4>Calculadora de IMC</h4>
                 <p>Verifique se seu peso está adequado para sua altura com base no Índice de Massa Corporal.</p>
-                <a href="/pages/Ferramentas/Imc.php">Calcular IMC</a>
+                <a href="Urls.php?page=imc">Calcular IMC</a>
             </div>
 
             <div class="calc-card gratuito" style="border-left: 6px solid rgb(136, 41, 199);">
                 <h4 >Calculadora de Gasto calorico</h4>
                 <p>Saiba quantas calorias seu corpo gasta por dia com base em informações simples.</p>
-                <a href="/pages/Ferramentas/CalcCalorias.php">Calcular Gasto calorias</a>
+                <a href="Urls.php?page=cal-gasto">Calcular Gasto calorias</a>
             </div>
 
         </section>

@@ -55,7 +55,7 @@
 
 ## 📋 Requisitos Funcionais
 
-### RF-01: Cadastro de Usuário
+### 📦RF-01: Cadastro de Usuário
 **User Story**:  
 "Como usuário, quero criar uma conta e acessar funcionalidades do sistema."
 
@@ -68,7 +68,7 @@
 - Implementar validação de campos
 - Desenvolver lógica de armazenamento no BD
 
-### RF-02: Autenticação de Usuário
+### 📦RF-02: Autenticação de Usuário
 **User Story**:  
 "Como usuário, quero fazer login, mas que seja opcional. Quero que seja possivel a verificação de estar logado"
 
@@ -77,7 +77,7 @@
 - Implementar sistema de autenticação
 - Lógica de login/Registro/Logout e visualização
 
-### RF-03: Cálculos Nutricionais
+### 📦RF-03: Cálculos Nutricionais
 **User Story**:  
 "Como usuário, quero calcular informações nutricionais das minhas refeições para ter um acompanhamento mais saudável."
 
@@ -86,7 +86,7 @@
 - Implementar algoritmos de cálculo nutricional
 - Criar visualização de resultados
 
-### RF-04: Calculadora Avançada de Calorias
+### 📦RF-04: Calculadora Avançada de Calorias
 **User Story**:  
 "Como usuário, quero uma calculadora precisa de calorias com visual moderno para acompanhar meu consumo diário de forma mais eficiente."
 
@@ -96,7 +96,7 @@
 - Todos os alimentos devem estar no Banco de Dados
 -  Testes unitários 
 
-### RF-05: Geração de PDF com Informações Pessoais e Cálculos
+### 📦RF-05: Geração de PDF com Informações Pessoais e Cálculos
 **User Story:**
 "Como usuário, quero gerar um PDF com meus dados pessoais e os cálculos nutricionais para registrar e acompanhar minha saúde."
 

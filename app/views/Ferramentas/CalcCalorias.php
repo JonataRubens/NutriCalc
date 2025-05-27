@@ -67,19 +67,13 @@
     <div class="calc-card gratuito" style="border-left: 6px solid #ef4444;">
                 <h4>Calculadora de IMC</h4>
                 <p>Verifique se seu peso está adequado para sua altura com base no Índice de Massa Corporal.</p>
-                <a href="/pages/Ferramentas/Imc.php">Calcular IMC</a>
+                <a href="Urls.php?page=imc">Calcular IMC</a>
             </div>
 
             <div class="calc-card gratuito" style="border-left: 6px solid rgb(239, 213, 68);">
                 <h4>Calculadora de Consumo de agua</h4>
                 <p>Verifique se seu consumo de agua esta adeguado com a sua idade e peso.</p>
-                <a href="/pages/Ferramentas/QTDAagua.php">Calculadora de Consumo de agua </a>
-            </div>
-
-            <div class="calc-card gratuito" style="border-left: 6px solid rgb(136, 41, 199);">
-                <h4 >Calculadora de Gasto calorico</h4>
-                <p>Saiba quantas calorias seu corpo gasta por dia com base em informações simples.</p>
-                <a href="/pages/Ferramentas/CalcCalorias.php">Calcular Gasto calorias</a>
+                <a href="Urls.php?page=agua">Calculadora de Consumo de agua </a>
             </div>
 
         </section>

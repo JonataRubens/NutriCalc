@@ -55,7 +55,7 @@
 
 ## 📋 Requisitos Funcionais
 
-### RF-01: Cadastro de Usuário
+### 📦RF-01: Cadastro de Usuário
 **User Story**:  
 "Como usuário, quero criar uma conta e acessar funcionalidades do sistema."
 
@@ -68,7 +68,7 @@
 - Implementar validação de campos
 - Desenvolver lógica de armazenamento no BD
 
-### RF-02: Autenticação de Usuário
+### 📦RF-02: Autenticação de Usuário
 **User Story**:  
 "Como usuário, quero fazer login, mas que seja opcional. Quero que seja possivel a verificação de estar logado"
 
@@ -77,7 +77,7 @@
 - Implementar sistema de autenticação
 - Lógica de login/Registro/Logout e visualização
 
-### RF-03: Cálculos Nutricionais
+### 📦RF-03: Cálculos Nutricionais
 **User Story**:  
 "Como usuário, quero calcular informações nutricionais das minhas refeições para ter um acompanhamento mais saudável."
 
@@ -86,7 +86,7 @@
 - Implementar algoritmos de cálculo nutricional
 - Criar visualização de resultados
 
-### RF-04: Calculadora Avançada de Calorias
+### 📦RF-04: Calculadora Avançada de Calorias
 **User Story**:  
 "Como usuário, quero uma calculadora precisa de calorias com visual moderno para acompanhar meu consumo diário de forma mais eficiente."
 
@@ -96,7 +96,7 @@
 - Todos os alimentos devem estar no Banco de Dados
 -  Testes unitários 
 
-### RF-05: Geração de PDF com Informações Pessoais e Cálculos
+### 📦RF-05: Geração de PDF com Informações Pessoais e Cálculos
 **User Story:**
 "Como usuário, quero gerar um PDF com meus dados pessoais e os cálculos nutricionais para registrar e acompanhar minha saúde."
 
@@ -207,6 +207,20 @@
 - Criação de API
 - Implementação de testes unitarios
 - Reorganizar código fonte no padrão MVC
+
+### 📦 RF-12 Contato com nutricionistas e chat bot
+**User Story:**
+"Eu como usuario estando logado, quero que seja possivel abrir um chamado onde poderei mandar um email para uma nutricionista e quero um chat bot para me ajudar com perguntas simples e intuitivas"
+
+**📝 Regras de Negócio:**
+- Chat bot, deverá estar disponivel na pagina home apenas
+- O ato de mandar um email para o nutricionista, só será possivel após o cadastro do usuario
+- O email será uma mensagem que poderá ser mandada e terá retorno pelo Gmail e não pelo site
+
+**Tarefas Técnicas:**
+- Criação do chat bot
+- Opção de mandar email em perfil
+- Sistemas de testes
   
 ---
 
@@ -241,16 +255,26 @@ Geração de PDFs, Calculadora Avançada de Calorias, Perfil com dados do user, 
 ### 🧮Sprint 03 (13/05/2025 - 27/05/2025)
 
 **Objetivo**: 
-Criação de calculadora hormonal, ranking de alimentos mais saudaveis a fim de deixar claro para o usuario alimentos saudaveis com base em 3 filtros, ferramenta de substituição de alimentos onde no futuro será usado com a aba meus alimentos, implementação de API, testes e reorganização no padrão MVC
+Criação de calculadora hormonal, ranking de alimentos mais saudaveis a fim de deixar claro para o usuario alimentos saudaveis com base em 3 filtros, implementação de API, testes e reorganização no padrão MVC
 
 **Entregas**:
-- Lista de Substituições (RF-09)
-- Calculadora Avançada2 (RF-10)
-- Meus alimentos (RF-09)
-- Ranking de alimentos mais saudaveis (RF-09)
-- Testes unitarios (RF-11)
-- API (RF-11)
-- Reorganização no padrão MVC (RF-11)
+
+- Calculadora Avançada2 (RF-10) (Marcos)
+- Meus alimentos (RF-09) (Jonata)
+- Ranking de alimentos mais saudaveis (RF-09) (Caio)
+- API (RF-11) (Caio)
+- Reorganização no padrão MVC (RF-11) (Jonata/Caio)
+
+### 🧮Sprint 04 (27/05/2025 - 10/06/2025)
+
+**Objetivo**: 
+Criar um sistema de chat bot para responder perguntas simples, criação do sistema de testes para prever erros que possam vier a tona, ferramenta de substituição de alimentos onde no futuro será integrado aos meus alimentos e sistema para ser possivel o envio de email para um nutricionista.
+
+**Entregas**:
+- Lista de Substituições (RF-09) (Afonso)
+- Chat Bot (RF-12) (Marcos)
+- Sistema de Testes (RF-11) (Caio)
+- Contato com Nutricionista (RF-12) (Jonata)
 
 ---
 

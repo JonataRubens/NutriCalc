@@ -207,6 +207,20 @@
 - Criação de API
 - Implementação de testes unitarios
 - Reorganizar código fonte no padrão MVC
+
+### 📦 RF-12 Contato com nutricionistas e chat bot
+**User Story:**
+"Eu como usuario estando logado, quero que seja possivel abrir um chamado onde poderei mandar um email para uma nutricionista e quero um chat bot para me ajudar com perguntas simples e intuitivas"
+
+**📝 Regras de Negócio:**
+- Chat bot, deverá estar disponivel na pagina home apenas
+- O ato de mandar um email para o nutricionista, só será possivel após o cadastro do usuario
+- O email será uma mensagem que poderá ser mandada e terá retorno pelo Gmail e não pelo site
+
+**Tarefas Técnicas:**
+- Criação do chat bot
+- Opção de mandar email em perfil
+- Sistemas de testes
   
 ---
 
@@ -244,13 +258,22 @@ Geração de PDFs, Calculadora Avançada de Calorias, Perfil com dados do user, 
 Criação de calculadora hormonal, ranking de alimentos mais saudaveis a fim de deixar claro para o usuario alimentos saudaveis com base em 3 filtros, ferramenta de substituição de alimentos onde no futuro será usado com a aba meus alimentos, implementação de API, testes e reorganização no padrão MVC
 
 **Entregas**:
-- Lista de Substituições (RF-09)
-- Calculadora Avançada2 (RF-10)
-- Meus alimentos (RF-09)
-- Ranking de alimentos mais saudaveis (RF-09)
-- Testes unitarios (RF-11)
-- API (RF-11)
-- Reorganização no padrão MVC (RF-11)
+
+- Calculadora Avançada2 (RF-10) (Marcos)
+- Meus alimentos (RF-09) (Jonata)
+- Ranking de alimentos mais saudaveis (RF-09) (Caio)
+- API (RF-11) (Caio)
+- Reorganização no padrão MVC (RF-11) (Jonata/Caio)
+
+### 🧮Sprint 04 (27/05/2025 - 10/06/2025)
+
+**Objetivo**: 
+
+**Entregas**:
+- Lista de Substituições (RF-09) (Afonso)
+- Chat Bot (RF-12) (Marcos)
+- Sistema de Testes (RF-11) (Caio)
+- Contato com Nutricionista (RF-12) (Jonata)
 
 ---
 

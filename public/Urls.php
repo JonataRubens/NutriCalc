@@ -20,25 +20,25 @@ if ($page == 'register') {
 switch ($page) {
     
     case 'imc':
-        require_once '../app/controllers/Ferramentas/Imc.php';
+        require_once '../app/views/Ferramentas/Imc.php';
         break;
     case 'agua':
-        require_once '../app/controllers/Ferramentas/QTDAagua.php';
+        require_once '../app/views/Ferramentas/QTDAagua.php';
         break;
     case 'cal-gasto':
-        require_once '../app/controllers/Ferramentas/CalcCalorias.php';
+        require_once '../app/views/Ferramentas/CalcCalorias.php';
         break;
     
     case 'blog':
-        require_once '../app/controllers/posts/Blog.php';
+        require_once '../app/views/posts/Blog.php';
         break;
 
     case 'monstro':
-        require_once '../app/controllers/Ferramentas/Monstro.php';
+        require_once '../app/views/Ferramentas/Monstro.php';
         break;
     
     case 'notas':
-        require_once '../app/controllers/Nots/Notas.php';
+        require_once '../app/views/notas/Notas.php';
         break;
 
     case 'newnotas':
@@ -56,6 +56,9 @@ switch ($page) {
     case 'perfil':
         require_once '../app/controllers/perfil/Perfil.php';
         break;
+    case 'ranking':
+        require_once '../app/views/ranking/Ranking.php';
+        break;
 
     case 'admin':
         $action = $_GET['action'] ?? '';
@@ -68,7 +71,7 @@ switch ($page) {
                 header('Location: /Urls.php?page=admin');
                 exit();
             }
-            require_once '../app/pages/admin/Dashboard.php';
+            require_once '../app/views/admin/Dashboard.php';
         } elseif ($action === 'edit' && $tipo && $id) {
             if (session_status() == PHP_SESSION_NONE) session_start();
             if (!isset($_SESSION['user_id'])) {
@@ -76,9 +79,9 @@ switch ($page) {
                 exit();
             }
             if ($tipo === 'user') {
-                require_once '../app/pages/admin/EditarUser.php';
+                require_once '../app/controllers/admin/EditarUser.php';
             } elseif ($tipo === 'food') {
-                require_once '../app/pages/admin/EditarFood.php';
+                require_once '../app/controllers/admin/EditarFood.php';
             }
         } elseif ($action === 'delete' && $tipo && $id) {
             if (session_status() == PHP_SESSION_NONE) session_start();
@@ -87,31 +90,31 @@ switch ($page) {
                 exit();
             }
             if ($tipo === 'user') {
-                require_once '../app/pages/admin/DelUser.php';
+                require_once '../app/controllers/admin/DelUser.php';
             } elseif ($tipo === 'food') {
-                require_once '../app/pages/admin/DelFood.php';
+                require_once '../app/controllers/admin/DelFood.php';
             }
         } else {
-            require_once '../app/pages/admin/admin.php';
+            require_once '../app/views/admin/admin.php';
         }
         break;
 
 
     case 'logout-admin':
-        require_once '../app/pages/admin/LogoutAdmin.php';
+        require_once '../app/views/admin/LogoutAdmin.php';
         break;
 
     case 'post-calorias':
-        require_once '../app/controllers/posts/posts/PostCalorias.php';
+        require_once '../app/views/posts/posts/PostCalorias.php';
         break;
     case 'post-imc':
-        require_once '../app/controllers/posts/posts/PostIMC.php';
+        require_once '../app/views/posts/posts/PostIMC.php';
         break;
     case 'post-agua':
-        require_once '../app/controllers/posts/posts/PostQTDAgua.php';
+        require_once '../app/views/posts/posts/PostQTDAgua.php';
         break;
     case 'post-gasto-calorico':
-        require_once '../app/controllers/posts/posts/GastoCalorico.php';
+        require_once '../app/views/posts/posts/GastoCalorico.php';
         break;
 
  case 'alimentospdf':
@@ -130,7 +133,7 @@ switch ($page) {
 
 
     case 'meus-alimentos':
-        require_once '../app/views/Alimentos.php';
+        require_once '../app/views/meusAlimentos/Alimentos.php';
         break;
 
     default:

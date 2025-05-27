@@ -74,7 +74,7 @@ require_once __DIR__ . '/db_connection.php';
     <div class="container">
       <nav>
         <ul>
-          <li><a href="/">🏠 Página inicial</a></li>
+          <li><a href="/">🏠</a></li>
           <li><a href="">🛠️ Ferramentas Nutricionais</a>
             <div class="submenu">
               <ul>
@@ -96,6 +96,8 @@ require_once __DIR__ . '/db_connection.php';
             </li>
           <?php endif; ?>
           <li><a href="Urls.php?page=blog">📑 Blog</a></li>
+          <li><a href="Urls.php?page=ranking">👑 Ranking</a>
+          </li>
         </ul>
         <div class="nav-right">
           <?php if (isset($_SESSION['usuario_nome'])): ?>

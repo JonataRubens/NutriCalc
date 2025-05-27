@@ -20,21 +20,21 @@ if ($page == 'register') {
 switch ($page) {
     
     case 'imc':
-        require_once '../app/controllers/Ferramentas/Imc.php';
+        require_once '../app/views/Ferramentas/Imc.php';
         break;
     case 'agua':
-        require_once '../app/controllers/Ferramentas/QTDAagua.php';
+        require_once '../app/views/Ferramentas/QTDAagua.php';
         break;
     case 'cal-gasto':
-        require_once '../app/controllers/Ferramentas/CalcCalorias.php';
+        require_once '../app/views/Ferramentas/CalcCalorias.php';
         break;
     
     case 'blog':
-        require_once '../app/controllers/posts/Blog.php';
+        require_once '../app/views/posts/Blog.php';
         break;
 
     case 'monstro':
-        require_once '../app/controllers/Ferramentas/Monstro.php';
+        require_once '../app/views/Ferramentas/Monstro.php';
         break;
     
     case 'notas':
@@ -105,16 +105,16 @@ switch ($page) {
         break;
 
     case 'post-calorias':
-        require_once '../app/controllers/posts/posts/PostCalorias.php';
+        require_once '../app/views/posts/posts/PostCalorias.php';
         break;
     case 'post-imc':
-        require_once '../app/controllers/posts/posts/PostIMC.php';
+        require_once '../app/views/posts/posts/PostIMC.php';
         break;
     case 'post-agua':
-        require_once '../app/controllers/posts/posts/PostQTDAgua.php';
+        require_once '../app/views/posts/posts/PostQTDAgua.php';
         break;
     case 'post-gasto-calorico':
-        require_once '../app/controllers/posts/posts/GastoCalorico.php';
+        require_once '../app/views/posts/posts/GastoCalorico.php';
         break;
 
  case 'alimentospdf':

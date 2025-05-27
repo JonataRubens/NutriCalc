@@ -113,4 +113,35 @@ Com a evolução do projeto NutriCalc e o aumento da complexidade das funcionali
 
 
  # 🧾 Atribuições – Sprint 03 (13/05/2025 - 27/05/2025)
- (em construção)
+ - **Jonata**: Responsável pela **implementação do sistema de Meus alimentos e refatorazão MVC** (RF-09) (RF-11)
+- Atribuições específicas:
+    - Fazer refatoração completa do projeto no padrao MVC
+    - Criar a ferramenta meus alimentos
+ 
+  - **Marcos**: Responsável pela **implementação Ferramenta de ciclos e implementar a geração de relatorios** (RF-10)
+- Atribuições específicas:
+    - Criar a calculadora de ciclos
+    - Fazer a expansão da feature de geração de relatorio
+      
+- **Caio**: Responsável pela **implementação APIS e ranking de alimentos** (RF-09, RF-11)
+- Atribuições específicas:
+    - Fazer as APIS
+    - Criar o Ranking de alimentos mais saudaveis
+ 
+  - **Afonso**: Responsável pela **implementação Lista de substituição de alimentos e Teste unitarios** (RF-09, RF-11)
+- Atribuições específicas:
+    - Fazer Lista de substituição de alimentos
+    - Fazer testes unitarios
+
+ **Entregas**:
+- ✅ Calculadora Avançada2 (RF-10) (Marcos)
+- ✅ Meus alimentos (RF-09) (Jonata)
+- ❌ Lista de Substituições (RF-09) (Afonso)
+- ❌ Testes unitarios (RF-11) (Afonso)
+- ✅ API (RF-11) (caio)
+- ✅ Reorganização no padrão MVC (RF-11) (Jonata)
+
+  OBS: as feature que não foram entregues ainda serão entregues
+
+# 🧾 Atribuições – Sprint 04 (27/05/2025 - 10/06/2025)
+(em construção)

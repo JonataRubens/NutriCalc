@@ -1,6 +1,6 @@
 <?php
 // Controller para operações com alimentos
-require_once __DIR__ . '/../models/ListaAlimento.php';
+require_once __DIR__ . '/../models/ListaAlimentoAPI.php';
 class AlimentosController {
     // Listar todos os alimentos
     public static function listar($conn) {

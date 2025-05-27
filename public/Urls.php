@@ -38,7 +38,7 @@ switch ($page) {
         break;
     
     case 'notas':
-        require_once '../app/controllers/Nots/Notas.php';
+        require_once '../app/views/Notas.php';
         break;
 
     case 'newnotas':
@@ -71,7 +71,7 @@ switch ($page) {
                 header('Location: /Urls.php?page=admin');
                 exit();
             }
-            require_once '../app/pages/admin/Dashboard.php';
+            require_once '../app/views/admin/Dashboard.php';
         } elseif ($action === 'edit' && $tipo && $id) {
             if (session_status() == PHP_SESSION_NONE) session_start();
             if (!isset($_SESSION['user_id'])) {
@@ -79,9 +79,9 @@ switch ($page) {
                 exit();
             }
             if ($tipo === 'user') {
-                require_once '../app/pages/admin/EditarUser.php';
+                require_once '../app/controllers/admin/EditarUser.php';
             } elseif ($tipo === 'food') {
-                require_once '../app/pages/admin/EditarFood.php';
+                require_once '../app/controllers/admin/EditarFood.php';
             }
         } elseif ($action === 'delete' && $tipo && $id) {
             if (session_status() == PHP_SESSION_NONE) session_start();
@@ -90,18 +90,18 @@ switch ($page) {
                 exit();
             }
             if ($tipo === 'user') {
-                require_once '../app/pages/admin/DelUser.php';
+                require_once '../app/controllers/admin/DelUser.php';
             } elseif ($tipo === 'food') {
-                require_once '../app/pages/admin/DelFood.php';
+                require_once '../app/controllers/admin/DelFood.php';
             }
         } else {
-            require_once '../app/pages/admin/admin.php';
+            require_once '../app/views/admin/admin.php';
         }
         break;
 
 
     case 'logout-admin':
-        require_once '../app/pages/admin/LogoutAdmin.php';
+        require_once '../app/views/admin/LogoutAdmin.php';
         break;
 
     case 'post-calorias':

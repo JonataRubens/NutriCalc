@@ -255,7 +255,7 @@ Geração de PDFs, Calculadora Avançada de Calorias, Perfil com dados do user, 
 ### 🧮Sprint 03 (13/05/2025 - 27/05/2025)
 
 **Objetivo**: 
-Criação de calculadora hormonal, ranking de alimentos mais saudaveis a fim de deixar claro para o usuario alimentos saudaveis com base em 3 filtros, ferramenta de substituição de alimentos onde no futuro será usado com a aba meus alimentos, implementação de API, testes e reorganização no padrão MVC
+Criação de calculadora hormonal, ranking de alimentos mais saudaveis a fim de deixar claro para o usuario alimentos saudaveis com base em 3 filtros, implementação de API, testes e reorganização no padrão MVC
 
 **Entregas**:
 
@@ -268,6 +268,7 @@ Criação de calculadora hormonal, ranking de alimentos mais saudaveis a fim de 
 ### 🧮Sprint 04 (27/05/2025 - 10/06/2025)
 
 **Objetivo**: 
+Criar um sistema de chat bot para responder perguntas simples, criação do sistema de testes para prever erros que possam vier a tona, ferramenta de substituição de alimentos onde no futuro será integrado aos meus alimentos e sistema para ser possivel o envio de email para um nutricionista.
 
 **Entregas**:
 - Lista de Substituições (RF-09) (Afonso)

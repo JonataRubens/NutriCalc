@@ -144,4 +144,29 @@ Com a evolução do projeto NutriCalc e o aumento da complexidade das funcionali
   OBS: as feature que não foram entregues ainda serão entregues
 
 # 🧾 Atribuições – Sprint 04 (27/05/2025 - 10/06/2025)
-(em construção)
+ - **Jonata**: Responsável pela **implementação Contato com Nutricionista (RF-12)**
+- Atribuições específicas:
+    - Criar uma maneira de contatar via email o nutricionista
+ 
+  - **Marcos**: Responsável pela **implementação Chat Bot (RF-12) (Marcos)**
+- Atribuições específicas:
+    - Criar um chat bot
+    - chat bot será bem simples, atendendo apenas as duvidas mais comuns
+      
+- **Caio**: Responsável pela **implementaçãoSistema de Testes (RF-11)**
+- Atribuições específicas:
+    - Fazer Logica do Sistema de Testes 
+    - Integrar o o Ranking no index/home
+ 
+  - **Afonso**: Responsável pela **implementação Lista de Substituições (RF-09) **
+- Atribuições específicas:
+    - Fazer Lista de substituição de alimentos
+    - Garantir autenticação e privacidade dos dados
+
+ **Entregas**:
+- ❌Lista de Substituições (RF-09) (Afonso)
+- ❌Chat Bot (RF-12) (Marcos)
+- ❌Sistema de Testes (RF-11) (Caio)
+- ❌Contato com Nutricionista (RF-12) (Jonata)
+
+(em construção 27/05/2025)

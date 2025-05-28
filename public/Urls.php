@@ -128,12 +128,17 @@ switch ($page) {
     case 'autoload':
         require_once '../scripts/dompdf/vendor/autoload.php';
         break;
-
     
-
-
+    case 'get-substitutes':
+        require_once '../public/includes/get_substitutes.php';
+        break;
+    
     case 'meus-alimentos':
         require_once '../app/views/meusAlimentos/Alimentos.php';
+        break;
+    
+    case 'substitution-list':
+        require_once '../app/views/substitution/SubstitutionList.php';
         break;
 
     default:

@@ -136,6 +136,14 @@ switch ($page) {
         require_once '../app/views/meusAlimentos/Alimentos.php';
         break;
 
+    case 'api':
+        require_once '../public/api/Alimentos.php';
+        break;
+
+    case 'contato':
+        require_once '../app/views/email/Email.php';
+        break;
+        
     default:
         echo "Página não encontrada";
         break;

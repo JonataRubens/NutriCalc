@@ -98,7 +98,6 @@ require_once __DIR__ . '/db_connection.php';
             </li>
           <?php endif; ?>
           <li><a href="Urls.php?page=blog">📑 Blog</a></li>
-          <li><a href="Urls.php?page=ranking">👑 Ranking</a>
           </li>
         </ul>
         <div class="nav-right">

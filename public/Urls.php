@@ -56,9 +56,6 @@ switch ($page) {
     case 'perfil':
         require_once '../app/controllers/perfil/Perfil.php';
         break;
-    case 'ranking':
-        require_once '../app/views/ranking/Ranking.php';
-        break;
 
     case 'admin':
         $action = $_GET['action'] ?? '';

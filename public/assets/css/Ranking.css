@@ -1,85 +1,94 @@
+/* Estilização geral da seção de ranking */
+.ranking {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
 
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #f4f6fb;
-            margin: 0;
-            padding: 0;
-        }
-        h1 {
-            text-align: center;
-            color: #2d3a4b;
-            margin-top: 30px;
-        }
-        form#ranking-form {
-            background: #fff;
-            max-width: 600px;
-            margin: 30px auto 20px auto;
-            padding: 24px 32px 16px 32px;
-            border-radius: 12px;
-            box-shadow: 0 4px 16px rgba(44,62,80,0.08);
-            display: flex;
-            flex-wrap: wrap;
-            gap: 18px;
-            align-items: center;
-            justify-content: center;
-        }
-        form#ranking-form label {
-            font-weight: 500;
-            color: #2d3a4b;
-        }
-        form#ranking-form select, form#ranking-form input[type="number"] {
-            padding: 7px 10px;
-            border-radius: 6px;
-            border: 1px solid #bfc9d1;
-            font-size: 15px;
-            background: #f8fafc;
-            color: #2d3a4b;
-        }
-        form#ranking-form button {
-            background: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 6px;
-            padding: 8px 22px;
-            font-size: 15px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        form#ranking-form button:hover {
-            background: #0056b3;
-        }
-        #ranking-table {
-            width: 90%;
-            margin: 0 auto 40px auto;
-            border-collapse: collapse;
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 16px rgba(44,62,80,0.08);
-            overflow: hidden;
-        }
-        #ranking-table th, #ranking-table td {
-            padding: 14px 10px;
-            text-align: center;
-        }
-        #ranking-table th {
-            background: #007bff;
-            color: #fff;
-            font-weight: 600;
-            font-size: 16px;
-        }
-        #ranking-table tr:nth-child(even) {
-            background: #f4f6fb;
-        }
-        #ranking-table tr:hover {
-            background: #e3eefd;
-        }
-        @media (max-width: 700px) {
-            form#ranking-form {
-                flex-direction: column;
-                padding: 18px 8px 10px 8px;
-            }
-            #ranking-table {
-                font-size: 13px;
-            }
-        }
+.ranking h3 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilização do formulário */
+#ranking-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+#ranking-form label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+}
+
+#ranking-form select, 
+#ranking-form input {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Botão roxo estilizado */
+#ranking-form button {
+    background: #5e3bea; /* Roxo */
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+#ranking-form button:hover {
+    background: #472a9a; /* Tom mais escuro ao passar o mouse */
+    transform: scale(1.05);
+}
+
+/* Estilização da tabela */
+#ranking-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#ranking-table th, #ranking-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#ranking-table thead {
+    background: #5e3bea; /* Roxo */
+    color: white;
+}
+
+#ranking-table tbody tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+#ranking-table tbody tr:hover {
+    background: #ddd;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #ranking-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #ranking-table th, #ranking-table td {
+        font-size: 14px;
+    }
+}

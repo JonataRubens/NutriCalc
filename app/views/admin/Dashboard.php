@@ -204,24 +204,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </form>
 </div>
 
-<script>
-    function openTab(tabName) {
-        var tabs = document.querySelectorAll('.tab-content');
-        tabs.forEach(function(tab) {
-            tab.classList.remove('active');
-        });
-        document.getElementById(tabName).classList.add('active');
-    }
+<script src="/assets/js/DashBoard.js"></script>
 
-    window.onload = function() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const tab = urlParams.get('tab');
-        if (tab === 'alimentos') {
-            openTab('alimentos');
-        } else {
-            openTab('usuarios');
-        }
-    }
-</script>
 </body>
 </html>

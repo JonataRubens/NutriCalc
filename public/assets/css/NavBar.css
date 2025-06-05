@@ -1,0 +1,48 @@
+
+  /* Aplicar Segoe UI na navbar */
+.navbar {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar nav ul li a {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar nav ul li a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Aplicar também no dropdown do usuário */
+.usuario-logado {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  display: inline-block;
+  font-weight: 600;
+  color: #333;
+}
+
+.dropdown-menu {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  min-width: 120px;
+  display: none;
+  z-index: 1000;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Botões de login também */
+.btn-entrar,
+.btn-criar {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

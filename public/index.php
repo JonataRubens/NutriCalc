@@ -1,5 +1,12 @@
+<?php require_once __DIR__ . '/../router.php'; ?>
+<?php include __DIR__ . '/../app/views/chatbot.php'; ?>
+<link rel="stylesheet" href="/assets/css/chatbot.css">
+<script src="/assets/js/chatbot.js" defer></script>
+
 <?php include('includes/NavBar.php'); ?>
-  <!-- Conteúdo principal -->
+
+  
+<!-- Conteúdo principal -->
   <main class="container">
     <section class="hero">
       <h1>Tabela Nutricional</h1>
@@ -38,4 +45,5 @@
 
 <script src="/assets/js/Index.js"></script>
 
+<?php include __DIR__ . '/../app/views/chatbot.php'; ?>
  <?php include('includes/Footer.html'); ?>

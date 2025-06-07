@@ -16,6 +16,13 @@ if ($page == 'register') {
     require_once '../app/controllers/login/RegisterAjax.php';
     exit; // Importante para parar a execução após processar o AJAX
 }
+if ($page == 'chatbot') {
+    require_once '../app/controllers/chatbot/ChatbotController.php';
+    exit; // Importante para parar a execução após processar o AJAX
+}
+
+
+
 
 switch ($page) {
     

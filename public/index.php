@@ -1,9 +1,9 @@
-<?php require_once __DIR__ . '/../router.php'; ?>
-<?php include __DIR__ . '/../app/views/chatbot.php'; ?>
-<link rel="stylesheet" href="/assets/css/chatbot.css">
-<script src="/assets/js/chatbot.js" defer></script>
+<?php session_start();?>
+
 
 <?php include('includes/NavBar.php'); ?>
+<link rel="stylesheet" href="/assets/css/chatbot.css">
+<script src="/assets/js/chatbot.js" defer></script>
 
   
 <!-- Conteúdo principal -->

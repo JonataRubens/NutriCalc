@@ -1,6 +1,6 @@
 #chatbot-box {
   position: fixed;
-  bottom: 20px;
+  bottom: 90px; /* afastado do botão */
   right: 20px;
   width: 300px;
   height: 400px;
@@ -74,16 +74,55 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 50px;
-  height: 50px;
-  background-color: #5e3bea; /* mesmo roxo do cabeçalho */
+  z-index: 9998;
+  background-color: #5e3bea;
   color: white;
+  border: none;
   border-radius: 50%;
+  width: 60px;
+  height: 60px;
   font-size: 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
-  z-index: 10000;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+#quick-questions {
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: space-between;
+}
+
+.quick-btn {
+  flex: 1 1 48%;
+  padding: 8px 10px;
+  background: #e0e0e0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.quick-btn:hover {
+  background: #d0d0d0;
+}
+#sub-questions {
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: space-between;
+}
+.quick-btn.voltar-btn {
+  background-color: #f0f0f0;
+  color: #333;
+  font-weight: bold;
 }

@@ -6,10 +6,12 @@
     <button id="fechar">×</button>
   </div>
   <div id="chat-body"></div>
-  <div id="quick-questions">
-    <button class="quick-btn">Calorias</button>
-    <button class="quick-btn">IMC</button>
-    <button class="quick-btn">Água</button>
-    <button class="quick-btn">Dieta</button>
-  </div>
+<div id="quick-questions">
+  <button class="quick-btn" data-categoria="saude">Saúde</button>
+  <button class="quick-btn" data-categoria="conta">Conta</button>
+  <button class="quick-btn" data-categoria="ferramentas">Ferramentas</button>
+  <button class="quick-btn" data-categoria="ajuda">Ajuda</button>
+</div>
+
+<div id="sub-questions" style="display: none;"></div>
 </div>

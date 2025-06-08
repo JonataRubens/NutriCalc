@@ -1,4 +1,6 @@
-<div id="chatbot-box">
+<div id="chat-toggle">💬</div>
+
+<div id="chatbot-box" style="display: none;">
   <div id="chatbot-header">
     <span>NutriBot</span>
     <button id="fechar">×</button>

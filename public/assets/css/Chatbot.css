@@ -15,7 +15,7 @@
 }
 
 #chatbot-header {
-  background: #4CAF50;
+  background: #5e3bea;
   color: white;
   padding: 10px;
   border-top-left-radius: 10px;
@@ -69,4 +69,21 @@
   background-color: #eee;
   align-self: flex-start;
   text-align: left;
+}
+#chat-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #5e3bea; /* mesmo roxo do cabeçalho */
+  color: white;
+  border-radius: 50%;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }

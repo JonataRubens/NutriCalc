@@ -2,7 +2,7 @@
 
 
 <?php include('includes/NavBar.php'); ?>
-<link rel="stylesheet" href="/assets/css/chatbot.css">
+<link rel="stylesheet" href="/assets/css/Chatbot.css">
 <script src="/assets/js/chatbot.js" defer></script>
 
   
@@ -45,5 +45,5 @@
 
 <script src="/assets/js/Index.js"></script>
 
-<?php include __DIR__ . '/../app/views/chatbot.php'; ?>
+<?php include __DIR__ . '/../app/views/Chatbot.php'; ?>
  <?php include('includes/Footer.html'); ?>

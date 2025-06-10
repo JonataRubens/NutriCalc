@@ -165,8 +165,30 @@ Com a evolução do projeto NutriCalc e o aumento da complexidade das funcionali
 
  **Entregas**:
 - ❌Lista de Substituições (RF-09) (Afonso)
-- ❌Chat Bot (RF-12) (Marcos)
+- ✅Chat Bot (RF-12) (Marcos)
 - ❌Sistema de Testes (RF-11) (Caio)
-- ❌Contato com Nutricionista (RF-12) (Jonata)
+- ✅Contato com Nutricionista (RF-12) (Jonata)
 
-(em construção 27/05/2025)
+# 🧾 Atribuições – Sprint 04 (27/05/2025 - 10/06/2025)
+ - **Jonata**: Responsável pela **Lista de comparação (RF-13)**
+  - Atribuições específicas:
+    - Fazer a feature de comparacao de alimentos de acordo com as regras de negocio
+
+- **Caio**: Responsável pela **Sistema de testes mais complexos (RF-14)**
+  - Atribuições específicas:
+    - Afim de complementar os sistemas de testes já feitos, deixando assim completos
+
+- ⚠️**Afonso**⚠️
+  - Duas ultimas feature nao entregues, refazer o que foi desiguinado nas sprints anteriores.
+
+- **Marcos**: Responsável pela **Sistema de anuncios (RF-15)**
+  - Atribuições específicas:
+    - Fazer a propaganda para o user para assim tornar ele um "cliente" o que pode no futuro evoluir para anuncios diferentes
+
+ **Entregas**:
+- ❌Lista de comparação (RF-13) (Jonata)
+- ❌Sistema de testes mais complexos (RF- 14) (Caio)
+- ❌Refatoração da lista de substituição e implementação a lista de alimentos (RF- 09) (Afonso)
+- ❌Sistema de anuncios (RF- 15) (Marcos)
+
+(em construção 10/06/2025)

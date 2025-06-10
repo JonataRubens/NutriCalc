@@ -7,7 +7,7 @@
 - **Disciplina**: ENGENHARIA DE SOFTWARE
 - **Semestre**: 2025/01
 - **Professor**: Edeilson Milhomem da Silva
-- **Equipe**: Jonata Rubens, Afonso Dglan, Carlos Eduardo, Marcus Vinicius, Caio
+- **Equipe**: Jonata Rubens, Afonso Dglan, Marcus Vinicius, Caio
 
 ## 🧾 Descrição
 
@@ -68,6 +68,8 @@
 - Implementar validação de campos
 - Desenvolver lógica de armazenamento no BD
 
+---
+
 ### 📦RF-02: Autenticação de Usuário
 **User Story**:  
 "Como usuário, quero fazer login, mas que seja opcional. Quero que seja possivel a verificação de estar logado"
@@ -76,6 +78,8 @@
 - Desenvolver formulário de login
 - Implementar sistema de autenticação
 - Lógica de login/Registro/Logout e visualização
+
+---
 
 ### 📦RF-03: Cálculos Nutricionais
 **User Story**:  
@@ -86,6 +90,8 @@
 - Implementar algoritmos de cálculo nutricional
 - Criar visualização de resultados
 
+---
+
 ### 📦RF-04: Calculadora Avançada de Calorias
 **User Story**:  
 "Como usuário, quero uma calculadora precisa de calorias com visual moderno para acompanhar meu consumo diário de forma mais eficiente."
@@ -94,7 +100,8 @@
 - Cálculo baseado em: idade, peso, altura, gênero e nível de atividade
 -  Exibição de macros (proteínas, carboidratos, gorduras)
 - Todos os alimentos devem estar no Banco de Dados
--  Testes unitários 
+
+---
 
 ### 📦RF-05: Geração de PDF com Informações Pessoais e Cálculos
 **User Story:**
@@ -116,6 +123,8 @@
 -  Criar verificação de login e preenchimento do perfil antes da geração
 -  Testar layout e compatibilidade com diferentes navegadores
 
+---
+
 ### 📦RF-06: Geração de PDF com Lista de Alimentos
 **User Story:**
 "Como usuário, quero baixar um PDF com todos os alimentos cadastrados para consultar offline ou compartilhar."
@@ -134,6 +143,8 @@
 -  Bloquear acesso à geração caso o usuário não esteja autenticado
 -  Incluir nome do usuário e data na exportação
 
+---
+
 ### 📦RF-07: Criação da página de admin, Adição de informações ao user
 **User Story:**
 "Eu como super usuario quero ter uma tela de login para poder administrar usuarios e alimentos onde poderá ser realizado CRUD"
@@ -148,6 +159,8 @@
 - Criar página de admin
 - CRUD dentro da pagina admin
 - Adição de mais dados de usuario
+
+---
 
 ### 📦RF-08: Criação da opcao de lembretes/notas
 **User Story:**
@@ -165,6 +178,8 @@
 - CRUD Dentro de Notas
 - Implementar logica de sessao nas notas afim de impedir links diretos
 
+---
+
 
 ### 📦RF-09: Ranking de alimentos, Adição de "meus alimentos" 
 **User Story:**
@@ -180,6 +195,8 @@
 - Criar o ranking de alimentos saudaveis
 - Criação da aba meus alimentos
 
+---
+
 ### 📦RF-10: Calculadora avançada 2
 **User Story:**
 "Eu como usuario quero uma calculadora de ciclos de hormonios"
@@ -194,6 +211,8 @@
 - Só sera possivel o uso se estiver logado
 - ser possivel o download desses dados em pdf
 
+---
+
 ### 📦 RF-11 Api, testes e MVC
 **User Story:**
 "Eu como Usuario Administrador afim de deixar tudo pronto para uso externo o uso de api se torna necessario, e os testes andam lado a lado para assim garantir um codigo polido e funcional"
@@ -207,6 +226,8 @@
 - Criação de API
 - Implementação de testes unitarios
 - Reorganizar código fonte no padrão MVC
+
+---
 
 ### 📦 RF-12 Contato com nutricionistas e chat bot
 **User Story:**
@@ -224,6 +245,48 @@
   
 ---
 
+
+### 📦 RF-13 Lista de comparação
+**User Story:**
+"Eu como usuario não final, quero uma ferramenta que me possibilite a comparação de alimentos destacando pontos entre os alimentos"
+
+**📝 Regras de Negócio:**
+- Poderá ser feita sem estar logado
+- Destacar pontos entres os alimentos
+- Permitir apenas 1 comparação por vez
+- Apresentar de manaeira visual e única
+
+**Tarefas Técnicas:**
+- Lista de comparação dentro da despensa digital
+  
+---
+
+### 📦 RF-14 Sistema de testes mais complexos
+**User Story:**
+"como administrador quero um sistema de testes completos no site afim de ter mais controle sobre o que acontec no back end"
+
+**📝 Regras de Negócio:**
+- Deverá ter uma pasta para por todos os testes
+
+**Tarefas Técnicas:**
+- Criação de sistemas de testes no back end
+
+---
+
+
+### 📦 RF-15 Sistema de anuncios
+**User Story:**
+"Afim de fazer a propaganda para o usuario fazer o cadastro no site, quero uma sistema de anuncio amigavel"
+
+**📝 Regras de Negócio:**
+- Será mostrado um modal de anuncio para cadastro quando disparado determinado eventos
+
+**Tarefas Técnicas:**
+- Implementar logica para isso acontece apenas quando nao estiver logado
+
+---
+
+
 ## 🚀 Roadmap de Sprints
 
 ### 🧮Sprint 01 (08/04/2025 - 29/04/2025)
@@ -238,6 +301,8 @@ Oferecer experiência inicial de navegação e acesso ao sistema com cadastro e 
 - Cálculo e exibição de nutrientes totais
 - Implementação do cálculos Nutricionais
 
+---
+
 ### 🧮Sprint 02 (30/04/2025 - 13/05/2025)
 
 **Objetivo**: 
@@ -250,6 +315,8 @@ Geração de PDFs, Calculadora Avançada de Calorias, Perfil com dados do user, 
 - Bloqueio da geração se não estiver logado ou perfil incompleto (marcos)
 - Implementação da pagina de admin (RF-07) (caio) 
 - Criacao de Notas/Lembretes (RF-08 )(Jonata)
+
+---
 
 
 ### 🧮Sprint 03 (13/05/2025 - 27/05/2025)
@@ -265,6 +332,8 @@ Criação de calculadora hormonal, ranking de alimentos mais saudaveis a fim de 
 - API (RF-11) (Caio)
 - Reorganização no padrão MVC (RF-11) (Jonata/Caio)
 
+---
+
 ### 🧮Sprint 04 (27/05/2025 - 10/06/2025)
 
 **Objetivo**: 
@@ -275,6 +344,19 @@ Criar um sistema de chat bot para responder perguntas simples, criação do sist
 - Chat Bot (RF-12) (Marcos)
 - Sistema de Testes (RF-11) (Caio)
 - Contato com Nutricionista (RF-12) (Jonata)
+
+---
+
+### 🧮Sprint 05 (10/06/2025 - 24/06/2025)
+
+**Objetivo**: 
+Criação de features mais simples para os usuarios não finais com teor visual mais forte, finalização de features que ficaram para trás além refinamentos.
+
+**Entregas**:
+- Lista de comparação (RF-13) (Jonata)
+- Sistema de testes mais complexos (RF- 14) (Caio)
+- Refatoração da lista de substituição e implementação a lista de alimentos (RF- 09) (Afonso)
+- Sistema de anuncios (RF- 15) (Marcos)
 
 ---
 

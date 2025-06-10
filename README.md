@@ -68,6 +68,8 @@
 - Implementar validação de campos
 - Desenvolver lógica de armazenamento no BD
 
+---
+
 ### 📦RF-02: Autenticação de Usuário
 **User Story**:  
 "Como usuário, quero fazer login, mas que seja opcional. Quero que seja possivel a verificação de estar logado"
@@ -76,6 +78,8 @@
 - Desenvolver formulário de login
 - Implementar sistema de autenticação
 - Lógica de login/Registro/Logout e visualização
+
+---
 
 ### 📦RF-03: Cálculos Nutricionais
 **User Story**:  
@@ -86,6 +90,8 @@
 - Implementar algoritmos de cálculo nutricional
 - Criar visualização de resultados
 
+---
+
 ### 📦RF-04: Calculadora Avançada de Calorias
 **User Story**:  
 "Como usuário, quero uma calculadora precisa de calorias com visual moderno para acompanhar meu consumo diário de forma mais eficiente."
@@ -94,7 +100,8 @@
 - Cálculo baseado em: idade, peso, altura, gênero e nível de atividade
 -  Exibição de macros (proteínas, carboidratos, gorduras)
 - Todos os alimentos devem estar no Banco de Dados
--  Testes unitários 
+
+---
 
 ### 📦RF-05: Geração de PDF com Informações Pessoais e Cálculos
 **User Story:**
@@ -116,6 +123,8 @@
 -  Criar verificação de login e preenchimento do perfil antes da geração
 -  Testar layout e compatibilidade com diferentes navegadores
 
+---
+
 ### 📦RF-06: Geração de PDF com Lista de Alimentos
 **User Story:**
 "Como usuário, quero baixar um PDF com todos os alimentos cadastrados para consultar offline ou compartilhar."
@@ -134,6 +143,8 @@
 -  Bloquear acesso à geração caso o usuário não esteja autenticado
 -  Incluir nome do usuário e data na exportação
 
+---
+
 ### 📦RF-07: Criação da página de admin, Adição de informações ao user
 **User Story:**
 "Eu como super usuario quero ter uma tela de login para poder administrar usuarios e alimentos onde poderá ser realizado CRUD"
@@ -148,6 +159,8 @@
 - Criar página de admin
 - CRUD dentro da pagina admin
 - Adição de mais dados de usuario
+
+---
 
 ### 📦RF-08: Criação da opcao de lembretes/notas
 **User Story:**
@@ -165,6 +178,8 @@
 - CRUD Dentro de Notas
 - Implementar logica de sessao nas notas afim de impedir links diretos
 
+---
+
 
 ### 📦RF-09: Ranking de alimentos, Adição de "meus alimentos" 
 **User Story:**
@@ -180,6 +195,8 @@
 - Criar o ranking de alimentos saudaveis
 - Criação da aba meus alimentos
 
+---
+
 ### 📦RF-10: Calculadora avançada 2
 **User Story:**
 "Eu como usuario quero uma calculadora de ciclos de hormonios"
@@ -194,6 +211,8 @@
 - Só sera possivel o uso se estiver logado
 - ser possivel o download desses dados em pdf
 
+---
+
 ### 📦 RF-11 Api, testes e MVC
 **User Story:**
 "Eu como Usuario Administrador afim de deixar tudo pronto para uso externo o uso de api se torna necessario, e os testes andam lado a lado para assim garantir um codigo polido e funcional"
@@ -207,6 +226,8 @@
 - Criação de API
 - Implementação de testes unitarios
 - Reorganizar código fonte no padrão MVC
+
+---
 
 ### 📦 RF-12 Contato com nutricionistas e chat bot
 **User Story:**
@@ -280,6 +301,8 @@ Oferecer experiência inicial de navegação e acesso ao sistema com cadastro e 
 - Cálculo e exibição de nutrientes totais
 - Implementação do cálculos Nutricionais
 
+---
+
 ### 🧮Sprint 02 (30/04/2025 - 13/05/2025)
 
 **Objetivo**: 
@@ -292,6 +315,8 @@ Geração de PDFs, Calculadora Avançada de Calorias, Perfil com dados do user, 
 - Bloqueio da geração se não estiver logado ou perfil incompleto (marcos)
 - Implementação da pagina de admin (RF-07) (caio) 
 - Criacao de Notas/Lembretes (RF-08 )(Jonata)
+
+---
 
 
 ### 🧮Sprint 03 (13/05/2025 - 27/05/2025)
@@ -306,6 +331,8 @@ Criação de calculadora hormonal, ranking de alimentos mais saudaveis a fim de 
 - Ranking de alimentos mais saudaveis (RF-09) (Caio)
 - API (RF-11) (Caio)
 - Reorganização no padrão MVC (RF-11) (Jonata/Caio)
+
+---
 
 ### 🧮Sprint 04 (27/05/2025 - 10/06/2025)
 

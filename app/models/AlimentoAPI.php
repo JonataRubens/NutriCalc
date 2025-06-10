@@ -1,8 +1,40 @@
 <?php
-// Controller para operações com alimentos
-require_once __DIR__ . '/../models/ListaAlimentoAPI.php';
-class AlimentosController {
-    // Listar todos os alimentos
+// Model para a tabela lista_alimentos
+class ListaAlimento {
+    public $id;
+    public $descricao;
+    public $categoria;
+    public $energia;
+    public $proteina;
+    public $lipideos;
+    public $carboidratos;
+    public $criado_em;
+
+    public function __construct($row) {
+        $this->id = $row['id'] ?? null;
+        $this->descricao = $row['descricao'] ?? null;
+        $this->categoria = $row['categoria'] ?? null;
+        $this->energia = $row['energia'] ?? null;
+        $this->proteina = $row['proteina'] ?? null;
+        $this->lipideos = $row['lipideos'] ?? null;
+        $this->carboidratos = $row['carboidratos'] ?? null;
+        $this->criado_em = $row['criado_em'] ?? null;
+    }
+
+    // Retorna os dados como array associativo
+    public function toArray() {
+        return [
+            'id' => $this->id,
+            'descricao' => $this->descricao,
+            'categoria' => $this->categoria,
+            'energia' => $this->energia,
+            'proteina' => $this->proteina,
+            'lipideos' => $this->lipideos,
+            'carboidratos' => $this->carboidratos,
+            'criado_em' => $this->criado_em
+        ];
+    }
+
     public static function listar($conn) {
         $result = $conn->query("SELECT * FROM alimentos");
         $alimentos = [];
@@ -48,7 +80,7 @@ class AlimentosController {
         }
     }
 
-    // Editar alimento
+        // Editar alimento
     public static function editar($conn, $id, $data) {
         $stmt = $conn->prepare("UPDATE alimentos SET descricao = ?, categoria = ?, energia = ?, proteina = ?, lipideos = ?, carboidratos = ? WHERE id = ?");
         $stmt->bind_param(
@@ -72,6 +104,7 @@ class AlimentosController {
         }
     }
 
+    
     // Filtrar alimentos por termo (busca em descricao e categoria)
     public static function filtrar($conn, $termo) {
         $termo = "%" . $termo . "%";
@@ -87,6 +120,7 @@ class AlimentosController {
         return $alimentos;
     }
 
+    
     // Filtrar por categoria exata
     public static function filtrarPorCategoria($conn, $categoria) {
         $stmt = $conn->prepare("SELECT * FROM alimentos WHERE categoria = ?");
@@ -100,4 +134,6 @@ class AlimentosController {
         }
         return $alimentos;
     }
+    
 }
+?>

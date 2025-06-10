@@ -80,7 +80,7 @@ document.getElementById('searchInput').addEventListener('input', function(e) {
         return;
     }
 
-    fetch(`/api/Alimentos.php?termo=${encodeURIComponent(searchTerm)}`)
+    fetch(`/Urls.php?page=alimentos-api&termo=${encodeURIComponent(searchTerm)}`)
         .then(response => response.json())
         .then(data => {
             displayResults(data, resultsContainer);
@@ -95,7 +95,7 @@ function searchByCategory(category) {
     const resultsContainer = document.getElementById('searchResults');
     resultsContainer.innerHTML = '<p>Carregando...</p>';
 
-    fetch(`/api/Alimentos.php?categoria=${encodeURIComponent(category)}`)
+    fetch(`/Urls.php?page=alimentos-api&categoria=${encodeURIComponent(category)}`)
         .then(response => response.json())
         .then(data => {
             displayResults(data, resultsContainer);
@@ -142,7 +142,11 @@ document.getElementById('ranking-form').addEventListener('submit', function(e) {
     const tbody = document.querySelector('#ranking-table tbody');
     tbody.innerHTML = '<tr><td colspan="6">Carregando...</td></tr>';
 
-    fetch('/api/Alimentos.php')
+    fetch('/Urls.php?page=alimentos-api&' + new URLSearchParams({
+            filtro: filtro,
+            ordem: ordem,
+            limite: limite
+        }))
         .then(response => response.json())
         .then(data => {
             if (!data || data.length === 0) {

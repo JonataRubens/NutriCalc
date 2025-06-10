@@ -1,0 +1,128 @@
+#chatbot-box {
+  position: fixed;
+  bottom: 90px; /* afastado do botão */
+  right: 20px;
+  width: 300px;
+  height: 400px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+  z-index: 9999;
+}
+
+#chatbot-header {
+  background: #5e3bea;
+  color: white;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#chat-body {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background: #f9f9f9;
+}
+
+#quick-questions {
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.quick-btn {
+  flex: 1 1 45%;
+  padding: 8px 10px;
+  background: #e0e0e0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.user-msg, .bot-msg {
+  margin: 5px 0;
+  padding: 8px;
+  border-radius: 10px;
+  max-width: 80%;
+  clear: both;
+}
+
+.user-msg {
+  background-color: #DCF8C6;
+  align-self: flex-end;
+  margin-left: auto;
+  text-align: right;
+}
+
+.bot-msg {
+  background-color: #eee;
+  align-self: flex-start;
+  text-align: left;
+}
+#chat-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9998;
+  background-color: #5e3bea;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+#quick-questions {
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: space-between;
+}
+
+.quick-btn {
+  flex: 1 1 48%;
+  padding: 8px 10px;
+  background: #e0e0e0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.quick-btn:hover {
+  background: #d0d0d0;
+}
+#sub-questions {
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: space-between;
+}
+.quick-btn.voltar-btn {
+  background-color: #f0f0f0;
+  color: #333;
+  font-weight: bold;
+}

@@ -7,7 +7,7 @@
 - **Disciplina**: ENGENHARIA DE SOFTWARE
 - **Semestre**: 2025/01
 - **Professor**: Edeilson Milhomem da Silva
-- **Equipe**: Jonata Rubens, Afonso Dglan, Carlos Eduardo, Marcus Vinicius, Caio
+- **Equipe**: Jonata Rubens, Afonso Dglan, Marcus Vinicius, Caio
 
 ## 🧾 Descrição
 
@@ -224,6 +224,48 @@
   
 ---
 
+
+### 📦 RF-13 Lista de comparação
+**User Story:**
+"Eu como usuario não final, quero uma ferramenta que me possibilite a comparação de alimentos destacando pontos entre os alimentos"
+
+**📝 Regras de Negócio:**
+- Poderá ser feita sem estar logado
+- Destacar pontos entres os alimentos
+- Permitir apenas 1 comparação por vez
+- Apresentar de manaeira visual e única
+
+**Tarefas Técnicas:**
+- Lista de comparação dentro da despensa digital
+  
+---
+
+### 📦 RF-14 Sistema de testes mais complexos
+**User Story:**
+"como administrador quero um sistema de testes completos no site afim de ter mais controle sobre o que acontec no back end"
+
+**📝 Regras de Negócio:**
+- Deverá ter uma pasta para por todos os testes
+
+**Tarefas Técnicas:**
+- Criação de sistemas de testes no back end
+
+---
+
+
+### 📦 RF-15 Sistema de anuncios
+**User Story:**
+"Afim de fazer a propaganda para o usuario fazer o cadastro no site, quero uma sistema de anuncio amigavel"
+
+**📝 Regras de Negócio:**
+- Será mostrado um modal de anuncio para cadastro quando disparado determinado eventos
+
+**Tarefas Técnicas:**
+- Implementar logica para isso acontece apenas quando nao estiver logado
+
+---
+
+
 ## 🚀 Roadmap de Sprints
 
 ### 🧮Sprint 01 (08/04/2025 - 29/04/2025)
@@ -275,6 +317,19 @@ Criar um sistema de chat bot para responder perguntas simples, criação do sist
 - Chat Bot (RF-12) (Marcos)
 - Sistema de Testes (RF-11) (Caio)
 - Contato com Nutricionista (RF-12) (Jonata)
+
+---
+
+### 🧮Sprint 05 (10/06/2025 - 24/06/2025)
+
+**Objetivo**: 
+Criação de features mais simples para os usuarios não finais com teor visual mais forte, finalização de features que ficaram para trás além refinamentos.
+
+**Entregas**:
+- Lista de comparação (RF-13) (Jonata)
+- Sistema de testes mais complexos (RF- 14) (Caio)
+- Refatoração da lista de substituição e implementação a lista de alimentos (RF- 09) (Afonso)
+- Sistema de anuncios (RF- 15) (Marcos)
 
 ---
 

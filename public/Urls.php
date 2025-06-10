@@ -16,6 +16,13 @@ if ($page == 'register') {
     require_once '../app/controllers/login/RegisterAjax.php';
     exit; // Importante para parar a execução após processar o AJAX
 }
+if ($page == 'chatbot') {
+    require_once '../app/controllers/chatbot/ChatbotController.php';
+    exit; // Importante para parar a execução após processar o AJAX
+}
+
+
+
 
 switch ($page) {
     
@@ -136,6 +143,14 @@ switch ($page) {
         require_once '../app/views/meusAlimentos/Alimentos.php';
         break;
 
+    case 'api':
+        require_once '../public/api/Alimentos.php';
+        break;
+
+    case 'contato':
+        require_once '../app/views/email/Email.php';
+        break;
+        
     default:
         echo "Página não encontrada";
         break;

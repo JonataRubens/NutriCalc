@@ -66,18 +66,6 @@ include(__DIR__ . '/../../../public/includes/NavBar.php');
     </div>
 </div>
 
-<script>
-function openModal(titulo, resumo, completo, id) {
-    document.getElementById("modalTitulo").innerText = titulo;
-    document.getElementById("modalConteudo").innerHTML = completo;
-    document.getElementById("notaIdParaExcluir").value = id;
-    document.getElementById("btnEditar").href = `/Urls.php?page=edit-notas&id=${id}`;
-    document.getElementById("notaModal").style.display = "block";
-}
-
-function closeModal() {
-    document.getElementById("notaModal").style.display = "none";
-}
-</script>
+<script src="/assets/js/Notas.js"></script>
 
 <?php include(__DIR__ . '/../../../public/includes/Footer.html'); ?>

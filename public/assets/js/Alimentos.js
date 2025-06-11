@@ -1,6 +1,13 @@
 const clearBtn = document.getElementById('clearBtn');
   const searchInput = document.getElementById('searchInput');
   const searchResults = document.getElementById('searchResults');
+  const substituteModal = document.getElementById('substituteModal'); // Get the modal
+  const closeSubstituteModalBtn = document.getElementById('closeSubstituteModal'); // Get the close button
+  const cancelSubstituteBtn = document.getElementById('cancelSubstituteBtn'); // Get the cancel button
+  const similarFoodsList = document.getElementById('similarFoodsList'); // Get the div for similar foods
+
+  let selectedAlimentos = [];
+  let currentFoodToSubstitute = null; // To store the food being substituted
 
   // Event listeners para o campo de busca e botão limpar
   searchInput.addEventListener('input', () => {
@@ -19,7 +26,28 @@ const clearBtn = document.getElementById('clearBtn');
     searchInput.focus();
   });
 
-  let selectedAlimentos = [];
+  // Open the substitute modal
+  function openSubstituteModal() {
+    substituteModal.style.display = 'block';
+  }
+
+  // Close the substitute modal
+  function closeSubstituteModal() {
+    substituteModal.style.display = 'none';
+    similarFoodsList.innerHTML = ''; // Clear previous results
+    currentFoodToSubstitute = null; // Clear the stored food
+  }
+
+  // Event listeners for modal close buttons
+  closeSubstituteModalBtn.addEventListener('click', closeSubstituteModal);
+  cancelSubstituteBtn.addEventListener('click', closeSubstituteModal);
+
+  // Close modal when clicking outside of it
+  window.addEventListener('click', (event) => {
+    if (event.target === substituteModal) {
+      closeSubstituteModal();
+    }
+  });
 
   // Carrega a lista salva do usuário
   function carregarListaSalva() {
@@ -80,7 +108,7 @@ const clearBtn = document.getElementById('clearBtn');
     container.innerHTML = html;
   }
 
-  // Mostrar lista selecionada com botão "Remover"
+  // Mostrar lista selecionada com botão "Remover" e "Substituir"
   function mostrarListaSelecionada() {
     const container = document.getElementById('selectedList');
     if (selectedAlimentos.length === 0) {
@@ -88,10 +116,10 @@ const clearBtn = document.getElementById('clearBtn');
       return;
     }
     
-    let html = '<table><thead><tr><th>Descrição</th><th>Categoria</th><th>Energia</th><th>Proteína</th><th>Lipídios</th><th>Carboidratos</th><th>Ação</th></tr></thead><tbody>';
+    let html = '<table><thead><tr><th>Descrição</th><th>Categoria</th><th>Energia</th><th>Proteína</th><th>Lipídios</th><th>Carboidratos</th><th colspan="2">Ação</th></tr></thead><tbody>';
     
     selectedAlimentos.forEach(alimento => {
-      html += `<tr data-id="${alimento.id}">
+      html += `<tr data-id="${alimento.id}" data-energia="${alimento.energia}">
         <td>${alimento.descricao}</td>
         <td>${alimento.categoria}</td>
         <td>${alimento.energia}</td>
@@ -99,12 +127,96 @@ const clearBtn = document.getElementById('clearBtn');
         <td>${alimento.lipideos}</td>
         <td>${alimento.carboidratos}</td>
         <td><button onclick="removerAlimento(${alimento.id})">Remover</button></td>
+        <td><button onclick="prepararSubstituicao(${alimento.id}, ${alimento.energia})">Substituir</button></td>
       </tr>`;
     });
     
     html += '</tbody></table>';
     container.innerHTML = html;
   }
+
+  // Prepara a substituição, abre o modal e busca alimentos similares
+  function prepararSubstituicao(id, energia) {
+    currentFoodToSubstitute = { id: id, energia: energia };
+    openSubstituteModal();
+    buscarAlimentosSimilares(energia);
+  }
+
+  // Função para buscar alimentos similares (no backend)
+  function buscarAlimentosSimilares(energia) {
+    similarFoodsList.innerHTML = '<p>Buscando alimentos similares...</p>';
+    fetch(`api/Alimentos.php?acao=get_similar_by_calories&energia=${energia}`)
+      .then(res => res.json())
+      .then(data => mostrarAlimentosSimilares(data))
+      .catch(err => {
+        console.error('Erro ao buscar alimentos similares:', err);
+        similarFoodsList.innerHTML = '<p>Erro ao carregar alimentos similares.</p>';
+      });
+  }
+
+  // Mostra os alimentos similares no modal
+  function mostrarAlimentosSimilares(alimentos) {
+    const container = similarFoodsList;
+    if (alimentos.length === 0) {
+      container.innerHTML = '<p>Nenhum alimento similar encontrado.</p>';
+      return;
+    }
+    
+    let html = '<table><thead><tr><th>Descrição</th><th>Categoria</th><th>Energia</th><th>Ação</th></tr></thead><tbody>';
+    
+    alimentos.forEach(alimento => {
+      html += `<tr data-id="${alimento.id}" data-energia="${alimento.energia}">
+        <td>${alimento.descricao}</td>
+        <td>${alimento.categoria}</td>
+        <td>${alimento.energia}</td>
+        <td><button onclick="confirmarSubstituicao(${alimento.id}, '${alimento.descricao}', '${alimento.categoria}', ${alimento.energia}, ${alimento.proteina}, ${alimento.lipideos}, ${alimento.carboidratos})">Selecionar</button></td>
+      </tr>`;
+    });
+    
+    html += '</tbody></table>';
+    container.innerHTML = html;
+  }
+
+  // Confirma a substituição de um alimento
+  function confirmarSubstituicao(novoId, novaDescricao, novaCategoria, novaEnergia, novaProteina, novoLipideos, novoCarboidratos) {
+    if (!currentFoodToSubstitute) {
+      alert('Erro: Alimento original não identificado para substituição.');
+      return;
+    }
+
+    const originalId = currentFoodToSubstitute.id;
+
+    const formData = new FormData();
+    formData.append('acao', 'substituir');
+    formData.append('original_id', originalId);
+    formData.append('novo_id', novoId);
+    formData.append('nova_descricao', novaDescricao);
+    formData.append('nova_categoria', novaCategoria);
+    formData.append('nova_energia', novaEnergia);
+    formData.append('nova_proteina', novaProteina);
+    formData.append('novo_lipideos', novoLipideos);
+    formData.append('novo_carboidratos', novoCarboidratos);
+
+    fetch('includes/gerenciar_lista.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        closeSubstituteModal();
+        carregarListaSalva(); // Recarrega a lista para mostrar a alteração
+        buscarAlimentos(document.getElementById('searchInput').value.trim()); // Atualiza resultados da busca também
+      } else {
+        alert(data.error || 'Erro ao substituir alimento.');
+      }
+    })
+    .catch(err => {
+      console.error('Erro na substituição:', err);
+      alert('Erro de comunicação ao substituir alimento.');
+    });
+  }
+
 
   // Adiciona alimento na lista selecionada e salva no banco
   function adicionarAlimento(id) {

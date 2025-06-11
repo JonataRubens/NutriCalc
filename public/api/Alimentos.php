@@ -4,6 +4,7 @@ require_once __DIR__ . '/../includes/db_connection.php';
 require_once __DIR__ . '/../../app/controllers/AlimentosControllerAPI.php';
 
 $method = $_SERVER['REQUEST_METHOD'];
+$acao = $_GET['acao'] ?? ''; // Added to handle different actions
 
 switch ($method) {
     case 'GET':
@@ -16,6 +17,10 @@ switch ($method) {
         } elseif (isset($_GET['categoria'])) {
             $categoria = $_GET['categoria'];
             $alimentos = AlimentosController::filtrarPorCategoria($conn, $categoria);
+            echo json_encode($alimentos);
+        } elseif ($acao === 'get_similar_by_calories' && isset($_GET['energia'])) { // New action
+            $energia = (float)$_GET['energia'];
+            $alimentos = AlimentosController::getSimilarByCalories($conn, $energia);
             echo json_encode($alimentos);
         } else {
             $alimentos = AlimentosController::listar($conn);

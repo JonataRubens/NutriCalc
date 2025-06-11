@@ -61,6 +61,32 @@ switch ($acao) {
         $sucesso = $listaModel->remover($usuario_id, $id_alimento);
         echo json_encode(['success' => $sucesso]);
         break;
+
+    case 'substituir': // New action to substitute an item
+        $original_id = $_POST['original_id'] ?? 0;
+        $novo_id = $_POST['novo_id'] ?? 0;
+        $nova_descricao = $_POST['nova_descricao'] ?? '';
+        $nova_categoria = $_POST['nova_categoria'] ?? '';
+        $nova_energia = $_POST['nova_energia'] ?? '';
+        $nova_proteina = $_POST['nova_proteina'] ?? '';
+        $novo_lipideos = $_POST['novo_lipideos'] ?? '';
+        $novo_carboidratos = $_POST['novo_carboidratos'] ?? '';
+
+        // First, remove the original item from the user's list
+        $sucessoRemover = $listaModel->remover($usuario_id, $original_id);
+
+        if ($sucessoRemover) {
+            // Then, add the new item to the user's list
+            if ($listaModel->jaExiste($usuario_id, $novo_id)) {
+                echo json_encode(['error' => 'O alimento de substituição já está na sua lista.']);
+            } else {
+                $sucessoAdicionar = $listaModel->adicionar($usuario_id, $novo_id, $nova_descricao, $nova_categoria, $nova_energia, $nova_proteina, $novo_lipideos, $novo_carboidratos);
+                echo json_encode(['success' => $sucessoAdicionar]);
+            }
+        } else {
+            echo json_encode(['error' => 'Erro ao remover o alimento original da lista.']);
+        }
+        break;
         
     case 'limpar':
         // Limpa toda a lista

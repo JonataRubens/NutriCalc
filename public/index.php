@@ -2,11 +2,8 @@
 <?php
 $isLoggedIn = isset($_SESSION['usuario_nome']);
 
-// Caminho das imagens do popup
 $imgDir = __DIR__ . '/assets/img/popup/';
 $imgUrlBase = '/assets/img/popup/';
-
-// Coleta imagens da pasta
 $images = glob($imgDir . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
 $randomImg = '';
 if ($images && count($images) > 0) {
@@ -22,16 +19,17 @@ if ($images && count($images) > 0) {
 <?php if (!$isLoggedIn && $randomImg): ?>
 <!-- POPUP DE CADASTRO/LOGIN -->
 <div id="popup-overlay">
-  <div id="popup-box">
-    <img src="<?= $randomImg ?>" alt="Imagem do popup" class="popup-img">
-    <h2>Bem-vindo!</h2>
-    <p>Cadastre-se ou entre na sua conta para aproveitar todos os recursos da plataforma!</p>
-    <div class="popup-buttons">
-      <a href="javascript:void(0);" onclick="openRegisterModal()" class="btn-cadastro">Criar conta</a>
-      <a href="javascript:void(0);" onclick="openLoginModal()" class="btn-login">Entrar</a>
-    </div>
-    <button id="fechar-popup" style="display: none;">Fechar</button>
+ <div id="popup-box">
+  <button class="fechar-x" onclick="fecharPopup()">×</button>
+  <img src="<?= $randomImg ?>" alt="Imagem do popup" class="popup-img">
+  <h2>Bem-vindo!</h2>
+  <p>Cadastre-se ou entre na sua conta para aproveitar todos os recursos da plataforma!</p>
+  <div class="popup-buttons">
+    <a href="javascript:void(0);" onclick="openRegisterModal(); fecharPopup();" class="btn-cadastro">Criar conta</a>
+    <a href="javascript:void(0);" onclick="openLoginModal(); fecharPopup();" class="btn-login">Entrar</a>
   </div>
+</div>
+
 </div>
 <?php endif; ?>
 
@@ -47,7 +45,6 @@ if ($images && count($images) > 0) {
   <section class="grupos">
     <h3>Grupos alimentares</h3>
     <div class="grid-grupos">
-      <button onclick="searchByCategory('Bebidas')">Bebidas</button>
       <button onclick="searchByCategory('Carnes')">Carnes</button>
       <button onclick="searchByCategory('Cereais')">Cereais</button>
       <button onclick="searchByCategory('Frutas')">Frutas</button>
@@ -69,20 +66,24 @@ if ($images && count($images) > 0) {
 <?php include __DIR__ . '/../app/views/Chatbot.php'; ?>
 <?php include('includes/Footer.html'); ?>
 
-<!-- Script do popup -->
+<!-- Script para fechar popup -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const popup = document.getElementById("popup-overlay");
-    const fecharBtn = document.getElementById("fechar-popup");
+    const fecharX = document.querySelector(".fechar-x");
 
-    if (popup && fecharBtn) {
-      setTimeout(() => {
-        fecharBtn.style.display = "inline-block";
-      }, 4000);
+    // Exibir o X após 4 segundos
+    setTimeout(() => {
+      if (fecharX) {
+        fecharX.style.display = "block";
+      }
+    }, 4000);
 
-      fecharBtn.addEventListener("click", () => {
-        popup.style.display = "none";
-      });
-    }
+    // Função global para fechar popup (usada nos botões Entrar/Cadastrar e X)
+    window.fecharPopup = function () {
+      if (popup) popup.style.display = "none";
+    };
   });
+</script>
+
 </script>

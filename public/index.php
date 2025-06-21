@@ -36,7 +36,6 @@ $isLoggedIn = isset($_SESSION['usuario_nome']); // Ajustado conforme sua lógica
   <section class="grupos">
     <h3>Grupos alimentares</h3>
     <div class="grid-grupos">
-      <button onclick="searchByCategory('Bebidas')">Bebidas</button>
       <button onclick="searchByCategory('Carnes')">Carnes</button>
       <button onclick="searchByCategory('Cereais')">Cereais</button>
       <button onclick="searchByCategory('Frutas')">Frutas</button>

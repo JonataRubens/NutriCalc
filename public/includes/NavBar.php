@@ -41,6 +41,7 @@ require_once __DIR__ . '/db_connection.php';
                   <li><a href="/Urls.php?page=notas">📜 Minhas Notas</a></li>
                   <li><a href="/Urls.php?page=monstro">💪 Monstro</a></li>
                   <li><a href="/Urls.php?page=lista-substituicao">Lista de Substituição</a></li>
+                  <li><a href="Urls.php?page=comparador">Comparador</a></li>
                 </ul>
               </div>
             </li>

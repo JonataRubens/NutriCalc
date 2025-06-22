@@ -152,6 +152,10 @@ switch ($page) {
     case 'contato':
         require_once '../app/views/email/Email.php';
         break;
+
+    case 'comparador':
+        require_once '../app/views/comparador/Comparador.php';
+        break;
         
     default:
         echo "Página não encontrada";

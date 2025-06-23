@@ -52,6 +52,11 @@ if ($images && count($images) > 0) {
   </section>
 
   <hr class="linha-divisoria">
+
+  <?php include __DIR__ . '/../app/views/ranking/Ranking.php'; ?>
+  
+  <hr class="linha-divisoria">
+
   <section class="conheca">
     <h3>Nossas Principais Ferramentas Nutricionais</h3>
     <div class="cards-simples">

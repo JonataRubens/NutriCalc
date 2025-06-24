@@ -32,6 +32,5 @@
   
       <h2>🎯 Conclusão</h2>
       <p>O IMC é uma ferramenta simples, mas poderosa para cuidar da saúde. Use nossa <strong>Calculadora de IMC e Peso Ideal</strong> para verificar se seu peso está dentro do recomendado e trace metas com segurança e responsabilidade.</p>
-      <p><a href="#">Acesse a calculadora agora mesmo</a> e descubra seu índice ideal.</p>
     </div>
 <?php include('../public/includes/Footer.html'); ?>

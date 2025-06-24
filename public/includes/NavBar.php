@@ -40,13 +40,14 @@ require_once __DIR__ . '/db_connection.php';
                   <li><a href="/Urls.php?page=meus-alimentos">🍽️ Meus Alimentos</a></li>
                   <li><a href="/Urls.php?page=notas">📜 Minhas Notas</a></li>
                   <li><a href="/Urls.php?page=monstro">💪 Monstro</a></li>
+                  <li><a href="/Urls.php?page=lista-substituicao">📦 Lista de Substituição</a></li>
+                  <li><a href="Urls.php?page=comparador">↕️ Comparador</a></li>
                 </ul>
               </div>
             </li>
           <?php endif; ?>
           <li><a href="/Urls.php?page=contato">📧 Suporte</a></li>
           <li><a href="Urls.php?page=blog">📑 Blog</a></li>
-          <li><a href="Urls.php?page=ranking">👑 Ranking</a>
           </li>
         </ul>
         <div class="nav-right">

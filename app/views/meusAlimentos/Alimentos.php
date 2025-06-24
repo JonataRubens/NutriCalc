@@ -11,7 +11,7 @@ include('../public/includes/NavBar.php');
 include __DIR__ . '/../../../public/includes/db_connection.php';
 ?>
 <link rel="stylesheet" href="/assets/css/MeusAlimentos.css">
-<title>Lista de Alimentos</title>
+<link rel="stylesheet" href="/assets/css/Modal.css"> <title>Lista de Alimentos</title>
 
 </head>
  <div id="alimentosPage">
@@ -34,14 +34,25 @@ include __DIR__ . '/../../../public/includes/db_connection.php';
 </div>
     
     <div id="searchResults" class="search-results">
-      <!-- Resultados da pesquisa com botão Adicionar -->
-    </div>
+      </div>
 
     <h2>Minha Lista</h2>
     <div id="selectedList" class="selected-list">
-      <!-- Alimentos adicionados com botão Remover -->
-    </div>
+      </div>
   </main>
+
+  <div id="substituteModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" id="closeSubstituteModal">&times;</span>
+      <h2>Substituir Alimento</h2>
+      <p>Alimento mais proximos</p>
+      <div id="similarFoodsList" class="similar-foods-list">
+              <button id="cancelSubstituteBtn" class="btn-cancel">Cancelar</button>
+        </div>
+
+    </div>
   </div>
+
+ </div>
 <script src="/assets/js/Alimentos.js"></script>
 <?php include('../public/includes/Footer.html'); ?>

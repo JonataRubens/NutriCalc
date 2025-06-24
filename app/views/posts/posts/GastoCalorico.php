@@ -43,11 +43,9 @@
   </div>
 
   <h2>✅ Dicas úteis</h2>
-  <p>✔️ Combine esse cálculo com a <a href="../Ferramentas/CalcCalorias.php">Calculadora de Calorias</a> para controlar entrada e saída de energia.</p>
+  <p>✔️ Combine esse cálculo com a Calculadora de Calorias para controlar entrada e saída de energia.</p>
   <p>✔️ Ajuste seu plano alimentar conforme o objetivo: déficit para emagrecer, superávit para ganhar massa.</p>
   <p>✔️ Recalcule periodicamente ao mudar hábitos ou peso.</p>
 
-  <h2>🚀 Comece agora</h2>
-  <p>Entender seu gasto calórico é o primeiro passo para uma alimentação inteligente. <strong><a href="#">Clique aqui para usar a calculadora de gasto calórico</a></strong> e comece a tomar decisões mais saudáveis hoje mesmo!</p>
 </div>
 <?php include('../public/includes/Footer.html'); ?>

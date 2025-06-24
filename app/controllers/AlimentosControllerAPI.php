@@ -100,4 +100,38 @@ class AlimentosController {
         }
         return $alimentos;
     }
+
+    // Buscar alimentos com calorias mais próximas
+    public static function getSimilarByCalories($conn, $targetEnergia, $limit = 3) {
+        // Find foods with energy less than or equal to target, ordered by energy descending
+        $stmtLess = $conn->prepare("SELECT * FROM alimentos WHERE energia <= ? ORDER BY energia DESC LIMIT ?");
+        $stmtLess->bind_param("di", $targetEnergia, $limit);
+        $stmtLess->execute();
+        $resultLess = $stmtLess->get_result();
+        $alimentosLess = [];
+        while ($row = $resultLess->fetch_assoc()) {
+            $alimentosLess[] = (new ListaAlimento($row))->toArray();
+        }
+        
+        // Find foods with energy greater than target, ordered by energy ascending
+        $stmtGreater = $conn->prepare("SELECT * FROM alimentos WHERE energia > ? ORDER BY energia ASC LIMIT ?");
+        $stmtGreater->bind_param("di", $targetEnergia, $limit);
+        $stmtGreater->execute();
+        $resultGreater = $stmtGreater->get_result();
+        $alimentosGreater = [];
+        while ($row = $resultGreater->fetch_assoc()) {
+            $alimentosGreater[] = (new ListaAlimento($row))->toArray();
+        }
+
+        // Combine and sort by absolute difference from target
+        $allAlimentos = array_merge($alimentosLess, $alimentosGreater);
+        usort($allAlimentos, function($a, $b) use ($targetEnergia) {
+            $diffA = abs($a['energia'] - $targetEnergia);
+            $diffB = abs($b['energia'] - $targetEnergia);
+            return $diffA <=> $diffB;
+        });
+
+        // Return the top N similar foods
+        return array_slice($allAlimentos, 0, $limit);
+    }
 }

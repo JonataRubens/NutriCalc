@@ -45,10 +45,11 @@ include __DIR__ . '/../../../public/includes/db_connection.php';
     <div class="modal-content">
       <span class="close-button" id="closeSubstituteModal">&times;</span>
       <h2>Substituir Alimento</h2>
-      <p>Selecione um alimento para substituir:</p>
+      <p>Alimento mais proximos</p>
       <div id="similarFoodsList" class="similar-foods-list">
+              <button id="cancelSubstituteBtn" class="btn-cancel">Cancelar</button>
         </div>
-      <button id="cancelSubstituteBtn" class="btn-cancel">Cancelar</button>
+
     </div>
   </div>
 

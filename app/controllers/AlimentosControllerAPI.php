@@ -102,10 +102,20 @@ class AlimentosController {
     }
 
     // Buscar alimentos com calorias mais próximas
-    public static function getSimilarByCalories($conn, $targetEnergia, $limit = 3) {
+    // MODIFICAÇÃO AQUI: Adiciona $excludeId e muda o limite padrão para 4
+    public static function getSimilarByCalories($conn, $targetEnergia, $excludeId = null, $limit = 4) {
+        // Cláusula WHERE para excluir o alimento de comparação, se um ID for fornecido
+        $whereClause = $excludeId ? " AND id != ?" : "";
+        
         // Find foods with energy less than or equal to target, ordered by energy descending
-        $stmtLess = $conn->prepare("SELECT * FROM alimentos WHERE energia <= ? ORDER BY energia DESC LIMIT ?");
-        $stmtLess->bind_param("di", $targetEnergia, $limit);
+        $sqlLess = "SELECT * FROM alimentos WHERE energia <= ?{$whereClause} ORDER BY energia DESC LIMIT ?";
+        $stmtLess = $conn->prepare($sqlLess);
+
+        if ($excludeId) {
+            $stmtLess->bind_param("dii", $targetEnergia, $excludeId, $limit);
+        } else {
+            $stmtLess->bind_param("di", $targetEnergia, $limit);
+        }
         $stmtLess->execute();
         $resultLess = $stmtLess->get_result();
         $alimentosLess = [];
@@ -114,8 +124,14 @@ class AlimentosController {
         }
         
         // Find foods with energy greater than target, ordered by energy ascending
-        $stmtGreater = $conn->prepare("SELECT * FROM alimentos WHERE energia > ? ORDER BY energia ASC LIMIT ?");
-        $stmtGreater->bind_param("di", $targetEnergia, $limit);
+        $sqlGreater = "SELECT * FROM alimentos WHERE energia > ?{$whereClause} ORDER BY energia ASC LIMIT ?";
+        $stmtGreater = $conn->prepare($sqlGreater);
+
+        if ($excludeId) {
+            $stmtGreater->bind_param("dii", $targetEnergia, $excludeId, $limit);
+        } else {
+            $stmtGreater->bind_param("di", $targetEnergia, $limit);
+        }
         $stmtGreater->execute();
         $resultGreater = $stmtGreater->get_result();
         $alimentosGreater = [];
@@ -131,7 +147,7 @@ class AlimentosController {
             return $diffA <=> $diffB;
         });
 
-        // Return the top N similar foods
+        // Return the top N similar foods (adjusted from 3 to 4)
         return array_slice($allAlimentos, 0, $limit);
     }
 }

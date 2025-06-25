@@ -139,13 +139,16 @@ const clearBtn = document.getElementById('clearBtn');
   function prepararSubstituicao(id, energia) {
     currentFoodToSubstitute = { id: id, energia: energia };
     openSubstituteModal();
-    buscarAlimentosSimilares(energia);
+    // MODIFICAÇÃO AQUI: Passando o ID do alimento a ser excluído
+    buscarAlimentosSimilares(energia, id); 
   }
 
   // Função para buscar alimentos similares (no backend)
-  function buscarAlimentosSimilares(energia) {
+  // MODIFICAÇÃO AQUI: Adicionado o parâmetro 'excludeId'
+  function buscarAlimentosSimilares(energia, excludeId) { 
     similarFoodsList.innerHTML = '<p>Buscando alimentos similares...</p>';
-    fetch(`api/Alimentos.php?acao=get_similar_by_calories&energia=${energia}`)
+    // MODIFICAÇÃO AQUI: Incluindo 'exclude_id' na URL da requisição
+    fetch(`api/Alimentos.php?acao=get_similar_by_calories&energia=${energia}&exclude_id=${excludeId}`)
       .then(res => res.json())
       .then(data => mostrarAlimentosSimilares(data))
       .catch(err => {

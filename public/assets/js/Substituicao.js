@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function displayDropdownResults(alimentos) {
         searchResultsDropdown.innerHTML = ''; // Limpa resultados anteriores
         if (alimentos.length === 0) {
-            searchResultsDropdown.innerHTML = '<p>Nenhum alimento encontrado.</p>';
+            searchResultsDropdown.innerHTML = '<p>Nenhum alimento encontrado.</p>.</p>'; // Correção de digitação aqui
             showDropdown();
             return;
         }
@@ -67,14 +67,16 @@ document.addEventListener('DOMContentLoaded', () => {
         selectedFoodEnergy.textContent = alimento.energia;
         resultsSection.style.display = 'block'; // Mostra a seção de resultados
 
-        // Agora, busca os alimentos similares
-        buscarAlimentosSimilares(alimento.energia);
+        // Agora, busca os alimentos similares, passando o ID do alimento selecionado
+        buscarAlimentosSimilares(alimento.energia, alimento.id); // MODIFICAÇÃO AQUI: Passando alimento.id
     }
 
     // Função para buscar alimentos similares (já existente na API)
-    function buscarAlimentosSimilares(energia) {
+    // Adiciona o parâmetro excludeId
+    function buscarAlimentosSimilares(energia, excludeId) { // MODIFICAÇÃO AQUI: Recebe excludeId
         similarFoodsTableContainer.innerHTML = '<p>Buscando sugestões...</p>';
-        fetch(`api/Alimentos.php?acao=get_similar_by_calories&energia=${energia}`)
+        // Adiciona o parâmetro exclude_id na URL da requisição
+        fetch(`api/Alimentos.php?acao=get_similar_by_calories&energia=${energia}&exclude_id=${excludeId}`) // MODIFICAÇÃO AQUI: Usa excludeId na URL
             .then(res => res.json())
             .then(data => mostrarAlimentosSimilares(data))
             .catch(err => {

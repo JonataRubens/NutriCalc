@@ -43,33 +43,66 @@ body {
     display: flex;
     align-items: center;
     width: 100%;
+    height: 60px;
+    border: 1px solid #ced4da;
+    border-radius: 25px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background: white;
+    padding: 0;
+}
+
+.input-wrapper:focus-within {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
 }
 
 .search-input {
-    width: 100%;
-    padding: 12px 40px 12px 15px;
-    border: 1px solid #ced4da;
+    flex: 1;
+    margin-bottom: 15px;
+    padding-top: 15px;
+    border: none;
     border-radius: 25px;
     font-size: 1.1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    transition: border-color 0.3s, box-shadow 0.3s;
+    background: transparent;
+    outline: none;
+    box-shadow: none;
 }
 
 .search-input:focus {
-    border-color: #80bdff;
-    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
     outline: none;
+    border: none;
+    box-shadow: none;
 }
 
 .input-wrapper button {
-    position: absolute;
-    right: 10px;
+    position: relative;
+    right: 0;
+    top: 0;
+    transform: none;
     background: none;
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
     color: #6c757d;
-    display: none; /* Escondido por padrão, mostrado com JS */
+    display: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+.input-wrapper button:hover {
+    background-color: #f8f9fa;
+    color: #495057;
+}
+
+.input-wrapper button.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Dropdown para resultados da busca */

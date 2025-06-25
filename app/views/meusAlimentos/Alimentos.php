@@ -48,7 +48,7 @@ include __DIR__ . '/../../../public/includes/db_connection.php';
       <p>Selecione um alimento para substituir:</p>
       <div id="similarFoodsList" class="similar-foods-list">
         </div>
-      <button id="cancelSubstituteBtn" class="btn-cancel">Cancelar</button>
+      <button id="cancelSubstituteBtn" class="btn-cance"></button>
     </div>
   </div>
 

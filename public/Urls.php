@@ -136,7 +136,7 @@ switch ($page) {
         require_once '../scripts/dompdf/vendor/autoload.php';
         break;
 
-    case 'lista-substituicao': // NOVO CASE AQUI
+    case 'lista-substituicao':
         require_once '../app/views/meusAlimentos/Substituicao.php';
         break;
 

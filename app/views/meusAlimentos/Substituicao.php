@@ -19,7 +19,7 @@ include __DIR__ . '/../../../public/includes/db_connection.php';
                 <button id="clearBtn" aria-label="Limpar campo de pesquisa">&times;</button>
             </div>
             <div id="searchResultsDropdown" class="dropdown-content">
-                </div>
+            </div>
         </section>
 
         <section id="resultsSection" class="results-section" style="display: none;">

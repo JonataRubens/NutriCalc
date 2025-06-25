@@ -37,6 +37,29 @@ include __DIR__ . '/../../../public/includes/db_connection.php';
         </section>
     </div>
 
-    <script src="/assets/js/Substituicao.js"></script> <?php include('../public/includes/Footer.html'); ?>
-</body>
-</html>
+    <script src="/assets/js/Substituicao.js"></script>
+</main>
+<script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+  const clearBtn = document.getElementById('clearBtn');
+  const searchInput = document.getElementById('searchInput');
+
+  // Ocultar botão inicialmente
+  clearBtn.style.display = 'none';
+
+  // Mostrar o botão apenas se houver texto
+  searchInput.addEventListener('input', function () {
+    clearBtn.style.display = this.value.length > 0 ? 'inline-block' : 'none';
+  });
+
+  // Ação do botão para limpar
+  clearBtn.addEventListener('click', function () {
+    searchInput.value = '';
+    clearBtn.style.display = 'none';
+    searchInput.focus();
+  });
+});
+
+</script>
+<?php include('../public/includes/Footer.html'); ?>

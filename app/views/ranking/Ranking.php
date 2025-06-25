@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Ranking de Alimentos</title>
-    <link rel="stylesheet" href="/assets/css/Ranking.css">
-
-</head>
+<title>Ranking de Alimentos</title>
+<link rel="stylesheet" href="/assets/css/Ranking.css">
 <body>
     <h1>Ranking de Alimentos</h1>
     <form id="ranking-form">
@@ -22,8 +16,8 @@
             <option value="asc">Menor primeiro</option>
         </select>
         <label for="limite">Quantidade:</label>
-        <input type="number" name="limite" id="limite" value="10" min="1" max="100">
-        <button type="submit">Ver Ranking</button>
+        <input type="number" name="limite" id="limite" value="3" min="1" max="8">
+        <button type="submit">Ir</button>
     </form>
     <table border="1" id="ranking-table">
         <thead>
@@ -38,7 +32,5 @@
         </thead>
         <tbody></tbody>
     </table>
-
 <script src="/assets/js/Ranking.js"></script>
 </body>
-</html>

@@ -360,6 +360,10 @@ Criação de features mais simples para os usuarios não finais com teor visual 
 
 ---
 
+### Ultima semana (24/06/2025 - 01/06/2025)
+- Semana de polimentos se for necessario nas features, mas devido a organização tomada pelo lider, não será preciso, o projeto se encontra finalizado, podendo ter apenas commits sobre documentação do projeto!!! 
+
+
 ## Como Executar 
 
 Para executar esta aplicação, siga estes passos:

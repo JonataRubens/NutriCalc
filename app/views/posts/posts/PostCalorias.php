@@ -45,11 +45,10 @@
     
       <h2>🧠 Dicas práticas</h2>
       <p>✔️ Use uma balança de cozinha para maior precisão.</p>
-      <p>✔️ Use nossa <a href="../Calculadoras.php">Calculadora de Gasto Calórico</a> para equilibrar consumo e gasto.</p>
+      <p>✔️ Use nossa Calculadora de Gasto Calórico para equilibrar consumo e gasto.</p>
       <p>✔️ Não foque só nas calorias: analise também proteínas, fibras e gorduras boas.</p>
     
       <h2>✅ Conclusão</h2>
       <p>Ter consciência do que você consome é um passo importante para cuidar da saúde. Com a Calculadora de Calorias do NutriCalc, você transforma informação nutricional em ação!</p>
-      <p><strong><a href="#">Clique aqui e comece a calcular agora mesmo!</a></strong></p>
     </div>
     <?php include('../public/includes/Footer.html'); ?>

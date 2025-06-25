@@ -169,7 +169,7 @@ Com a evolução do projeto NutriCalc e o aumento da complexidade das funcionali
 - ❌Sistema de Testes (RF-11) (Caio)
 - ✅Contato com Nutricionista (RF-12) (Jonata)
 
-# 🧾 Atribuições – Sprint 04 (27/05/2025 - 10/06/2025)
+# 🧾 Atribuições – Sprint 04 (10/06/2025 - 24/06/2025)
  - **Jonata**: Responsável pela **Lista de comparação (RF-13)**
   - Atribuições específicas:
     - Fazer a feature de comparacao de alimentos de acordo com as regras de negocio
@@ -186,9 +186,10 @@ Com a evolução do projeto NutriCalc e o aumento da complexidade das funcionali
     - Fazer a propaganda para o user para assim tornar ele um "cliente" o que pode no futuro evoluir para anuncios diferentes
 
  **Entregas**:
-- ❌Lista de comparação (RF-13) (Jonata)
+- ✅Lista de comparação (RF-13) (Jonata)
 - ❌Sistema de testes mais complexos (RF- 14) (Caio)
 - ❌Refatoração da lista de substituição e implementação a lista de alimentos (RF- 09) (Afonso)
-- ❌Sistema de anuncios (RF- 15) (Marcos)
+- ✅Sistema de anuncios (RF- 15) (Marcos)
 
-(em construção 10/06/2025)
+⚠️ Caio e afonso nao entregaram suas designações a 2 4 semanas, ficando apenas jonata e marcos a merçe de tudo, mas fazendo tudo que ficou pendente no caminho até aqui. Eu (jonata), declaro agora estar finalizado esse projeto vindo a ter commits relacionados a documentos apenas ou bug/fix!!!
+(24/06/2025)

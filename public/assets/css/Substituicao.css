@@ -1,41 +1,42 @@
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
-    line-height: 1.6;
+/* Escopo exclusivo para a página de substituição */
+#substituicao-wrapper {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fafafa;
+  padding: 60px 20px;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
+/* Container central com sombra e arredondado */
+#substituicao-wrapper .container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.header {
-    text-align: center;
-    margin-bottom: 40px;
+/* Cabeçalho */
+#substituicao-wrapper .header {
+  text-align: center;
+  margin-bottom: 32px;
 }
 
-.title {
-    font-size: 3rem;
-    font-weight: 400;
-    color: #2c3e50;
-    margin-bottom: 20px;
-    font-family: Georgia, serif;
+#substituicao-wrapper .title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1f1f1f;
+  margin: 0;
 }
 
-.subtitle {
-    font-size: 1.5rem;
-    color: #5a6c7d;
-    margin-bottom: 15px;
-    font-weight: 500;
+#substituicao-wrapper .subtitle {
+  font-size: 18px;
+  color: #6b6b6b;
+  margin-top: 8px;
 }
 
-/* Search Section */
-.search-section {
-    position: relative;
-    max-width: 600px;
-    margin: 0 auto 30px;
+/* Campo de busca */
+#substituicao-wrapper .search-section {
+  margin-bottom: 24px;
 }
 
 .input-wrapper {
@@ -103,90 +104,82 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
-/* Dropdown para resultados da busca */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    min-width: 100%;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 8px;
-    margin-top: 5px;
-    max-height: 300px;
-    overflow-y: auto;
-    border: 1px solid #eee;
+/* Resultados */
+#substituicao-wrapper .results-section {
+  margin-top: 30px;
 }
 
-.dropdown-item {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    cursor: pointer;
+#substituicao-wrapper .alimento-selecionado,
+#substituicao-wrapper .similar-foods-display {
+  margin-bottom: 20px;
 }
 
-.dropdown-item:hover, .dropdown-item.highlighted {
-    background-color: #f1f1f1;
+#substituicao-wrapper h3 {
+  color: #2c2c2c;
+  margin-bottom: 10px;
 }
 
-.dropdown-content p {
-    padding: 12px 16px;
-    text-align: center;
-    color: #6c757d;
+#substituicao-wrapper p {
+  font-size: 15px;
+  color: #444;
+  margin: 4px 0;
+}
+#searchResults:empty {
+  display: none;
+}
+#results-section:empty {
+  display: none;
 }
 
-/* Results Section */
-.results-section {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    margin-top: 40px;
+#substituicao-wrapper #searchInput {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  box-shadow: none;
 }
 
-.alimento-selecionado {
-    border-bottom: 1px solid #eee;
-    padding-bottom: 20px;
-    margin-bottom: 30px;
+/* Remove qualquer linha extra */
+#substituicao-wrapper #searchInput:focus {
+  border-color: #aaa;
+  box-shadow: none;
+}
+#substituicao-wrapper .alimento-selecionado,
+#substituicao-wrapper .similar-foods-display {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+#substituicao-wrapper .similar-foods-display {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
 }
 
-.alimento-selecionado h3, .similar-foods-display h3 {
-    color: #2c3e50;
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    font-weight: 500;
+/* Estilização da tabela dentro do card */
+#substituicao-wrapper .similar-foods-display table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 14px; /* Tamanho reduzido */
 }
 
-.alimento-selecionado p {
-    font-size: 1.1rem;
-    margin-bottom: 5px;
+#substituicao-wrapper .similar-foods-display th,
+#substituicao-wrapper .similar-foods-display td {
+  border: 1px solid #ddd;
+  padding: 6px 8px; /* Menor padding */
+  text-align: center;
 }
 
-.similar-foods-display table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
-}
-
-.similar-foods-display th, .similar-foods-display td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
-}
-
-.similar-foods-display th {
-    background-color: #f2f2f2;
-    color: #555;
-    font-weight: bold;
-}
-
-.similar-foods-display tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.similar-foods-display tr:hover {
-    background-color: #f1f1f1;
+#substituicao-wrapper .similar-foods-display th {
+  background-color: #f8f8f8;
+  font-weight: bold;
 }

@@ -20,7 +20,9 @@ switch ($method) {
             echo json_encode($alimentos);
         } elseif ($acao === 'get_similar_by_calories' && isset($_GET['energia'])) { // New action
             $energia = (float)$_GET['energia'];
-            $alimentos = AlimentosController::getSimilarByCalories($conn, $energia);
+            // MODIFICAÇÃO AQUI: Captura o exclude_id da URL
+            $excludeId = isset($_GET['exclude_id']) ? (int)$_GET['exclude_id'] : null;
+            $alimentos = AlimentosController::getSimilarByCalories($conn, $energia, $excludeId); // MODIFICAÇÃO AQUI: Passa o excludeId
             echo json_encode($alimentos);
         } else {
             $alimentos = AlimentosController::listar($conn);

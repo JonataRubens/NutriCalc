@@ -156,6 +156,10 @@ switch ($page) {
     case 'comparador':
         require_once '../app/views/comparador/Comparador.php';
         break;
+
+    case 'landing':
+        require_once 'assets/LandingPage.html';
+        break;
         
     default:
         echo "Página não encontrada";

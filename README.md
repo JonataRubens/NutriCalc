@@ -21,7 +21,7 @@
 - Login opcional para relatórios em PDF
 - Sistema de Notas/Lembretes
 
-**🎨[Protótipo inicial no Figma](https://www.figma.com/proto/lQPOqAeOSFHSjUynHLdZet/Untitled?node-id=4-185&p=f&t=uzYsCdXIex9B338e-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2)**
+**🎨[Protótipo inicial no Figma](https://www.figma.com/design/lQPOqAeOSFHSjUynHLdZet/Untitled?node-id=74-29&t=8rfjLK28VTN2sojv-1)**
 
 **📄[Documentação das sprints e designações da equipe](https://github.com/JonataRubens/NutriCalc/blob/develop/DocDasSprints.md).**
 
@@ -29,6 +29,7 @@
 - [Link do Trelo (Fluxo de designações de maneira mais visual e formal)](https://trello.com/invite/b/681a0e4615979a30d0ec83b0/ATTIc2e4c7c4927d05db55ad57c97f0570443321E019/nutricalc).
 - Whatsapp
 - GitHub
+- Trello
 
 ---
 

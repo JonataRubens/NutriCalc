@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NutrilCalc</title>
+  <!-- Fontes modernas e agradáveis -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;600&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Nunito', Arial, sans-serif;
+      background: #f6f7fb;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+      color: #f5f5f5;
+    }
+    .bg-shape {
+      position: absolute;
+      border-radius: 50%;
+      z-index: 0;
+      opacity: 0.8;
+    }
+    .shape1 { width: 400px; height: 400px; background: #4f8cff; top: -120px; left: -120px; }
+    .shape2 { width: 300px; height: 300px; background: #ffb400; top: 60px; right: -100px; }
+    .shape3 { width: 200px; height: 200px; background:rgb(255, 0, 72); bottom: -80px; left: 50%; transform: translateX(-50%);}
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 60px auto 0 auto;
+      background: #18181a;
+      border-radius: 24px;
+      box-shadow: 0 6px 32px rgba(0,0,0,0.13);
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .content {
+      flex: 1;
+      padding: 60px 48px;
+      color: #fff;
+      max-width: 540px;
+      text-align: center;
+    }
+    h1 {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 2.7rem;
+      font-weight: 700;
+      margin-bottom: 22px;
+      line-height: 1.1;
+      color: #4f8cff;
+      letter-spacing: -1px;
+      text-shadow: 0 2px 8px rgba(79,140,255,0.10);
+    }
+    .intro {
+      font-family: 'Nunito', Arial, sans-serif;
+      font-size: 1.18rem;
+      color: #e0e0e0;
+      margin-bottom: 30px;
+      line-height: 1.7;
+      max-width: 500px;
+    }
+    .subtitle {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: #ffb400;
+      margin-bottom: 12px;
+      margin-top: 22px;
+      letter-spacing: 0.2px;
+      text-shadow: 0 2px 8px rgba(255, 180, 0, 0.08);
+    }
+    ul, p, .subtitle {
+      font-family: 'Nunito', Arial, sans-serif;
+      text-align: left;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 500px;
+      color: #e0e0e0;
+      font-size: 1.13rem;
+      line-height: 1.8;
+    }
+    ul li {
+      margin-bottom: 12px;
+      padding-left: 2px;
+    }
+    ul li strong, ul li a {
+      color: #4f8cff;
+      font-weight: 700;
+      font-family: 'Montserrat', Arial, sans-serif;
+      text-decoration: none;
+    }
+    .cta-btn {
+      font-family: 'Montserrat', Arial, sans-serif;
+      display: inline-block;
+      background: linear-gradient(90deg, #4f8cff 60%, #ff4f81 100%);
+      color: #fff;
+      padding: 16px 44px;
+      border-radius: 10px;
+      font-size: 1.15rem;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 4px 18px rgba(79,140,255,0.13);
+      transition: background 0.2s, transform 0.2s;
+      border: none;
+      cursor: pointer;
+      margin-top: 28px;
+      margin-bottom: 0;
+      align-self: flex-start;
+      letter-spacing: 0.5px;
+    }
+    .cta-btn:hover {
+      background: linear-gradient(90deg, #2563eb 60%, #ff1f5a 100%);
+      transform: translateY(-3px) scale(1.03);
+    }
+    .img-center {
+      margin: 24px 0;
+      text-align: center;
+    }
+    .img-center img {
+      display: inline-block;
+      max-width: 320px;
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(79,140,255,0.08);
+      background: #fff;
+      padding: 0;
+      border: none;
+    }
+    @media (max-width: 900px) {
+      .container { flex-direction: column; }
+      .content { padding: 36px 24px; min-height: unset; }
+    }
+    @media (max-width: 600px) {
+      .container { margin: 24px 8px 0 8px; }
+      h1 { font-size: 2rem; }
+      .content { padding: 24px 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-shape shape1"></div>
+  <div class="bg-shape shape2"></div>
+  <div class="bg-shape shape3"></div>
+  <div class="container">
+    <div class="content">
+      <h1>NutriCalc</h1>
+      <p>Conheça a plataforma que vai revolucionar sua relação com a alimentação e a saúde! Aqui você encontra praticidade, informação de qualidade e ferramentas inteligentes para transformar seus hábitos alimentares com facilidade e personalização.</p>
+      <span class="subtitle amarelo">Funcionalidades gratuitas:</span>
+      <ul>
+        <li><strong>Calculadoras online:</strong> IMC, água ideal, gasto calórico e mais – tudo sem cadastro!</li>
+        <li><strong>Busca inteligente de alimentos:</strong> Encontre informações nutricionais completas por nome ou grupo alimentar.</li>
+        <li><strong>Ferramentas práticas: </strong> Monte refeições equilibradas e compare alimentos em segundos.</li>
+      </ul>
+      <!-- Imagem no meio -->
+      <div class="img-center">
+        <img src="img (6).jpg" alt="Frutas variadas">
+      </div>
+      <span class="subtitle rosa">Depensa Digital <span style="color:#ff4f81;">(exclusiva para logados)</span>:</span>
+      <ul>
+        <li><strong>Meus Alimentos:</strong> Registre e acompanhe o que você consome.</li>
+        <li><strong>Minhas Notas:</strong> Anote receitas, observações e insights da sua rotina.</li>
+        <li><strong>Monstro:</strong> Monitore seu progresso e desafios pessoais.</li>
+        <li><strong>Lista de Substituição:</strong> Crie trocas inteligentes para variar sua alimentação.</li>
+        <li><strong>Comparador:</strong> Compare alimentos e faça escolhas mais saudáveis.</li>
+      </ul>
+      <!-- Imagem no final -->
+      <div class="img-center">
+        <img src="img (1).jpg" alt="Comida saudável">
+      </div>
+      <p><strong>Cadastre-se grátis</strong> e desbloqueie sua Depensa Digital. Aproveite todas as ferramentas e transforme sua alimentação de forma prática e divertida!</p>
+      <a href="http://localhost" target="_blank"  class="cta-btn">Comece agora</a>
+
+    </div>
+          <a href="https://github.com/JonataRubens/NutriCalc" target="_blank"  style="padding-bottom: 18px;">Link do Repositório do Projeto</a>
+  </div>
+</body>
+</html>

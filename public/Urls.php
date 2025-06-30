@@ -157,8 +157,8 @@ switch ($page) {
         require_once '../app/views/comparador/Comparador.php';
         break;
 
-    case 'landing':
-        require_once 'assets/LandingPage.html';
+    case 'land':
+        require_once '../index.html';
         break;
         
     default:

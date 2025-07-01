@@ -21,6 +21,8 @@
 - Login opcional para relatórios em PDF
 - Sistema de Notas/Lembretes
 
+---
+
 **🎨[Protótipo inicial no Figma](https://www.figma.com/design/lQPOqAeOSFHSjUynHLdZet/Untitled?node-id=74-29&t=8rfjLK28VTN2sojv-1)**
 
 **📄[Documentação das sprints e designações da equipe](https://github.com/JonataRubens/NutriCalc/blob/develop/DocDasSprints.md).**
@@ -30,6 +32,14 @@
 - Whatsapp
 - GitHub
 - Trello
+
+---
+
+## LINKS 
+
+**📄[Link Do Projeto Final](http://34.56.153.53/).**
+
+**📄[Link da landing page](https://jonatarubens.github.io/NutriCalc/).**
 
 ---
 
